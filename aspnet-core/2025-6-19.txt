@@ -40,3 +40,32 @@ dotnet new classlib -o framework/entity-change/RuiChen.Abp.EntityChange.HttpApi
 dotnet sln RuiChen.MicroService.sln add  framework/entity-change/RuiChen.Abp.EntityChange.Application
 dotnet sln RuiChen.MicroService.sln add  framework/entity-change/RuiChen.Abp.EntityChange.Application.Contracts
 dotnet sln RuiChen.MicroService.sln add  framework/entity-change/RuiChen.Abp.EntityChange.HttpApi
+
+
+dotnet new classlib -o framework/exception-handling/RuiChen.Abp.ExceptionHandling
+dotnet new classlib -o framework/exception-handling/RuiChen.Abp.ExceptionHandling.Emailing
+
+dotnet sln RuiChen.MicroService.sln add  framework/exception-handling/RuiChen.Abp.ExceptionHandling
+dotnet sln RuiChen.MicroService.sln add  framework/exception-handling/RuiChen.Abp.ExceptionHandling.Emailing
+
+
+dotnet new classlib -o framework/exporter/RuiChen.Abp.Exporter.Core
+dotnet new classlib -o framework/exporter/RuiChen.Abp.Exporter.MagicodesIE.Excel
+dotnet new classlib -o framework/exporter/RuiChen.Abp.Exporter.MiniExcel
+
+dotnet new classlib -o framework/features/RuiChen.Abp.FeatureManagement.Client
+dotnet new classlib -o framework/features/RuiChen.Abp.Features.Client
+dotnet new classlib -o framework/features/RuiChen.Abp.Features.LimitValidation
+dotnet new classlib -o framework/features/RuiChen.Abp.Features.LimitValidation.Redis
+dotnet new classlib -o framework/features/RuiChen.Abp.Features.LimitValidation.Redis.Client
+
+
+dotnet sln RuiChen.MicroService.sln add  framework/exporter/RuiChen.Abp.Exporter.Core
+dotnet sln RuiChen.MicroService.sln add  framework/exporter/RuiChen.Abp.Exporter.MagicodesIE.Excel
+dotnet sln RuiChen.MicroService.sln add  framework/exporter/RuiChen.Abp.Exporter.MiniExcel
+
+dotnet sln RuiChen.MicroService.sln add  framework/features/RuiChen.Abp.FeatureManagement.Client
+dotnet sln RuiChen.MicroService.sln add  framework/features/RuiChen.Abp.Features.Client
+dotnet sln RuiChen.MicroService.sln add  framework/features/RuiChen.Abp.Features.LimitValidation
+dotnet sln RuiChen.MicroService.sln add  framework/features/RuiChen.Abp.Features.LimitValidation.Redis
+dotnet sln RuiChen.MicroService.sln add  framework/features/RuiChen.Abp.Features.LimitValidation.Redis.Client

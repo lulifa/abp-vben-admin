@@ -19,9 +19,9 @@
 
     <!-- Define versions for referenced packages -->
     <VoloAbpPackageVersion>9.2.0</VoloAbpPackageVersion>
-    <MicrosoftExtensionsPackageVersion>9.0.2</MicrosoftExtensionsPackageVersion>
-    <MicrosoftAspNetCorePackageVersion>9.0.2</MicrosoftAspNetCorePackageVersion>
-    <MicrosoftEntityFrameworkCorePackageVersion>9.0.2</MicrosoftEntityFrameworkCorePackageVersion>
+    <MicrosoftExtensionsPackageVersion>9.0.4</MicrosoftExtensionsPackageVersion>
+    <MicrosoftAspNetCorePackageVersion>9.0.4</MicrosoftAspNetCorePackageVersion>
+    <MicrosoftEntityFrameworkCorePackageVersion>9.0.4</MicrosoftEntityFrameworkCorePackageVersion>
     <DotNetCoreCAPPackageVersion>8.3.5</DotNetCoreCAPPackageVersion>
     <ElsaPackageVersion>2.15.1</ElsaPackageVersion>
     

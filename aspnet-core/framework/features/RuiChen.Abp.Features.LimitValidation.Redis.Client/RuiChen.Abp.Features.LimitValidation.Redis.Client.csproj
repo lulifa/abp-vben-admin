@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <AssemblyName>RuiChen.Abp.Features.LimitValidation.Redis.Client</AssemblyName>
+    <PackageId>RuiChen.Abp.Features.LimitValidation.Redis.Client</PackageId>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <RootNamespace />
+    <Description>功能限制验证组件Redis客户端格式实现</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RuiChen.Abp.Features.LimitValidation.Redis\RuiChen.Abp.Features.LimitValidation.Redis.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <AssemblyName>RuiChen.Abp.ExceptionHandling.Emailing</AssemblyName>
+    <PackageId>RuiChen.Abp.ExceptionHandling.Emailing</PackageId>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <RootNamespace />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="RuiChen\Abp\ExceptionHandling\Emailing\Localization\Resources\en.json" />
+    <EmbeddedResource Include="RuiChen\Abp\ExceptionHandling\Emailing\Localization\Resources\zh-Hans.json" />
+    <EmbeddedResource Include="RuiChen\Abp\ExceptionHandling\Emailing\Templates\SendEmail\en.tpl" />
+    <EmbeddedResource Include="RuiChen\Abp\ExceptionHandling\Emailing\Templates\SendEmail\zh-Hans.tpl" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Emailing" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RuiChen.Abp.ExceptionHandling\RuiChen.Abp.ExceptionHandling.csproj" />
+  </ItemGroup>
+
+</Project>
