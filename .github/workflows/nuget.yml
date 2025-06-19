@@ -1,0 +1,26 @@
+name: Nuget
+on:
+  push:
+    tags:
+      - "*"
+
+jobs:
+  Push-Nuget:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Dotnet 9.0.301
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 9.0.301
+          include-prerelease: True
+      - name: Setting Version
+        id: vars
+        run: echo ::set-output name=tag::${GITHUB_REF:10}
+      - name: Build
+        run: dotnet build aspnet-core/RuiChen.MicroService.sln
+      - name: Pack
+        run: dotnet pack aspnet-core/RuiChen.MicroService.sln  --include-source --include-symbols /p:Configuration=Release -p:PackageVersion=${GITHUB_REF:10} --output nupkgs
+      - name: Push
+        if: startsWith(github.ref, 'refs/tags/v')
+        run: dotnet nuget push nupkgs/*.symbols.nupkg -k ${{secrets.NUGET_KEY}} -s https://api.nuget.org/v3/index.json

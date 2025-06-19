@@ -1,0 +1,29 @@
+
+dotnet new sln -n RuiChen.MicroService
+
+dotnet new classlib -o framework/common/RuiChen.Abp.AspNetCore.HttpOverrides
+dotnet new classlib -o framework/common/RuiChen.Abp.Data.DbMigrator
+dotnet new classlib -o framework/common/RuiChen.Abp.EventBus.CAP
+dotnet new classlib -o framework/common/RuiChen.Abp.IdGenerator
+dotnet new classlib -o framework/common/RuiChen.Abp.IP.Location
+dotnet new classlib -o framework/common/RuiChen.Abp.IP2Region
+
+dotnet sln RuiChen.MicroService.sln add  framework/common/RuiChen.Abp.AspNetCore.HttpOverrides
+dotnet sln RuiChen.MicroService.sln add  framework/common/RuiChen.Abp.Data.DbMigrator
+dotnet sln RuiChen.MicroService.sln add  framework/common/RuiChen.Abp.EventBus.CAP
+dotnet sln RuiChen.MicroService.sln add  framework/common/RuiChen.Abp.IdGenerator
+dotnet sln RuiChen.MicroService.sln add  framework/common/RuiChen.Abp.IP.Location
+dotnet sln RuiChen.MicroService.sln add  framework/common/RuiChen.Abp.IP2Region
+
+
+
+dotnet new classlib -o framework/auditing/RuiChen.Abp.AuditLogging
+dotnet new classlib -o framework/auditing/RuiChen.Abp.AuditLogging.Elasticsearch
+dotnet new classlib -o framework/auditing/RuiChen.Abp.AuditLogging.EntityFrameworkCore
+dotnet new classlib -o framework/auditing/RuiChen.Abp.AuditLogging.IP.Location
+
+
+dotnet sln RuiChen.MicroService.sln add  framework/auditing/RuiChen.Abp.AuditLogging
+dotnet sln RuiChen.MicroService.sln add  framework/auditing/RuiChen.Abp.AuditLogging.Elasticsearch
+dotnet sln RuiChen.MicroService.sln add  framework/auditing/RuiChen.Abp.AuditLogging.EntityFrameworkCore
+dotnet sln RuiChen.MicroService.sln add  framework/auditing/RuiChen.Abp.AuditLogging.IP.Location
