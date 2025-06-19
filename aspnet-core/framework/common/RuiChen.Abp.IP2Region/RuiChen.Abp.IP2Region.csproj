@@ -2,8 +2,27 @@
 
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>RuiChen.Abp.IP2Region</AssemblyName>
+    <PackageId>RuiChen.Abp.IP2Region</PackageId>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
     <Nullable>enable</Nullable>
+    <RootNamespace />
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="RuiChen\Abp\IP2Region\Resources\ip2region.xdb" />
+    <EmbeddedResource Include="RuiChen\Abp\IP2Region\Resources\ip2region.xdb" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.VirtualFileSystem" />
+    <PackageReference Include="IP2Region.Net" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RuiChen.Abp.IP.Location\RuiChen.Abp.IP.Location.csproj" />
+  </ItemGroup>
 
 </Project>

@@ -16,6 +16,8 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/lulifa/abp-pro-admin</RepositoryUrl>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
 
     <!-- Define versions for referenced packages -->
     <VoloAbpPackageVersion>9.2.0</VoloAbpPackageVersion>
