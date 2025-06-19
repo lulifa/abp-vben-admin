@@ -4,8 +4,8 @@
     <TargetFramework>net9.0</TargetFramework>
     <Nullable>enable</Nullable>
     <WarningsAsErrors>Nullable</WarningsAsErrors>
-    <AssemblyName>RuiChen.Abp.AuditLogging</AssemblyName>
-    <PackageId>RuiChen.Abp.AuditLogging</PackageId>
+    <AssemblyName>RuiChen.Abp.Elasticsearch</AssemblyName>
+    <PackageId>RuiChen.Abp.Elasticsearch</PackageId>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
@@ -13,9 +13,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.Auditing" />
-    <PackageReference Include="Volo.Abp.Guids" />
-    <PackageReference Include="Volo.Abp.ExceptionHandling" />
+    <PackageReference Include="NEST" />
+    <PackageReference Include="Volo.Abp.Core" />
   </ItemGroup>
 
 </Project>

@@ -27,3 +27,7 @@ dotnet sln RuiChen.MicroService.sln add  framework/auditing/RuiChen.Abp.AuditLog
 dotnet sln RuiChen.MicroService.sln add  framework/auditing/RuiChen.Abp.AuditLogging.Elasticsearch
 dotnet sln RuiChen.MicroService.sln add  framework/auditing/RuiChen.Abp.AuditLogging.EntityFrameworkCore
 dotnet sln RuiChen.MicroService.sln add  framework/auditing/RuiChen.Abp.AuditLogging.IP.Location
+
+dotnet new classlib -o framework/elasticsearch/RuiChen.Abp.Elasticsearch
+
+dotnet sln RuiChen.MicroService.sln add  framework/elasticsearch/RuiChen.Abp.Elasticsearch
