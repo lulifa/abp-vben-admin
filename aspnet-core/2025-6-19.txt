@@ -31,3 +31,12 @@ dotnet sln RuiChen.MicroService.sln add  framework/auditing/RuiChen.Abp.AuditLog
 dotnet new classlib -o framework/elasticsearch/RuiChen.Abp.Elasticsearch
 
 dotnet sln RuiChen.MicroService.sln add  framework/elasticsearch/RuiChen.Abp.Elasticsearch
+
+
+dotnet new classlib -o framework/entity-change/RuiChen.Abp.EntityChange.Application
+dotnet new classlib -o framework/entity-change/RuiChen.Abp.EntityChange.Application.Contracts
+dotnet new classlib -o framework/entity-change/RuiChen.Abp.EntityChange.HttpApi
+
+dotnet sln RuiChen.MicroService.sln add  framework/entity-change/RuiChen.Abp.EntityChange.Application
+dotnet sln RuiChen.MicroService.sln add  framework/entity-change/RuiChen.Abp.EntityChange.Application.Contracts
+dotnet sln RuiChen.MicroService.sln add  framework/entity-change/RuiChen.Abp.EntityChange.HttpApi
