@@ -69,3 +69,13 @@ dotnet sln RuiChen.MicroService.sln add  framework/features/RuiChen.Abp.Features
 dotnet sln RuiChen.MicroService.sln add  framework/features/RuiChen.Abp.Features.LimitValidation
 dotnet sln RuiChen.MicroService.sln add  framework/features/RuiChen.Abp.Features.LimitValidation.Redis
 dotnet sln RuiChen.MicroService.sln add  framework/features/RuiChen.Abp.Features.LimitValidation.Redis.Client
+
+
+
+dotnet new classlib -o framework/localization/RuiChen.Abp.AspNetCore.Mvc.Localization
+dotnet new classlib -o framework/localization/RuiChen.Abp.Localization.CultureMap
+dotnet new classlib -o framework/localization/RuiChen.Abp.Localization.Xml
+
+dotnet sln RuiChen.MicroService.sln add  framework/localization/RuiChen.Abp.AspNetCore.Mvc.Localization
+dotnet sln RuiChen.MicroService.sln add  framework/localization/RuiChen.Abp.Localization.CultureMap
+dotnet sln RuiChen.MicroService.sln add  framework/localization/RuiChen.Abp.Localization.Xml
