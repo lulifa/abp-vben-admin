@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <AssemblyName>RuiChen.Abp.Http.Client.Wrapper</AssemblyName>
+    <PackageId>RuiChen.Abp.Http.Client.Wrapper</PackageId>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <RootNamespace />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Http.Client" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RuiChen.Abp.Wrapper\RuiChen.Abp.Wrapper.csproj" />
+  </ItemGroup>
+
+</Project>

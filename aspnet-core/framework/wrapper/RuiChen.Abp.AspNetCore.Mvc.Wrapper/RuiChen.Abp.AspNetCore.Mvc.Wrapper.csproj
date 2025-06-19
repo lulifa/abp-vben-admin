@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <AssemblyName>RuiChen.Abp.AspNetCore.Mvc.Wrapper</AssemblyName>
+    <PackageId>RuiChen.Abp.AspNetCore.Mvc.Wrapper</PackageId>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <RootNamespace />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="RuiChen\Abp\AspNetCore\Mvc\Wrapper\Localization\Resources\*.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RuiChen.Abp.AspNetCore.Wrapper\RuiChen.Abp.AspNetCore.Wrapper.csproj" />
+    <ProjectReference Include="..\RuiChen.Abp.Wrapper\RuiChen.Abp.Wrapper.csproj" />
+  </ItemGroup>
+
+
+</Project>

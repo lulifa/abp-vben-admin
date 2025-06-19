@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <AssemblyName>RuiChen.Abp.SettingManagement.Application.Contracts</AssemblyName>
+    <PackageId>RuiChen.Abp.SettingManagement.Application.Contracts</PackageId>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <RootNamespace />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="RuiChen\Abp\SettingManagement\Localization\ApplicationContracts\*.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Ddd.Application.Contracts" />
+    <PackageReference Include="Volo.Abp.SettingManagement.Domain.Shared" />
+  </ItemGroup>
+
+</Project>

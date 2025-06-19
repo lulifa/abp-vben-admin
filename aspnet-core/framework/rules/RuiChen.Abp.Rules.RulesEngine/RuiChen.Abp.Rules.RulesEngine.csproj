@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <AssemblyName>RuiChen.Abp.Rules.RulesEngine</AssemblyName>
+    <PackageId>RuiChen.Abp.Rules.RulesEngine</PackageId>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <RootNamespace />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="RulesEngine" />
+    <PackageReference Include="Volo.Abp.Json" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Memory" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RuiChen.Abp.Rules\RuiChen.Abp.Rules.csproj" />
+  </ItemGroup>
+
+</Project>

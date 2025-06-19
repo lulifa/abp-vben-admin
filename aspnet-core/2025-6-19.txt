@@ -79,3 +79,35 @@ dotnet new classlib -o framework/localization/RuiChen.Abp.Localization.Xml
 dotnet sln RuiChen.MicroService.sln add  framework/localization/RuiChen.Abp.AspNetCore.Mvc.Localization
 dotnet sln RuiChen.MicroService.sln add  framework/localization/RuiChen.Abp.Localization.CultureMap
 dotnet sln RuiChen.MicroService.sln add  framework/localization/RuiChen.Abp.Localization.Xml
+
+
+
+dotnet new classlib -o framework/logging/RuiChen.Abp.Logging
+dotnet new classlib -o framework/logging/RuiChen.Abp.Logging.Serilog.Elasticsearch
+dotnet new classlib -o framework/logging/RuiChen.Abp.Serilog.Enrichers.Application
+dotnet new classlib -o framework/logging/RuiChen.Abp.Serilog.Enrichers.UniqueId
+
+dotnet sln RuiChen.MicroService.sln add  framework/logging/RuiChen.Abp.Logging
+dotnet sln RuiChen.MicroService.sln add  framework/logging/RuiChen.Abp.Logging.Serilog.Elasticsearch
+dotnet sln RuiChen.MicroService.sln add  framework/logging/RuiChen.Abp.Serilog.Enrichers.Application
+dotnet sln RuiChen.MicroService.sln add  framework/logging/RuiChen.Abp.Serilog.Enrichers.UniqueId
+
+
+dotnet new classlib -o framework/navigation/RuiChen.Abp.UI.Navigation
+dotnet new classlib -o framework/realtime/RuiChen.Abp.RealTime
+dotnet new classlib -o framework/rules/RuiChen.Abp.Rules
+dotnet new classlib -o framework/rules/RuiChen.Abp.Rules.NRules
+dotnet new classlib -o framework/rules/RuiChen.Abp.Rules.RulesEngine
+dotnet new classlib -o framework/settings/RuiChen.Abp.SettingManagement.Application.Contracts
+dotnet new classlib -o framework/settings/RuiChen.Abp.Settings
+dotnet new classlib -o framework/tenants/RuiChen.Abp.MultiTenancy.Editions
+
+
+dotnet sln RuiChen.MicroService.sln add  framework/navigation/RuiChen.Abp.UI.Navigation
+dotnet sln RuiChen.MicroService.sln add  framework/realtime/RuiChen.Abp.RealTime
+dotnet sln RuiChen.MicroService.sln add  framework/rules/RuiChen.Abp.Rules
+dotnet sln RuiChen.MicroService.sln add  framework/rules/RuiChen.Abp.Rules.NRules
+dotnet sln RuiChen.MicroService.sln add  framework/rules/RuiChen.Abp.Rules.RulesEngine
+dotnet sln RuiChen.MicroService.sln add  framework/settings/RuiChen.Abp.SettingManagement.Application.Contracts
+dotnet sln RuiChen.MicroService.sln add  framework/settings/RuiChen.Abp.Settings
+dotnet sln RuiChen.MicroService.sln add  framework/tenants/RuiChen.Abp.MultiTenancy.Editions
