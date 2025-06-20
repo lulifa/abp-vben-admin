@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
 using RuiChen.Abp.Data.DbMigrator;
+using RuiChen.Abp.Saas.Tenants;
 using System;
 using System.Linq;
 using System.Threading.Tasks;

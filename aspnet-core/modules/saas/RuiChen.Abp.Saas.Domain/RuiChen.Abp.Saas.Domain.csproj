@@ -2,8 +2,24 @@
 
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <AssemblyName>RuiChen.Abp.Saas.Domain</AssemblyName>
+    <PackageId>RuiChen.Abp.Saas.Domain</PackageId>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <RootNamespace />
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AutoMapper" />
+    <PackageReference Include="Volo.Abp.Caching" />
+    <PackageReference Include="Volo.Abp.Ddd.Domain" />
+    <PackageReference Include="Volo.Abp.Features" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\framework\tenants\RuiChen.Abp.MultiTenancy.Editions\RuiChen.Abp.MultiTenancy.Editions.csproj" />
+    <ProjectReference Include="..\RuiChen.Abp.Saas.Domain.Shared\RuiChen.Abp.Saas.Domain.Shared.csproj" />
+  </ItemGroup>
 
 </Project>

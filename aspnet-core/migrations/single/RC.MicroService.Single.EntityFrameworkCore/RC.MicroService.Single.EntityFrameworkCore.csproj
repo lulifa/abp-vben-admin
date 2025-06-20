@@ -24,6 +24,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\framework\common\RuiChen.Abp.Data.DbMigrator\RuiChen.Abp.Data.DbMigrator.csproj" />
+    <ProjectReference Include="..\..\..\modules\saas\RuiChen.Abp.Saas.EntityFrameworkCore\RuiChen.Abp.Saas.EntityFrameworkCore.csproj" />
   </ItemGroup>
 
 </Project>
