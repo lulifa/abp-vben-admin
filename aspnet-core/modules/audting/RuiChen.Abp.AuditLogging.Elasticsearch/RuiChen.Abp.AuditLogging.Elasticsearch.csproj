@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <AssemblyName>RuiChen.Abp.AuditLogging.Elasticsearch</AssemblyName>
+		<PackageId>RuiChen.Abp.AuditLogging.Elasticsearch</PackageId>
+		<GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+		<GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+		<GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+		<RootNamespace />
+  </PropertyGroup>
+  
+<ItemGroup>
+		<PackageReference Include="Volo.Abp.Json" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\framework\elasticsearch\RuiChen.Abp.Elasticsearch\RuiChen.Abp.Elasticsearch.csproj" />
+		<ProjectReference Include="..\RuiChen.Abp.AuditLogging\RuiChen.Abp.AuditLogging.csproj" />
+	</ItemGroup>
+
+</Project>

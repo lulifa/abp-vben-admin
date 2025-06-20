@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <WarningsAsErrors>Nullable</WarningsAsErrors>
+    <AssemblyName>RuiChen.Abp.AuditLogging.IP.Location</AssemblyName>
+    <PackageId>RuiChen.Abp.AuditLogging.IP.Location</PackageId>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <RootNamespace />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\framework\common\RuiChen.Abp.IP.Location\RuiChen.Abp.IP.Location.csproj" />
+    <ProjectReference Include="..\RuiChen.Abp.AuditLogging\RuiChen.Abp.AuditLogging.csproj" />
+  </ItemGroup>
+
+</Project>

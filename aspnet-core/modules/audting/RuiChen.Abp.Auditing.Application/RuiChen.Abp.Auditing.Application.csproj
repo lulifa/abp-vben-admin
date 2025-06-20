@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <AssemblyName>RuiChen.Abp.Auditing.Application</AssemblyName>
+    <PackageId>RuiChen.Abp.Auditing.Application</PackageId>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <RootNamespace />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AutoMapper" />
+    <PackageReference Include="Volo.Abp.Ddd.Application" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\framework\auditing\RuiChen.Abp.AuditLogging\RuiChen.Abp.AuditLogging.csproj" />
+    <ProjectReference Include="..\..\..\framework\logging\RuiChen.Abp.Logging\RuiChen.Abp.Logging.csproj" />
+    <ProjectReference Include="..\RuiChen.Abp.Auditing.Application.Contracts\RuiChen.Abp.Auditing.Application.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>
