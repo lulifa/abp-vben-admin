@@ -1,0 +1,6 @@
+
+dotnet new classlib -o migrations/single/RC.MicroService.Single.DbMigrator
+dotnet new classlib -o migrations/single/RC.MicroService.Single.EntityFrameworkCore
+
+dotnet sln RuiChen.MicroService.sln add  migrations/single/RC.MicroService.Single.DbMigrator
+dotnet sln RuiChen.MicroService.sln add  migrations/single/RC.MicroService.Single.EntityFrameworkCore
