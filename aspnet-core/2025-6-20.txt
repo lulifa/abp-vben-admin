@@ -46,21 +46,21 @@ dotnet sln RuiChen.MicroService.sln add  modules/platform/RuiChen.Platform.Setti
 dotnet sln RuiChen.MicroService.sln add  modules/platform/RuiChen.Platform.Theme.VueVbenAdmin
 
 
-dotnet new classlib -o modules/audting/RuiChen.Abp.Auditing.Application
-dotnet new classlib -o modules/audting/RuiChen.Abp.Auditing.Application.Contracts
-dotnet new classlib -o modules/audting/RuiChen.Abp.Auditing.HttpApi
-dotnet new classlib -o modules/audting/RuiChen.Abp.AuditLogging
-dotnet new classlib -o modules/audting/RuiChen.Abp.AuditLogging.Elasticsearch
-dotnet new classlib -o modules/audting/RuiChen.Abp.AuditLogging.EntityFrameworkCore
-dotnet new classlib -o modules/audting/RuiChen.Abp.AuditLogging.IP.Location
+dotnet new classlib -o modules/auditing/RuiChen.Abp.Auditing.Application
+dotnet new classlib -o modules/auditing/RuiChen.Abp.Auditing.Application.Contracts
+dotnet new classlib -o modules/auditing/RuiChen.Abp.Auditing.HttpApi
+dotnet new classlib -o modules/auditing/RuiChen.Abp.AuditLogging
+dotnet new classlib -o modules/auditing/RuiChen.Abp.AuditLogging.Elasticsearch
+dotnet new classlib -o modules/auditing/RuiChen.Abp.AuditLogging.EntityFrameworkCore
+dotnet new classlib -o modules/auditing/RuiChen.Abp.AuditLogging.IP.Location
 
-dotnet sln RuiChen.MicroService.sln add  modules/audting/RuiChen.Abp.Auditing.Application
-dotnet sln RuiChen.MicroService.sln add  modules/audting/RuiChen.Abp.Auditing.Application.Contracts
-dotnet sln RuiChen.MicroService.sln add  modules/audting/RuiChen.Abp.Auditing.HttpApi
-dotnet sln RuiChen.MicroService.sln add  modules/audting/RuiChen.Abp.AuditLogging
-dotnet sln RuiChen.MicroService.sln add  modules/audting/RuiChen.Abp.AuditLogging.Elasticsearch
-dotnet sln RuiChen.MicroService.sln add  modules/audting/RuiChen.Abp.AuditLogging.EntityFrameworkCore
-dotnet sln RuiChen.MicroService.sln add  modules/audting/RuiChen.Abp.AuditLogging.IP.Location
+dotnet sln RuiChen.MicroService.sln add  modules/auditing/RuiChen.Abp.Auditing.Application
+dotnet sln RuiChen.MicroService.sln add  modules/auditing/RuiChen.Abp.Auditing.Application.Contracts
+dotnet sln RuiChen.MicroService.sln add  modules/auditing/RuiChen.Abp.Auditing.HttpApi
+dotnet sln RuiChen.MicroService.sln add  modules/auditing/RuiChen.Abp.AuditLogging
+dotnet sln RuiChen.MicroService.sln add  modules/auditing/RuiChen.Abp.AuditLogging.Elasticsearch
+dotnet sln RuiChen.MicroService.sln add  modules/auditing/RuiChen.Abp.AuditLogging.EntityFrameworkCore
+dotnet sln RuiChen.MicroService.sln add  modules/auditing/RuiChen.Abp.AuditLogging.IP.Location
 
 
 
@@ -117,3 +117,64 @@ dotnet new classlib -o framework/exporter/RuiChen.Abp.Exporter.Application.Contr
 
 dotnet sln RuiChen.MicroService.sln add  framework/exporter/RuiChen.Abp.Exporter.Application
 dotnet sln RuiChen.MicroService.sln add  framework/exporter/RuiChen.Abp.Exporter.Application.Contracts
+
+dotnet new classlib -o modules/settings/RuiChen.Abp.SettingManagement.Application
+dotnet new classlib -o modules/settings/RuiChen.Abp.SettingManagement.HttpApi
+
+dotnet sln RuiChen.MicroService.sln add  modules/settings/RuiChen.Abp.SettingManagement.Application
+dotnet sln RuiChen.MicroService.sln add  modules/settings/RuiChen.Abp.SettingManagement.HttpApi
+
+
+dotnet new classlib -o modules/account/RuiChen.Abp.Account.Application
+dotnet new classlib -o modules/account/RuiChen.Abp.Account.Application.Contracts
+dotnet new classlib -o modules/account/RuiChen.Abp.Account.Emailing
+dotnet new classlib -o modules/account/RuiChen.Abp.Account.HttpApi
+dotnet new classlib -o modules/account/RuiChen.Abp.Account.OAuth
+dotnet new web -o modules/account/RuiChen.Abp.Account.Web
+dotnet new web -o modules/account/RuiChen.Abp.Account.Web.OAuth
+dotnet new web -o modules/account/RuiChen.Abp.Account.Web.OpenIddict
+
+dotnet sln RuiChen.MicroService.sln add  modules/account/RuiChen.Abp.Account.Application
+dotnet sln RuiChen.MicroService.sln add  modules/account/RuiChen.Abp.Account.Application.Contracts
+dotnet sln RuiChen.MicroService.sln add  modules/account/RuiChen.Abp.Account.Emailing
+dotnet sln RuiChen.MicroService.sln add  modules/account/RuiChen.Abp.Account.HttpApi
+dotnet sln RuiChen.MicroService.sln add  modules/account/RuiChen.Abp.Account.OAuth
+dotnet sln RuiChen.MicroService.sln add  modules/account/RuiChen.Abp.Account.Web
+dotnet sln RuiChen.MicroService.sln add  modules/account/RuiChen.Abp.Account.Web.OAuth
+dotnet sln RuiChen.MicroService.sln add  modules/account/RuiChen.Abp.Account.Web.OpenIddict
+
+
+dotnet new classlib -o modules/openIddict/RuiChen.Abp.OpenIddict.Application
+dotnet new classlib -o modules/openIddict/RuiChen.Abp.OpenIddict.Application.Contracts
+dotnet new classlib -o modules/openIddict/RuiChen.Abp.OpenIddict.AspNetCore.Session
+dotnet new classlib -o modules/openIddict/RuiChen.Abp.OpenIddict.HttpApi
+dotnet new classlib -o modules/openIddict/RuiChen.Abp.OpenIddict.LinkUser
+dotnet new classlib -o modules/openIddict/RuiChen.Abp.OpenIddict.Portal
+dotnet new classlib -o modules/openIddict/RuiChen.Abp.OpenIddict.Sms
+
+dotnet new classlib -o modules/identity/RuiChen.Abp.Identity.Application
+dotnet new classlib -o modules/identity/RuiChen.Abp.Identity.Application.Contracts
+dotnet new classlib -o modules/identity/RuiChen.Abp.Identity.AspNetCore.Session
+dotnet new classlib -o modules/identity/RuiChen.Abp.Identity.Domain
+dotnet new classlib -o modules/identity/RuiChen.Abp.Identity.Domain.Shared
+dotnet new classlib -o modules/identity/RuiChen.Abp.Identity.EntityFrameworkCore
+dotnet new classlib -o modules/identity/RuiChen.Abp.Identity.HttpApi
+dotnet new classlib -o modules/identity/RuiChen.Abp.Identity.Session
+dotnet new classlib -o modules/identity/RuiChen.Abp.Identity.Session.AspNetCore
+
+dotnet sln RuiChen.MicroService.sln add  modules/openIddict/RuiChen.Abp.OpenIddict.Application
+dotnet sln RuiChen.MicroService.sln add  modules/openIddict/RuiChen.Abp.OpenIddict.Application.Contracts
+dotnet sln RuiChen.MicroService.sln add  modules/openIddict/RuiChen.Abp.OpenIddict.AspNetCore.Session
+dotnet sln RuiChen.MicroService.sln add  modules/openIddict/RuiChen.Abp.OpenIddict.HttpApi
+dotnet sln RuiChen.MicroService.sln add  modules/openIddict/RuiChen.Abp.OpenIddict.LinkUser
+dotnet sln RuiChen.MicroService.sln add  modules/openIddict/RuiChen.Abp.OpenIddict.Portal
+dotnet sln RuiChen.MicroService.sln add  modules/openIddict/RuiChen.Abp.OpenIddict.Sms
+dotnet sln RuiChen.MicroService.sln add  modules/identity/RuiChen.Abp.Identity.Application
+dotnet sln RuiChen.MicroService.sln add  modules/identity/RuiChen.Abp.Identity.Application.Contracts
+dotnet sln RuiChen.MicroService.sln add  modules/identity/RuiChen.Abp.Identity.AspNetCore.Session
+dotnet sln RuiChen.MicroService.sln add  modules/identity/RuiChen.Abp.Identity.Domain
+dotnet sln RuiChen.MicroService.sln add  modules/identity/RuiChen.Abp.Identity.Domain.Shared
+dotnet sln RuiChen.MicroService.sln add  modules/identity/RuiChen.Abp.Identity.EntityFrameworkCore
+dotnet sln RuiChen.MicroService.sln add  modules/identity/RuiChen.Abp.Identity.HttpApi
+dotnet sln RuiChen.MicroService.sln add  modules/identity/RuiChen.Abp.Identity.Session
+dotnet sln RuiChen.MicroService.sln add  modules/identity/RuiChen.Abp.Identity.Session.AspNetCore

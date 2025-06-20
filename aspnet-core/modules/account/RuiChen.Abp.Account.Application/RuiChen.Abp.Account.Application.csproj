@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <AssemblyName>RuiChen.Abp.Account.Application</AssemblyName>
+    <PackageId>RuiChen.Abp.Account.Application</PackageId>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <RootNamespace />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Account.Application" />
+    <PackageReference Include="Volo.Abp.BlobStoring" />
+    <PackageReference Include="Volo.Abp.Sms" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\framework\auditing\RuiChen.Abp.AuditLogging\RuiChen.Abp.AuditLogging.csproj" />
+    <ProjectReference Include="..\..\..\framework\settings\RuiChen.Abp.Settings\RuiChen.Abp.Settings.csproj" />
+    <ProjectReference Include="..\..\identity\RuiChen.Abp.Identity.Domain\RuiChen.Abp.Identity.Domain.csproj" />
+    <ProjectReference Include="..\RuiChen.Abp.Account.Application.Contracts\RuiChen.Abp.Account.Application.Contracts.csproj" />
+    <ProjectReference Include="..\RuiChen.Abp.Account.Emailing\RuiChen.Abp.Account.Emailing.csproj" />
+  </ItemGroup>
+
+</Project>

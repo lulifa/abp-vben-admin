@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <AssemblyName>RuiChen.Abp.SettingManagement.Application</AssemblyName>
+    <PackageId>RuiChen.Abp.SettingManagement.Application</PackageId>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <RootNamespace />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="RuiChen\Abp\SettingManagement\Localization\Resources\*.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc.Contracts" />
+    <PackageReference Include="Volo.Abp.Ddd.Application" />
+    <PackageReference Include="Volo.Abp.Emailing" />
+    <PackageReference Include="Volo.Abp.SettingManagement.Domain" />
+    <PackageReference Include="Volo.Abp.SettingManagement.Application.Contracts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\account\RuiChen.Abp.Account.Application.Contracts\RuiChen.Abp.Account.Application.Contracts.csproj" />
+    <ProjectReference Include="..\..\account\RuiChen.Abp.Account.OAuth\RuiChen.Abp.Account.OAuth.csproj" />
+    <ProjectReference Include="..\..\identity\RuiChen.Abp.Identity.Domain.Shared\RuiChen.Abp.Identity.Domain.Shared.csproj" />
+    <ProjectReference Include="..\..\..\framework\settings\RuiChen.Abp.SettingManagement.Application.Contracts\RuiChen.Abp.SettingManagement.Application.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>

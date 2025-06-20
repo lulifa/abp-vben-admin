@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <AssemblyName>RuiChen.Abp.Identity.Domain</AssemblyName>
+    <PackageId>RuiChen.Abp.Identity.Domain</PackageId>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <RootNamespace />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Identity.Domain" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RuiChen.Abp.Identity.Domain.Shared\RuiChen.Abp.Identity.Domain.Shared.csproj" />
+    <ProjectReference Include="..\RuiChen.Abp.Identity.Session\RuiChen.Abp.Identity.Session.csproj" />
+  </ItemGroup>
+
+</Project>
