@@ -32,17 +32,38 @@
     <PackageReference Include="Volo.Abp.SettingManagement.Web" />
     <PackageReference Include="Volo.Abp.Identity.Web" />
     <PackageReference Include="Volo.Abp.VirtualFileExplorer.Web" />
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc.UI.Theme.LeptonXLite" />
   </ItemGroup>
 
   <ItemGroup>
+
+    <ProjectReference Include="..\..\..\framework\common\RuiChen.Abp.AspNetCore.HttpOverrides\RuiChen.Abp.AspNetCore.HttpOverrides.csproj" />
+
+    <ProjectReference Include="..\..\..\framework\localization\RuiChen.Abp.Localization.CultureMap\RuiChen.Abp.Localization.CultureMap.csproj" />
+
+    <ProjectReference Include="..\..\..\framework\wrapper\RuiChen.Abp.AspNetCore.Mvc.Wrapper\RuiChen.Abp.AspNetCore.Mvc.Wrapper.csproj" />
+
+    <ProjectReference Include="..\..\..\migrations\single\RC.MicroService.Single.EntityFrameworkCore\RC.MicroService.Single.EntityFrameworkCore.csproj" />
+
+    <ProjectReference Include="..\..\..\modules\account\RuiChen.Abp.Account.HttpApi\RuiChen.Abp.Account.HttpApi.csproj" />
+    <ProjectReference Include="..\..\..\modules\account\RuiChen.Abp.Account.Application\RuiChen.Abp.Account.Application.csproj" />
+    <ProjectReference Include="..\..\..\modules\account\RuiChen.Abp.Account.Web.OpenIddict\RuiChen.Abp.Account.Web.OpenIddict.csproj" />
 
     <ProjectReference Include="..\..\..\modules\auditing\RuiChen.Abp.Auditing.HttpApi\RuiChen.Abp.Auditing.HttpApi.csproj" />
     <ProjectReference Include="..\..\..\modules\auditing\RuiChen.Abp.Auditing.Application\RuiChen.Abp.Auditing.Application.csproj" />
     <ProjectReference Include="..\..\..\modules\auditing\RuiChen.Abp.AuditLogging.EntityFrameworkCore\RuiChen.Abp.AuditLogging.EntityFrameworkCore.csproj" />
 
+    <ProjectReference Include="..\..\..\modules\identity\RuiChen.Abp.Identity.HttpApi\RuiChen.Abp.Identity.HttpApi.csproj" />
+    <ProjectReference Include="..\..\..\modules\identity\RuiChen.Abp.Identity.Application\RuiChen.Abp.Identity.Application.csproj" />
+    <ProjectReference Include="..\..\..\modules\identity\RuiChen.Abp.Identity.EntityFrameworkCore\RuiChen.Abp.Identity.EntityFrameworkCore.csproj" />
+
     <ProjectReference Include="..\..\..\modules\saas\RuiChen.Abp.Saas.HttpApi\RuiChen.Abp.Saas.HttpApi.csproj" />
     <ProjectReference Include="..\..\..\modules\saas\RuiChen.Abp.Saas.Application\RuiChen.Abp.Saas.Application.csproj" />
     <ProjectReference Include="..\..\..\modules\saas\RuiChen.Abp.Saas.EntityFrameworkCore\RuiChen.Abp.Saas.EntityFrameworkCore.csproj" />
+
+    <ProjectReference Include="..\..\..\modules\platform\RuiChen.Platform.HttpApi\RuiChen.Platform.HttpApi.csproj" />
+    <ProjectReference Include="..\..\..\modules\platform\RuiChen.Platform.Application\RuiChen.Platform.Application.csproj" />
+    <ProjectReference Include="..\..\..\modules\platform\RuiChen.Platform.EntityFrameworkCore\RuiChen.Platform.EntityFrameworkCore.csproj" />
 
     <ProjectReference Include="..\..\..\modules\settings\RuiChen.Abp.SettingManagement.Application\RuiChen.Abp.SettingManagement.Application.csproj" />
     <ProjectReference Include="..\..\..\modules\settings\RuiChen.Abp.SettingManagement.HttpApi\RuiChen.Abp.SettingManagement.HttpApi.csproj" />

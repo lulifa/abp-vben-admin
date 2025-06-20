@@ -153,6 +153,13 @@
   dependencies:
     moment "^2.30.1"
 
+"@abp/qrcode@9.2.0":
+  version "9.2.0"
+  resolved "https://registry.npmmirror.com/@abp/qrcode/-/qrcode-9.2.0.tgz#89b1bb2e5fffd3af3132ddfce66cd2f1ee308d91"
+  integrity sha512-xPYWkVTXaA/GziFy4cjloLcOyCAmTAsMKUUGeU6w4e5hpjIAoWbsuWDgLuS6fB2j9opklQY4MOGAaOKdDv86og==
+  dependencies:
+    "@abp/core" "~9.2.0"
+
 "@abp/select2@~9.2.0":
   version "9.2.0"
   resolved "https://registry.npmmirror.com/@abp/select2/-/select2-9.2.0.tgz#c96d869be0d3298ed7c0888288ea9829e6266cd4"
