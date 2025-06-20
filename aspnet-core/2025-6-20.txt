@@ -61,3 +61,21 @@ dotnet sln RuiChen.MicroService.sln add  modules/audting/RuiChen.Abp.AuditLoggin
 dotnet sln RuiChen.MicroService.sln add  modules/audting/RuiChen.Abp.AuditLogging.Elasticsearch
 dotnet sln RuiChen.MicroService.sln add  modules/audting/RuiChen.Abp.AuditLogging.EntityFrameworkCore
 dotnet sln RuiChen.MicroService.sln add  modules/audting/RuiChen.Abp.AuditLogging.IP.Location
+
+
+
+dotnet new classlib -o services/single/RuiChen.Single.Application
+dotnet new classlib -o services/single/RuiChen.Single.Application.Contracts
+dotnet new classlib -o services/single/RuiChen.Single.Domain
+dotnet new classlib -o services/single/RuiChen.Single.Domain.Shared
+dotnet new classlib -o services/single/RuiChen.Single.EntityFrameworkCore
+dotnet new classlib -o services/single/RuiChen.Single.HttpApi
+dotnet new web -o services/single/RuiChen.Single.HttpApi.Host
+
+dotnet sln RuiChen.MicroService.sln add  services/single/RuiChen.Single.Application
+dotnet sln RuiChen.MicroService.sln add  services/single/RuiChen.Single.Application.Contracts
+dotnet sln RuiChen.MicroService.sln add  services/single/RuiChen.Single.Domain
+dotnet sln RuiChen.MicroService.sln add  services/single/RuiChen.Single.Domain.Shared
+dotnet sln RuiChen.MicroService.sln add  services/single/RuiChen.Single.EntityFrameworkCore
+dotnet sln RuiChen.MicroService.sln add  services/single/RuiChen.Single.HttpApi
+dotnet sln RuiChen.MicroService.sln add  services/single/RuiChen.Single.HttpApi.Host
