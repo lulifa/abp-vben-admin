@@ -2,8 +2,24 @@
 
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <AssemblyName>RuiChen.Single.Domain</AssemblyName>
+    <PackageId>RuiChen.Single.Domain</PackageId>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <RootNamespace />
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AutoMapper" />
+    <PackageReference Include="Volo.Abp.Ddd.Domain" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\framework\data-protection\RuiChen.Abp.DataProtection.Abstractions\RuiChen.Abp.DataProtection.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\framework\data-protection\RuiChen.Abp.DataProtection\RuiChen.Abp.DataProtection.csproj" />
+    <ProjectReference Include="..\RuiChen.Single.Domain.Shared\RuiChen.Single.Domain.Shared.csproj" />
+  </ItemGroup>
 
 </Project>

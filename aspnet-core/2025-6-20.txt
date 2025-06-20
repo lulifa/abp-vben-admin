@@ -64,18 +64,56 @@ dotnet sln RuiChen.MicroService.sln add  modules/audting/RuiChen.Abp.AuditLoggin
 
 
 
-dotnet new classlib -o services/single/RuiChen.Single.Application
-dotnet new classlib -o services/single/RuiChen.Single.Application.Contracts
-dotnet new classlib -o services/single/RuiChen.Single.Domain
-dotnet new classlib -o services/single/RuiChen.Single.Domain.Shared
-dotnet new classlib -o services/single/RuiChen.Single.EntityFrameworkCore
-dotnet new classlib -o services/single/RuiChen.Single.HttpApi
-dotnet new web -o services/single/RuiChen.Single.HttpApi.Host
+dotnet new classlib -o services/single-service/RuiChen.Single.Application
+dotnet new classlib -o services/single-service/RuiChen.Single.Application.Contracts
+dotnet new classlib -o services/single-service/RuiChen.Single.Domain
+dotnet new classlib -o services/single-service/RuiChen.Single.Domain.Shared
+dotnet new classlib -o services/single-service/RuiChen.Single.EntityFrameworkCore
+dotnet new classlib -o services/single-service/RuiChen.Single.HttpApi
+dotnet new web -o services/single-service/RuiChen.Single.HttpApi.Host
 
-dotnet sln RuiChen.MicroService.sln add  services/single/RuiChen.Single.Application
-dotnet sln RuiChen.MicroService.sln add  services/single/RuiChen.Single.Application.Contracts
-dotnet sln RuiChen.MicroService.sln add  services/single/RuiChen.Single.Domain
-dotnet sln RuiChen.MicroService.sln add  services/single/RuiChen.Single.Domain.Shared
-dotnet sln RuiChen.MicroService.sln add  services/single/RuiChen.Single.EntityFrameworkCore
-dotnet sln RuiChen.MicroService.sln add  services/single/RuiChen.Single.HttpApi
-dotnet sln RuiChen.MicroService.sln add  services/single/RuiChen.Single.HttpApi.Host
+dotnet sln RuiChen.MicroService.sln add  services/single-service/RuiChen.Single.Application
+dotnet sln RuiChen.MicroService.sln add  services/single-service/RuiChen.Single.Application.Contracts
+dotnet sln RuiChen.MicroService.sln add  services/single-service/RuiChen.Single.Domain
+dotnet sln RuiChen.MicroService.sln add  services/single-service/RuiChen.Single.Domain.Shared
+dotnet sln RuiChen.MicroService.sln add  services/single-service/RuiChen.Single.EntityFrameworkCore
+dotnet sln RuiChen.MicroService.sln add  services/single-service/RuiChen.Single.HttpApi
+dotnet sln RuiChen.MicroService.sln add  services/single-service/RuiChen.Single.HttpApi.Host
+
+
+
+dotnet new classlib -o framework/data-protection/RuiChen.Abp.DataProtection
+dotnet new classlib -o framework/data-protection/RuiChen.Abp.DataProtection.Abstractions
+dotnet new classlib -o framework/data-protection/RuiChen.Abp.DataProtection.EntityFrameworkCore
+
+dotnet new classlib -o modules/data-protection/RuiChen.Abp.DataProtectionManagement.Application
+dotnet new classlib -o modules/data-protection/RuiChen.Abp.DataProtectionManagement.Application.Contracts
+dotnet new classlib -o modules/data-protection/RuiChen.Abp.DataProtectionManagement.Domain
+dotnet new classlib -o modules/data-protection/RuiChen.Abp.DataProtectionManagement.Domain.Shared
+dotnet new classlib -o modules/data-protection/RuiChen.Abp.DataProtectionManagement.EntityFrameworkCore
+dotnet new classlib -o modules/data-protection/RuiChen.Abp.DataProtectionManagement.HttpApi
+
+
+
+dotnet sln RuiChen.MicroService.sln add  framework/data-protection/RuiChen.Abp.DataProtection
+dotnet sln RuiChen.MicroService.sln add  framework/data-protection/RuiChen.Abp.DataProtection.Abstractions
+dotnet sln RuiChen.MicroService.sln add  framework/data-protection/RuiChen.Abp.DataProtection.EntityFrameworkCore
+
+dotnet sln RuiChen.MicroService.sln add  modules/data-protection/RuiChen.Abp.DataProtectionManagement.Application
+dotnet sln RuiChen.MicroService.sln add  modules/data-protection/RuiChen.Abp.DataProtectionManagement.Application.Contracts
+dotnet sln RuiChen.MicroService.sln add  modules/data-protection/RuiChen.Abp.DataProtectionManagement.Domain
+dotnet sln RuiChen.MicroService.sln add  modules/data-protection/RuiChen.Abp.DataProtectionManagement.Domain.Shared
+dotnet sln RuiChen.MicroService.sln add  modules/data-protection/RuiChen.Abp.DataProtectionManagement.EntityFrameworkCore
+dotnet sln RuiChen.MicroService.sln add  modules/data-protection/RuiChen.Abp.DataProtectionManagement.HttpApi
+
+dotnet new classlib -o framework/authorization/RuiChen.Abp.Authorization.OrganizationUnits
+
+dotnet sln RuiChen.MicroService.sln add  framework/authorization/RuiChen.Abp.Authorization.OrganizationUnits
+
+
+
+dotnet new classlib -o framework/exporter/RuiChen.Abp.Exporter.Application
+dotnet new classlib -o framework/exporter/RuiChen.Abp.Exporter.Application.Contracts
+
+dotnet sln RuiChen.MicroService.sln add  framework/exporter/RuiChen.Abp.Exporter.Application
+dotnet sln RuiChen.MicroService.sln add  framework/exporter/RuiChen.Abp.Exporter.Application.Contracts

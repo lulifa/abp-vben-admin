@@ -2,8 +2,22 @@
 
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <AssemblyName>RuiChen.Single.Application</AssemblyName>
+    <PackageId>RuiChen.Single.Application</PackageId>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <RootNamespace />
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Ddd.Application" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\framework\exporter\RuiChen.Abp.Exporter.Application\RuiChen.Abp.Exporter.Application.csproj" />
+    <ProjectReference Include="..\RuiChen.Single.Application.Contracts\RuiChen.Single.Application.Contracts.csproj" />
+    <ProjectReference Include="..\RuiChen.Single.Domain\RuiChen.Single.Domain.csproj" />
+  </ItemGroup>
 
 </Project>

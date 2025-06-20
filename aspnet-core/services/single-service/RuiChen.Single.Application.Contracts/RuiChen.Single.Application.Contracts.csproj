@@ -2,8 +2,24 @@
 
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>RuiChen.Single.Application.Contracts</AssemblyName>
+    <PackageId>RuiChen.Single.Application.Contracts</PackageId>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
     <Nullable>enable</Nullable>
+    <RootNamespace />
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Authorization.Abstractions" />
+    <PackageReference Include="Volo.Abp.Ddd.Application.Contracts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\framework\data-protection\RuiChen.Abp.DataProtection.Abstractions\RuiChen.Abp.DataProtection.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\framework\exporter\RuiChen.Abp.Exporter.Application.Contracts\RuiChen.Abp.Exporter.Application.Contracts.csproj" />
+    <ProjectReference Include="..\RuiChen.Single.Domain.Shared\RuiChen.Single.Domain.Shared.csproj" />
+  </ItemGroup>
 
 </Project>

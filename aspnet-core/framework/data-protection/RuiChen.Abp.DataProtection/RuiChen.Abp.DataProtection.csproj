@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <AssemblyName>RuiChen.Abp.DataProtection</AssemblyName>
+    <PackageId>RuiChen.Abp.DataProtection</PackageId>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <RootNamespace />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Ddd.Domain" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\authorization\RuiChen.Abp.Authorization.OrganizationUnits\RuiChen.Abp.Authorization.OrganizationUnits.csproj" />
+    <ProjectReference Include="..\RuiChen.Abp.DataProtection.Abstractions\RuiChen.Abp.DataProtection.Abstractions.csproj" />
+  </ItemGroup>
+
+</Project>
