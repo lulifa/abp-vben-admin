@@ -1,9 +1,46 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>RuiChen.Abp.Account.Web</AssemblyName>
+    <PackageId>RuiChen.Abp.Account.Web</PackageId>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <GenerateEmbeddedFilesManifest>true</GenerateEmbeddedFilesManifest>
+    <RootNamespace>RuiChen.Abp.Account.Web</RootNamespace>
+    <OutputType>Library</OutputType>
+    <IsPackable>true</IsPackable>
   </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Modules\**\*.js" />
+    <EmbeddedResource Include="Modules\**\*.css" />
+    <EmbeddedResource Include="Pages\**\*.js" />
+    <EmbeddedResource Include="Pages\**\*.css" />
+    <EmbeddedResource Include="Components\**\*.js" />
+    <EmbeddedResource Include="Components\**\*.css" />
+    <EmbeddedResource Include="wwwroot\**\*.js" />
+    <EmbeddedResource Include="wwwroot\**\*.css" />
+    <Content Remove="Components\**\*.js" />
+    <Content Remove="Components\**\*.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Sms" />
+    <PackageReference Include="Volo.Abp.Account.Web" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\identity\RuiChen.Abp.Identity.AspNetCore.QrCode\RuiChen.Abp.Identity.AspNetCore.QrCode.csproj" />
+    <ProjectReference Include="..\..\identity\RuiChen.Abp.Identity.Domain\RuiChen.Abp.Identity.Domain.csproj" />
+    <ProjectReference Include="..\RuiChen.Abp.Account.Application.Contracts\RuiChen.Abp.Account.Application.Contracts.csproj" />
+    <ProjectReference Include="..\RuiChen.Abp.Account.Emailing\RuiChen.Abp.Account.Emailing.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" />
+  </ItemGroup>
+
 
 </Project>

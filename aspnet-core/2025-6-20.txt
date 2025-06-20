@@ -154,11 +154,13 @@ dotnet new classlib -o modules/openIddict/RuiChen.Abp.OpenIddict.Sms
 
 dotnet new classlib -o modules/identity/RuiChen.Abp.Identity.Application
 dotnet new classlib -o modules/identity/RuiChen.Abp.Identity.Application.Contracts
+dotnet new classlib -o modules/identity/RuiChen.Abp.Identity.AspNetCore.QrCode
 dotnet new classlib -o modules/identity/RuiChen.Abp.Identity.AspNetCore.Session
 dotnet new classlib -o modules/identity/RuiChen.Abp.Identity.Domain
 dotnet new classlib -o modules/identity/RuiChen.Abp.Identity.Domain.Shared
 dotnet new classlib -o modules/identity/RuiChen.Abp.Identity.EntityFrameworkCore
 dotnet new classlib -o modules/identity/RuiChen.Abp.Identity.HttpApi
+dotnet new classlib -o modules/identity/RuiChen.Abp.Identity.QrCode
 dotnet new classlib -o modules/identity/RuiChen.Abp.Identity.Session
 dotnet new classlib -o modules/identity/RuiChen.Abp.Identity.Session.AspNetCore
 
@@ -171,10 +173,12 @@ dotnet sln RuiChen.MicroService.sln add  modules/openIddict/RuiChen.Abp.OpenIddi
 dotnet sln RuiChen.MicroService.sln add  modules/openIddict/RuiChen.Abp.OpenIddict.Sms
 dotnet sln RuiChen.MicroService.sln add  modules/identity/RuiChen.Abp.Identity.Application
 dotnet sln RuiChen.MicroService.sln add  modules/identity/RuiChen.Abp.Identity.Application.Contracts
+dotnet sln RuiChen.MicroService.sln add  modules/identity/RuiChen.Abp.Identity.AspNetCore.QrCode
 dotnet sln RuiChen.MicroService.sln add  modules/identity/RuiChen.Abp.Identity.AspNetCore.Session
 dotnet sln RuiChen.MicroService.sln add  modules/identity/RuiChen.Abp.Identity.Domain
 dotnet sln RuiChen.MicroService.sln add  modules/identity/RuiChen.Abp.Identity.Domain.Shared
 dotnet sln RuiChen.MicroService.sln add  modules/identity/RuiChen.Abp.Identity.EntityFrameworkCore
 dotnet sln RuiChen.MicroService.sln add  modules/identity/RuiChen.Abp.Identity.HttpApi
+dotnet sln RuiChen.MicroService.sln add  modules/identity/RuiChen.Abp.Identity.QrCode
 dotnet sln RuiChen.MicroService.sln add  modules/identity/RuiChen.Abp.Identity.Session
 dotnet sln RuiChen.MicroService.sln add  modules/identity/RuiChen.Abp.Identity.Session.AspNetCore
