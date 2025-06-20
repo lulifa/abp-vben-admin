@@ -4,3 +4,43 @@ dotnet new classlib -o migrations/single/RC.MicroService.Single.EntityFrameworkC
 
 dotnet sln RuiChen.MicroService.sln add  migrations/single/RC.MicroService.Single.DbMigrator
 dotnet sln RuiChen.MicroService.sln add  migrations/single/RC.MicroService.Single.EntityFrameworkCore
+
+
+
+dotnet new classlib -o modules/saas/RuiChen.Abp.Saas.Application
+dotnet new classlib -o modules/saas/RuiChen.Abp.Saas.Application.Contracts
+dotnet new classlib -o modules/saas/RuiChen.Abp.Saas.DbChecker
+dotnet new classlib -o modules/saas/RuiChen.Abp.Saas.Domain
+dotnet new classlib -o modules/saas/RuiChen.Abp.Saas.Domain.Shared
+dotnet new classlib -o modules/saas/RuiChen.Abp.Saas.EntityFrameworkCore
+dotnet new classlib -o modules/saas/RuiChen.Abp.Saas.HttpApi
+
+dotnet sln RuiChen.MicroService.sln add  modules/saas/RuiChen.Abp.Saas.Application
+dotnet sln RuiChen.MicroService.sln add  modules/saas/RuiChen.Abp.Saas.Application.Contracts
+dotnet sln RuiChen.MicroService.sln add  modules/saas/RuiChen.Abp.Saas.DbChecker
+dotnet sln RuiChen.MicroService.sln add  modules/saas/RuiChen.Abp.Saas.Domain
+dotnet sln RuiChen.MicroService.sln add  modules/saas/RuiChen.Abp.Saas.Domain.Shared
+dotnet sln RuiChen.MicroService.sln add  modules/saas/RuiChen.Abp.Saas.EntityFrameworkCore
+dotnet sln RuiChen.MicroService.sln add  modules/saas/RuiChen.Abp.Saas.HttpApi
+
+
+
+dotnet new classlib -o modules/platform/RuiChen.Abp.UI.Navigation.VueVbenAdmin
+dotnet new classlib -o modules/platform/RuiChen.Platform.Application
+dotnet new classlib -o modules/platform/RuiChen.Platform.Application.Contracts
+dotnet new classlib -o modules/platform/RuiChen.Platform.Domain
+dotnet new classlib -o modules/platform/RuiChen.Platform.Domain.Shared
+dotnet new classlib -o modules/platform/RuiChen.Platform.EntityFrameworkCore
+dotnet new classlib -o modules/platform/RuiChen.Platform.HttpApi
+dotnet new classlib -o modules/platform/RuiChen.Platform.Settings.VueVbenAdmin
+dotnet new classlib -o modules/platform/RuiChen.Platform.Theme.VueVbenAdmin
+
+dotnet sln RuiChen.MicroService.sln add  modules/platform/RuiChen.Abp.UI.Navigation.VueVbenAdmin
+dotnet sln RuiChen.MicroService.sln add  modules/platform/RuiChen.Platform.Application
+dotnet sln RuiChen.MicroService.sln add  modules/platform/RuiChen.Platform.Application.Contracts
+dotnet sln RuiChen.MicroService.sln add  modules/platform/RuiChen.Platform.Domain
+dotnet sln RuiChen.MicroService.sln add  modules/platform/RuiChen.Platform.Domain.Shared
+dotnet sln RuiChen.MicroService.sln add  modules/platform/RuiChen.Platform.EntityFrameworkCore
+dotnet sln RuiChen.MicroService.sln add  modules/platform/RuiChen.Platform.HttpApi
+dotnet sln RuiChen.MicroService.sln add  modules/platform/RuiChen.Platform.Settings.VueVbenAdmin
+dotnet sln RuiChen.MicroService.sln add  modules/platform/RuiChen.Platform.Theme.VueVbenAdmin
