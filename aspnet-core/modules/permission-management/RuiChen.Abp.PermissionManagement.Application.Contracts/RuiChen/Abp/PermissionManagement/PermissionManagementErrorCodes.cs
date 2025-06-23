@@ -1,4 +1,4 @@
-﻿namespace LINGYUN.Abp.PermissionManagement;
+﻿namespace RuiChen.Abp.PermissionManagement;
 public static class PermissionManagementErrorCodes
 {
     public const string Namespace = "PermissionManagement";

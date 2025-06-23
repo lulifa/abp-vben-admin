@@ -1,4 +1,4 @@
-﻿using LINGYUN.Abp.PermissionManagement.Permissions;
+﻿using RuiChen.Abp.PermissionManagement.Permissions;
 using Microsoft.AspNetCore.Authorization;
 using System;
 using System.Collections.Generic;
@@ -14,7 +14,7 @@ using Volo.Abp.Domain.Repositories;
 using Volo.Abp.Localization;
 using Volo.Abp.PermissionManagement;
 
-namespace LINGYUN.Abp.PermissionManagement.Definitions;
+namespace RuiChen.Abp.PermissionManagement.Definitions;
 
 [Authorize(PermissionManagementPermissionNames.GroupDefinition.Default)]
 public class PermissionGroupDefinitionAppService : PermissionManagementAppServiceBase, IPermissionGroupDefinitionAppService

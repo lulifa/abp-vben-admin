@@ -1,4 +1,4 @@
-﻿namespace LINGYUN.Abp.PermissionManagement.Permissions;
+﻿namespace RuiChen.Abp.PermissionManagement.Permissions;
 public static class PermissionManagementPermissionNames
 {
     public const string GroupName = "PermissionManagement";

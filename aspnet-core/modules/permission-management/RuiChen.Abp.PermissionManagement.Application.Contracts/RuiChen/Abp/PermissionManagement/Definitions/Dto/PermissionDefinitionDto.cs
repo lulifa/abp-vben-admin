@@ -2,7 +2,7 @@
 using Volo.Abp.Data;
 using Volo.Abp.MultiTenancy;
 
-namespace LINGYUN.Abp.PermissionManagement.Definitions;
+namespace RuiChen.Abp.PermissionManagement.Definitions;
 
 public class PermissionDefinitionDto : IHasExtraProperties
 {

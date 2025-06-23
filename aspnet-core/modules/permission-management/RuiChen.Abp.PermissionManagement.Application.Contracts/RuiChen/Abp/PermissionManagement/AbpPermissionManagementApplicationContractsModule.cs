@@ -5,7 +5,7 @@ using Volo.Abp.PermissionManagement.Localization;
 using Volo.Abp.VirtualFileSystem;
 using VoloAbpPermissionManagementApplicationContractsModule = Volo.Abp.PermissionManagement.AbpPermissionManagementApplicationContractsModule;
 
-namespace LINGYUN.Abp.PermissionManagement;
+namespace RuiChen.Abp.PermissionManagement;
 
 [DependsOn(
     typeof(VoloAbpPermissionManagementApplicationContractsModule))]
@@ -22,7 +22,7 @@ public class AbpPermissionManagementApplicationContractsModule : AbpModule
         {
             options.Resources
                 .Get<AbpPermissionManagementResource>()
-                .AddVirtualJson("/LINGYUN/Abp/PermissionManagement/Localization/Application/Contracts");
+                .AddVirtualJson("/RuiChen/Abp/PermissionManagement/Localization/Application/Contracts");
         });
 
         Configure<AbpExceptionLocalizationOptions>(options =>

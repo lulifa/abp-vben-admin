@@ -59,3 +59,29 @@ dotnet sln RuiChen.MicroService.sln add  modules/permission-management/RuiChen.A
 dotnet sln RuiChen.MicroService.sln add  modules/permission-management/RuiChen.Abp.PermissionManagement.Application.Contracts
 dotnet sln RuiChen.MicroService.sln add  modules/permission-management/RuiChen.Abp.PermissionManagement.Domain.OrganizationUnits
 dotnet sln RuiChen.MicroService.sln add  modules/permission-management/RuiChen.Abp.PermissionManagement.HttpApi
+
+
+
+
+dotnet new classlib -o modules/realtime-message/RuiChen.Abp.IM
+dotnet new classlib -o modules/realtime-message/RuiChen.Abp.IM.SignalR
+dotnet new classlib -o modules/realtime-message/RuiChen.Abp.MessageService.Application
+dotnet new classlib -o modules/realtime-message/RuiChen.Abp.MessageService.Application.Contracts
+dotnet new classlib -o modules/realtime-message/RuiChen.Abp.MessageService.Domain
+dotnet new classlib -o modules/realtime-message/RuiChen.Abp.MessageService.Domain.Shared
+dotnet new classlib -o modules/realtime-message/RuiChen.Abp.MessageService.EntityFrameworkCore
+dotnet new classlib -o modules/realtime-message/RuiChen.Abp.MessageService.HttpApi
+
+dotnet new classlib -o modules/realtime-notifications/LINGYUN.Abp.Notifications
+dotnet new classlib -o modules/realtime-notifications/LINGYUN.Abp.Notifications.Application
+dotnet new classlib -o modules/realtime-notifications/LINGYUN.Abp.Notifications.Application.Contracts
+dotnet new classlib -o modules/realtime-notifications/LINGYUN.Abp.Notifications.Common
+dotnet new classlib -o modules/realtime-notifications/LINGYUN.Abp.Notifications.Core
+dotnet new classlib -o modules/realtime-notifications/LINGYUN.Abp.Notifications.Domain
+dotnet new classlib -o modules/realtime-notifications/LINGYUN.Abp.Notifications.Domain.Shared
+dotnet new classlib -o modules/realtime-notifications/LINGYUN.Abp.Notifications.Emailing
+dotnet new classlib -o modules/realtime-notifications/LINGYUN.Abp.Notifications.EntityFrameworkCore
+dotnet new classlib -o modules/realtime-notifications/LINGYUN.Abp.Notifications.HttpApi
+dotnet new classlib -o modules/realtime-notifications/RuiChen.Abp.MessageService.HttpApi
+dotnet new classlib -o modules/realtime-notifications/RuiChen.Abp.MessageService.HttpApi
+dotnet new classlib -o modules/realtime-notifications/RuiChen.Abp.MessageService.HttpApi

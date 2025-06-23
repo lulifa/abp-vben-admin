@@ -3,7 +3,7 @@ using Volo.Abp.Localization;
 using Volo.Abp.MultiTenancy;
 using Volo.Abp.PermissionManagement.Localization;
 
-namespace LINGYUN.Abp.PermissionManagement.Permissions;
+namespace RuiChen.Abp.PermissionManagement.Permissions;
 
 public class PermissionManagementPermissionDefinitionProvider : PermissionDefinitionProvider
 {

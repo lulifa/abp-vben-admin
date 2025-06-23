@@ -1,7 +1,7 @@
 ﻿using Volo.Abp.Modularity;
 using VoloAbpPermissionManagementApplicationModule = Volo.Abp.PermissionManagement.AbpPermissionManagementApplicationModule;
 
-namespace LINGYUN.Abp.PermissionManagement;
+namespace RuiChen.Abp.PermissionManagement;
 
 [DependsOn(
     typeof(AbpPermissionManagementApplicationContractsModule),

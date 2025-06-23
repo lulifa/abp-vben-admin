@@ -2,7 +2,7 @@
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Application.Services;
 
-namespace LINGYUN.Abp.PermissionManagement.Definitions;
+namespace RuiChen.Abp.PermissionManagement.Definitions;
 
 public interface IPermissionGroupDefinitionAppService : IApplicationService
 {

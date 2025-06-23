@@ -1,7 +1,7 @@
 ﻿using Volo.Abp.Application.Services;
 using Volo.Abp.PermissionManagement.Localization;
 
-namespace LINGYUN.Abp.PermissionManagement;
+namespace RuiChen.Abp.PermissionManagement;
 public abstract class PermissionManagementAppServiceBase : ApplicationService
 {
     protected PermissionManagementAppServiceBase()

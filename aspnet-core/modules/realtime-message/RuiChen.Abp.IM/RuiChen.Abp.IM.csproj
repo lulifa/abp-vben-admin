@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <AssemblyName>RuiChen.Abp.IM</AssemblyName>
+    <PackageId>RuiChen.Abp.IM</PackageId>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <RootNamespace />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="RuiChen\Abp\IM\Localization\Resources\*.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Auditing" />
+    <PackageReference Include="Volo.Abp.EventBus" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\framework\common\RuiChen.Abp.IdGenerator\RuiChen.Abp.IdGenerator.csproj" />
+    <ProjectReference Include="..\..\..\framework\common\RuiChen.Abp.RealTime\RuiChen.Abp.RealTime.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <AssemblyName>RuiChen.Abp.MessageService.Domain</AssemblyName>
+    <PackageId>RuiChen.Abp.MessageService.Domain</PackageId>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <RootNamespace />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Caching" />
+    <PackageReference Include="Volo.Abp.Ddd.Domain" />
+    <PackageReference Include="Volo.Abp.AutoMapper" />
+    <PackageReference Include="Volo.Abp.BackgroundJobs" />
+    <PackageReference Include="Volo.Abp.Users.Abstractions" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RuiChen.Abp.IM\RuiChen.Abp.IM.csproj" />
+    <ProjectReference Include="..\..\realtime-notifications\RuiChen.Abp.Notifications\RuiChen.Abp.Notifications.csproj" />
+    <ProjectReference Include="..\RuiChen.Abp.MessageService.Domain.Shared\RuiChen.Abp.MessageService.Domain.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

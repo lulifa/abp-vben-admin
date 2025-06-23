@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <AssemblyName>RuiChen.Abp.MessageService.Application</AssemblyName>
+		<PackageId>RuiChen.Abp.MessageService.Application</PackageId>
+		<GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+		<GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+		<GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+		<RootNamespace />
+  </PropertyGroup>
+  
+<ItemGroup>
+		<PackageReference Include="Volo.Abp.Ddd.Application" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\RuiChen.Abp.MessageService.Application.Contracts\RuiChen.Abp.MessageService.Application.Contracts.csproj" />
+		<ProjectReference Include="..\RuiChen.Abp.MessageService.Domain\RuiChen.Abp.MessageService.Domain.csproj" />
+	</ItemGroup>
+
+</Project>

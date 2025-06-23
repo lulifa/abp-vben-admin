@@ -2,7 +2,7 @@
 using Volo.Abp.PermissionManagement;
 using Volo.Abp.Validation;
 
-namespace LINGYUN.Abp.PermissionManagement.Definitions;
+namespace RuiChen.Abp.PermissionManagement.Definitions;
 
 public class PermissionDefinitionCreateDto : PermissionDefinitionCreateOrUpdateDto
 {

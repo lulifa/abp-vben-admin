@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Volo.Abp.Domain.Entities;
 
-namespace LINGYUN.Abp.PermissionManagement.Definitions;
+namespace RuiChen.Abp.PermissionManagement.Definitions;
 public class PermissionGroupDefinitionUpdateDto : PermissionGroupDefinitionCreateOrUpdateDto, IHasConcurrencyStamp
 {
     [StringLength(40)]

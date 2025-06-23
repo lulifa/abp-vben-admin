@@ -1,4 +1,4 @@
-﻿namespace LINGYUN.Abp.PermissionManagement.Definitions;
+﻿namespace RuiChen.Abp.PermissionManagement.Definitions;
 public class PermissionDefinitionGetListInput
 {
     public string Filter { get; set; }

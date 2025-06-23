@@ -1,7 +1,7 @@
 ﻿using Volo.Abp.AspNetCore.Mvc;
 using Volo.Abp.PermissionManagement.Localization;
 
-namespace LINGYUN.Abp.PermissionManagement.HttpApi;
+namespace RuiChen.Abp.PermissionManagement.HttpApi;
 public abstract class PermissionManagementControllerBase : AbpControllerBase
 {
     protected PermissionManagementControllerBase()

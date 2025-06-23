@@ -6,7 +6,7 @@ using Volo.Abp.PermissionManagement.Localization;
 using Volo.Abp.Validation.Localization;
 using VoloAbpPermissionManagementHttpApiModule = Volo.Abp.PermissionManagement.HttpApi.AbpPermissionManagementHttpApiModule;
 
-namespace LINGYUN.Abp.PermissionManagement.HttpApi;
+namespace RuiChen.Abp.PermissionManagement.HttpApi;
 
 [DependsOn(
     typeof(AbpPermissionManagementApplicationContractsModule),

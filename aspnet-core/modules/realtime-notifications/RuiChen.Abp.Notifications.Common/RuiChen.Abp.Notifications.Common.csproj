@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <AssemblyName>RuiChen.Abp.Notifications.Common</AssemblyName>
+    <PackageId>RuiChen.Abp.Notifications.Common</PackageId>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <RootNamespace />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="RuiChen\Abp\Notifications\Templates\ExceptionNotifier\*.tpl" />
+    <EmbeddedResource Include="RuiChen\Abp\Notifications\Templates\layout.tpl" />
+    <EmbeddedResource Include="RuiChen\Abp\Notifications\Templates\NewTenantRegisterd\*.tpl" />
+    <EmbeddedResource Include="RuiChen\Abp\Notifications\Templates\WelcomeToApplication\*.tpl" />
+    <EmbeddedResource Include="RuiChen\Abp\Notifications\Localization\Common\*.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RuiChen.Abp.Notifications\RuiChen.Abp.Notifications.csproj" />
+  </ItemGroup>
+
+</Project>

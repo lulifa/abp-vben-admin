@@ -10,7 +10,7 @@ using Volo.Abp.PermissionManagement;
 using Volo.Abp.Threading;
 using Volo.Abp.Timing;
 
-namespace LINGYUN.Abp.PermissionManagement.Definitions;
+namespace RuiChen.Abp.PermissionManagement.Definitions;
 public class DynamicPermissionDefinitionStoreCacheInvalidator :
     ILocalEventHandler<EntityChangedEventData<PermissionGroupDefinitionRecord>>,
     ILocalEventHandler<EntityChangedEventData<PermissionDefinitionRecord>>,

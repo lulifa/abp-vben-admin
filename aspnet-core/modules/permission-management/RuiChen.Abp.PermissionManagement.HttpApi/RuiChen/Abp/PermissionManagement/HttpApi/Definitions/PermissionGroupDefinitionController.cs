@@ -1,5 +1,5 @@
-﻿using LINGYUN.Abp.PermissionManagement.Definitions;
-using LINGYUN.Abp.PermissionManagement.Permissions;
+﻿using RuiChen.Abp.PermissionManagement.Definitions;
+using RuiChen.Abp.PermissionManagement.Permissions;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
@@ -7,7 +7,7 @@ using Volo.Abp;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.PermissionManagement;
 
-namespace LINGYUN.Abp.PermissionManagement.HttpApi.Definitions;
+namespace RuiChen.Abp.PermissionManagement.HttpApi.Definitions;
 
 [Controller]
 [Authorize(PermissionManagementPermissionNames.GroupDefinition.Default)]

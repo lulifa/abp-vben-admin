@@ -1,6 +1,6 @@
 ﻿using Volo.Abp.Data;
 
-namespace LINGYUN.Abp.PermissionManagement.Definitions;
+namespace RuiChen.Abp.PermissionManagement.Definitions;
 
 public class PermissionGroupDefinitionDto : IHasExtraProperties
 {
