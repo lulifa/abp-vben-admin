@@ -35,6 +35,7 @@
     <PackageReference Include="Volo.Abp.AspNetCore.Mvc.UI.Theme.LeptonXLite" />
   </ItemGroup>
 
+
   <ItemGroup>
 
     <ProjectReference Include="..\..\..\framework\common\RuiChen.Abp.AspNetCore.HttpOverrides\RuiChen.Abp.AspNetCore.HttpOverrides.csproj" />
@@ -44,6 +45,15 @@
     <ProjectReference Include="..\..\..\framework\wrapper\RuiChen.Abp.AspNetCore.Mvc.Wrapper\RuiChen.Abp.AspNetCore.Mvc.Wrapper.csproj" />
 
     <ProjectReference Include="..\..\..\migrations\single\RC.MicroService.Single.EntityFrameworkCore\RC.MicroService.Single.EntityFrameworkCore.csproj" />
+
+    <ProjectReference Include="..\RuiChen.Single.HttpApi\RuiChen.Single.HttpApi.csproj" />
+    <ProjectReference Include="..\RuiChen.Single.Application\RuiChen.Single.Application.csproj" />
+    <ProjectReference Include="..\RuiChen.Single.EntityFrameworkCore\RuiChen.Single.EntityFrameworkCore.csproj" />
+    
+
+  </ItemGroup>
+
+  <ItemGroup>
 
     <ProjectReference Include="..\..\..\modules\account\RuiChen.Abp.Account.HttpApi\RuiChen.Abp.Account.HttpApi.csproj" />
     <ProjectReference Include="..\..\..\modules\account\RuiChen.Abp.Account.Application\RuiChen.Abp.Account.Application.csproj" />
@@ -67,8 +77,6 @@
 
     <ProjectReference Include="..\..\..\modules\settings\RuiChen.Abp.SettingManagement.Application\RuiChen.Abp.SettingManagement.Application.csproj" />
     <ProjectReference Include="..\..\..\modules\settings\RuiChen.Abp.SettingManagement.HttpApi\RuiChen.Abp.SettingManagement.HttpApi.csproj" />
-
-    
     
   </ItemGroup>
 

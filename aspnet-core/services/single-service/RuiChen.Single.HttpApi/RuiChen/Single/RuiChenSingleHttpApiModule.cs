@@ -9,13 +9,13 @@ namespace RuiChen.Single;
 [DependsOn(
     typeof(AbpAspNetCoreMvcModule),
     typeof(RuiChenSingleApplicationContractsModule))]
-public class AbpDemoHttpApiModule : AbpModule
+public class RuiChenSingleHttpApiModule : AbpModule
 {
     public override void PreConfigureServices(ServiceConfigurationContext context)
     {
         PreConfigure<IMvcBuilder>(mvcBuilder =>
         {
-            mvcBuilder.AddApplicationPartIfNotExists(typeof(AbpDemoHttpApiModule).Assembly);
+            mvcBuilder.AddApplicationPartIfNotExists(typeof(RuiChenSingleHttpApiModule).Assembly);
         });
 
         PreConfigure<AbpMvcDataAnnotationsLocalizationOptions>(options =>

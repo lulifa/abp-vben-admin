@@ -43,7 +43,7 @@ public class BookAppService : SingleApplicationServiceBase, IBookAppService //im
         _bookRepository = bookRepository;
 
         LocalizationResource = typeof(SingleResource);
-        ObjectMapperContext = typeof(SingleApplicationModule);
+        ObjectMapperContext = typeof(RuiChenSingleApplicationModule);
     }
 
     [Authorize(SinglePermissions.Books.Create)]

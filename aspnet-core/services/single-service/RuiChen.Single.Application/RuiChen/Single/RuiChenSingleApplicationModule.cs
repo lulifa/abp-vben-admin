@@ -13,11 +13,11 @@ namespace RuiChen.Single;
     typeof(RuiChenSingleDomainModule),
     typeof(AbpExporterApplicationModule),
     typeof(RuiChenSingleApplicationContractsModule))]
-public class SingleApplicationModule : AbpModule
+public class RuiChenSingleApplicationModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)
     {
-        context.Services.AddAutoMapperObjectMapper<SingleApplicationModule>();
+        context.Services.AddAutoMapperObjectMapper<RuiChenSingleApplicationModule>();
 
         Configure<AbpAutoMapperOptions>(options =>
         {

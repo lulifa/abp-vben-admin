@@ -14,6 +14,7 @@ using RuiChen.Abp.SettingManagement;
 using RuiChen.Platform;
 using RuiChen.Platform.EntityFrameworkCore;
 using RuiChen.Platform.HttpApi;
+using RuiChen.Single.EntityFrameworkCore;
 using Volo.Abp.AspNetCore.MultiTenancy;
 using Volo.Abp.AspNetCore.Mvc.UI.Theme.LeptonXLite;
 using Volo.Abp.AspNetCore.Serilog;
@@ -50,12 +51,15 @@ namespace RuiChen.Single.HttpApi.Host;
     typeof(AbpSettingManagementApplicationModule),
     typeof(AbpSettingManagementEntityFrameworkCoreModule),
 
+    typeof(RuiChenSingleHttpApiModule),
+    typeof(RuiChenSingleApplicationModule),
+    typeof(RuiChenSingleEntityFrameworkCoreModule),
     typeof(SingleMigrationEntityFrameworkCoreModule),
 
     typeof(AbpAspNetCoreMvcWrapperModule),
     typeof(AbpAspNetCoreHttpOverridesModule),
     typeof(AbpLocalizationCultureMapModule),
-    
+
 
     typeof(AbpVirtualFileExplorerWebModule),
     typeof(AbpAspNetCoreMvcUiLeptonXLiteThemeModule),
@@ -65,4 +69,15 @@ namespace RuiChen.Single.HttpApi.Host;
 )]
 public partial class RuiChenSingleHttpApiHostModule : AbpModule
 {
+
+    public override void PreConfigureServices(ServiceConfigurationContext context)
+    {
+        base.PreConfigureServices(context);
+    }
+
+    public override void ConfigureServices(ServiceConfigurationContext context)
+    {
+        base.ConfigureServices(context);
+    }
+
 }
