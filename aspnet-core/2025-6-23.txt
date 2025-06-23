@@ -33,3 +33,11 @@ dotnet new classlib -o modules/feature-management/RuiChen.Abp.FeatureManagement.
 dotnet sln RuiChen.MicroService.sln add  modules/feature-management/RuiChen.Abp.FeatureManagement.Application
 dotnet sln RuiChen.MicroService.sln add  modules/feature-management/RuiChen.Abp.FeatureManagement.Application.Contracts
 dotnet sln RuiChen.MicroService.sln add  modules/feature-management/RuiChen.Abp.FeatureManagement.HttpApi
+
+
+dotnet new classlib -o modules/localization-management/LINGYUN.Abp.LocalizationManagement.Application
+dotnet new classlib -o modules/localization-management/LINGYUN.Abp.LocalizationManagement.Application.Contracts
+dotnet new classlib -o modules/localization-management/LINGYUN.Abp.LocalizationManagement.Domain
+dotnet new classlib -o modules/localization-management/RuiChen.Abp.FeatureManagement.Application
+dotnet new classlib -o modules/localization-management/RuiChen.Abp.FeatureManagement.Application.Contracts
+dotnet new classlib -o modules/localization-management/RuiChen.Abp.FeatureManagement.HttpApi

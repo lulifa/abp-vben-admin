@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <AssemblyName>RuiChen.Abp.LocalizationManagement.Application</AssemblyName>
+    <PackageId>RuiChen.Abp.LocalizationManagement.Application</PackageId>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <RootNamespace />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Ddd.Application" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RuiChen.Abp.LocalizationManagement.Domain\RuiChen.Abp.LocalizationManagement.Domain.csproj" />
+    <ProjectReference Include="..\RuiChen.Abp.LocalizationManagement.Application.Contracts\RuiChen.Abp.LocalizationManagement.Application.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>

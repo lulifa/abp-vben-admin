@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <AssemblyName>RuiChen.Abp.LocalizationManagement.Domain.Shared</AssemblyName>
+    <PackageId>RuiChen.Abp.LocalizationManagement.Domain.Shared</PackageId>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <RootNamespace />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="RuiChen\Abp\LocalizationManagement\Localization\Resources\en.json" />
+    <EmbeddedResource Include="RuiChen\Abp\LocalizationManagement\Localization\Resources\zh-Hans.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Features" />
+    <PackageReference Include="Volo.Abp.Validation" />
+    <PackageReference Include="Volo.Abp.Localization" />
+  </ItemGroup>
+
+</Project>

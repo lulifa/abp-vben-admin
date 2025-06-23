@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <AssemblyName>RuiChen.Abp.LocalizationManagement.HttpApi</AssemblyName>
+    <PackageId>RuiChen.Abp.LocalizationManagement.HttpApi</PackageId>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <RootNamespace />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\framework\localization\RuiChen.Abp.AspNetCore.Mvc.Localization\RuiChen.Abp.AspNetCore.Mvc.Localization.csproj" />
+    <ProjectReference Include="..\RuiChen.Abp.LocalizationManagement.Application.Contracts\RuiChen.Abp.LocalizationManagement.Application.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>
