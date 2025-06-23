@@ -1,0 +1,42 @@
+﻿using RuiChen.Abp.DataProtection;
+using System;
+using Volo.Abp;
+using Volo.Abp.Domain.Entities.Auditing;
+using Volo.Abp.MultiTenancy;
+
+namespace RuiChen.Abp.DataProtectionManagement;
+public abstract class EntityRuleBase : AuditedAggregateRoot<Guid>, IMultiTenant
+{
+    public virtual Guid? TenantId { get; protected set; }
+    public virtual bool IsEnabled { get; set; }
+    public virtual DataAccessOperation Operation { get; set; }
+    public virtual DataAccessFilterGroup FilterGroup { get; set; }
+    public virtual Guid EntityTypeId { get; protected set; }
+    public virtual string EntityTypeFullName { get; protected set; }
+    public virtual EntityTypeInfo EntityTypeInfo { get; protected set; }
+    public virtual string AccessedProperties { get; set; }
+    protected EntityRuleBase()
+    {
+    }
+
+    protected EntityRuleBase(
+        Guid id, 
+        Guid entityTypeId, 
+        string enetityTypeFullName, 
+        DataAccessOperation operation, 
+        string accessedProperties = null,
+        DataAccessFilterGroup filterGroup = null, 
+        Guid? tenantId = null)
+        : base(id)
+    {
+        Operation = operation;
+        FilterGroup = filterGroup;
+        TenantId = tenantId;
+
+        EntityTypeId = entityTypeId;
+        EntityTypeFullName = Check.NotNullOrWhiteSpace(enetityTypeFullName, nameof(enetityTypeFullName), EntityRuleConsts.MaxEntityTypeFullNameLength);
+        AccessedProperties = Check.Length(accessedProperties, nameof(accessedProperties), EntityRuleConsts.MaxAccessedPropertiesLength);
+    }
+
+
+}

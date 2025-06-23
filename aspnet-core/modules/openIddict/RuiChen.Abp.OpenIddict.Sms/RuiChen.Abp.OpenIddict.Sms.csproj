@@ -2,8 +2,25 @@
 
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <AssemblyName>RuiChen.Abp.OpenIddict.Sms</AssemblyName>
+    <PackageId>RuiChen.Abp.OpenIddict.Sms</PackageId>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <RootNamespace />
   </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="RuiChen\Abp\OpenIddict\Sms\Localization\Resources\*.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Sms" />
+    <PackageReference Include="Volo.Abp.OpenIddict.AspNetCore" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\identity\RuiChen.Abp.Identity.Domain\RuiChen.Abp.Identity.Domain.csproj" />
+  </ItemGroup>
 
 </Project>

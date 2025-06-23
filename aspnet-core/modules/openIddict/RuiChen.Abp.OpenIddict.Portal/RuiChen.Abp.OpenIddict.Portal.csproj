@@ -2,8 +2,21 @@
 
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <AssemblyName>RuiChen.Abp.OpenIddict.Portal</AssemblyName>
+    <PackageId>RuiChen.Abp.OpenIddict.Portal</PackageId>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <RootNamespace />
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.OpenIddict.AspNetCore" />
+    <PackageReference Include="Volo.Abp.AspNetCore.MultiTenancy" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\platform\RuiChen.Platform.Domain\RuiChen.Platform.Domain.csproj" />
+  </ItemGroup>
 
 </Project>

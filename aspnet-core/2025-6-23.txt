@@ -1,0 +1,26 @@
+
+dotnet new classlib -o modules/caching/RuiChen.Abp.CachingManagement.Application
+dotnet new classlib -o modules/caching/RuiChen.Abp.CachingManagement.Application.Contracts
+dotnet new classlib -o modules/caching/RuiChen.Abp.CachingManagement.Domain
+dotnet new classlib -o modules/caching/RuiChen.Abp.CachingManagement.HttpApi
+dotnet new classlib -o modules/caching/RuiChen.Abp.CachingManagement.StackExchangeRedis
+
+dotnet sln RuiChen.MicroService.sln add  modules/caching/RuiChen.Abp.CachingManagement.Application
+dotnet sln RuiChen.MicroService.sln add  modules/caching/RuiChen.Abp.CachingManagement.Application.Contracts
+dotnet sln RuiChen.MicroService.sln add  modules/caching/RuiChen.Abp.CachingManagement.Domain
+dotnet sln RuiChen.MicroService.sln add  modules/caching/RuiChen.Abp.CachingManagement.HttpApi
+dotnet sln RuiChen.MicroService.sln add  modules/caching/RuiChen.Abp.CachingManagement.StackExchangeRedis
+
+dotnet new classlib -o modules/logging/RuiChen.Abp.Logging
+dotnet new classlib -o modules/logging/RuiChen.Abp.Logging.Serilog.Elasticsearch
+dotnet new classlib -o modules/logging/RuiChen.Abp.Serilog.Enrichers.Application
+dotnet new classlib -o modules/logging/RuiChen.Abp.Serilog.Enrichers.UniqueId
+
+dotnet sln RuiChen.MicroService.sln add  modules/logging/RuiChen.Abp.Logging
+dotnet sln RuiChen.MicroService.sln add  modules/logging/RuiChen.Abp.Logging.Serilog.Elasticsearch
+dotnet sln RuiChen.MicroService.sln add  modules/logging/RuiChen.Abp.Serilog.Enrichers.Application
+dotnet sln RuiChen.MicroService.sln add  modules/logging/RuiChen.Abp.Serilog.Enrichers.UniqueId
+
+dotnet new classlib -o modules/openIddict/RuiChen.Abp.OpenIddict.QrCode
+
+dotnet sln RuiChen.MicroService.sln add  modules/openIddict/RuiChen.Abp.OpenIddict.QrCode

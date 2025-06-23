@@ -2,8 +2,21 @@
 
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <AssemblyName>RuiChen.Abp.DataProtectionManagement.Application</AssemblyName>
+    <PackageId>RuiChen.Abp.DataProtectionManagement.Application</PackageId>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <RootNamespace />
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Ddd.Application" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RuiChen.Abp.DataProtectionManagement.Application.Contracts\RuiChen.Abp.DataProtectionManagement.Application.Contracts.csproj" />
+    <ProjectReference Include="..\RuiChen.Abp.DataProtectionManagement.Domain\RuiChen.Abp.DataProtectionManagement.Domain.csproj" />
+  </ItemGroup>
 
 </Project>

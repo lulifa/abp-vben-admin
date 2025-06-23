@@ -1,0 +1,6 @@
+﻿namespace RuiChen.Abp.OpenIddict.LinkUser;
+
+public static class LinkUserTokenExtensionGrantConsts
+{
+    public const string GrantType = "link_user";
+}

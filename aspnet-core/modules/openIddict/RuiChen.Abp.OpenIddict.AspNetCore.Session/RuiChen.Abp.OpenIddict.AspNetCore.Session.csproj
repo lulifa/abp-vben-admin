@@ -2,8 +2,21 @@
 
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <AssemblyName>RuiChen.Abp.OpenIddict.AspNetCore.Session</AssemblyName>
+    <PackageId>RuiChen.Abp.OpenIddict.AspNetCore.Session</PackageId>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <RootNamespace />
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.OpenIddict.AspNetCore" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\identity\RuiChen.Abp.Identity.Domain\RuiChen.Abp.Identity.Domain.csproj" />
+    <ProjectReference Include="..\..\identity\RuiChen.Abp.Identity.Session.AspNetCore\RuiChen.Abp.Identity.Session.AspNetCore.csproj" />
+  </ItemGroup>
 
 </Project>

@@ -2,8 +2,25 @@
 
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <AssemblyName>RuiChen.Abp.DataProtectionManagement.Domain.Shared</AssemblyName>
+    <PackageId>RuiChen.Abp.DataProtectionManagement.Domain.Shared</PackageId>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <RootNamespace />
   </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="RuiChen\Abp\DataProtectionManagement\Localization\Resources\en.json" />
+    <EmbeddedResource Include="RuiChen\Abp\DataProtectionManagement\Localization\Resources\zh-Hans.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Ddd.Domain.Shared" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\framework\data-protection\RuiChen.Abp.DataProtection.Abstractions\RuiChen.Abp.DataProtection.Abstractions.csproj" />
+  </ItemGroup>
 
 </Project>

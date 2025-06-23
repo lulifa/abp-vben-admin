@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <AssemblyName>RuiChen.Abp.Logging.Serilog.Elasticsearch</AssemblyName>
+    <PackageId>RuiChen.Abp.Logging.Serilog.Elasticsearch</PackageId>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <RootNamespace />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Serilog.Sinks.Elasticsearch" />
+    <PackageReference Include="Volo.Abp.AutoMapper" />
+    <PackageReference Include="Volo.Abp.Json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\framework\elasticsearch\RuiChen.Abp.Elasticsearch\RuiChen.Abp.Elasticsearch.csproj" />
+    <ProjectReference Include="..\RuiChen.Abp.Logging\RuiChen.Abp.Logging.csproj" />
+    <ProjectReference Include="..\RuiChen.Abp.Serilog.Enrichers.Application\RuiChen.Abp.Serilog.Enrichers.Application.csproj" />
+    <ProjectReference Include="..\RuiChen.Abp.Serilog.Enrichers.UniqueId\RuiChen.Abp.Serilog.Enrichers.UniqueId.csproj" />
+  </ItemGroup>
+
+</Project>
