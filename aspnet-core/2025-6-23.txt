@@ -35,9 +35,27 @@ dotnet sln RuiChen.MicroService.sln add  modules/feature-management/RuiChen.Abp.
 dotnet sln RuiChen.MicroService.sln add  modules/feature-management/RuiChen.Abp.FeatureManagement.HttpApi
 
 
-dotnet new classlib -o modules/localization-management/LINGYUN.Abp.LocalizationManagement.Application
-dotnet new classlib -o modules/localization-management/LINGYUN.Abp.LocalizationManagement.Application.Contracts
-dotnet new classlib -o modules/localization-management/LINGYUN.Abp.LocalizationManagement.Domain
-dotnet new classlib -o modules/localization-management/RuiChen.Abp.FeatureManagement.Application
-dotnet new classlib -o modules/localization-management/RuiChen.Abp.FeatureManagement.Application.Contracts
-dotnet new classlib -o modules/localization-management/RuiChen.Abp.FeatureManagement.HttpApi
+dotnet new classlib -o modules/localization-management/RuiChen.Abp.LocalizationManagement.Application
+dotnet new classlib -o modules/localization-management/RuiChen.Abp.LocalizationManagement.Application.Contracts
+dotnet new classlib -o modules/localization-management/RuiChen.Abp.LocalizationManagement.Domain
+dotnet new classlib -o modules/localization-management/RuiChen.Abp.LocalizationManagement.Domain.Shared
+dotnet new classlib -o modules/localization-management/RuiChen.Abp.LocalizationManagement.EntityFrameworkCore
+dotnet new classlib -o modules/localization-management/RuiChen.Abp.LocalizationManagement.HttpApi
+
+dotnet sln RuiChen.MicroService.sln add  modules/localization-management/RuiChen.Abp.LocalizationManagement.Application
+dotnet sln RuiChen.MicroService.sln add  modules/localization-management/RuiChen.Abp.LocalizationManagement.Application.Contracts
+dotnet sln RuiChen.MicroService.sln add  modules/localization-management/RuiChen.Abp.LocalizationManagement.Domain
+dotnet sln RuiChen.MicroService.sln add  modules/localization-management/RuiChen.Abp.LocalizationManagement.Domain.Shared
+dotnet sln RuiChen.MicroService.sln add  modules/localization-management/RuiChen.Abp.LocalizationManagement.EntityFrameworkCore
+dotnet sln RuiChen.MicroService.sln add  modules/localization-management/RuiChen.Abp.LocalizationManagement.HttpApi
+
+
+dotnet new classlib -o modules/permission-management/RuiChen.Abp.PermissionManagement.Application
+dotnet new classlib -o modules/permission-management/RuiChen.Abp.PermissionManagement.Application.Contracts
+dotnet new classlib -o modules/permission-management/RuiChen.Abp.PermissionManagement.Domain.OrganizationUnits
+dotnet new classlib -o modules/permission-management/RuiChen.Abp.PermissionManagement.HttpApi
+
+dotnet sln RuiChen.MicroService.sln add  modules/permission-management/RuiChen.Abp.PermissionManagement.Application
+dotnet sln RuiChen.MicroService.sln add  modules/permission-management/RuiChen.Abp.PermissionManagement.Application.Contracts
+dotnet sln RuiChen.MicroService.sln add  modules/permission-management/RuiChen.Abp.PermissionManagement.Domain.OrganizationUnits
+dotnet sln RuiChen.MicroService.sln add  modules/permission-management/RuiChen.Abp.PermissionManagement.HttpApi
