@@ -11,15 +11,6 @@ dotnet sln RuiChen.MicroService.sln add  modules/caching/RuiChen.Abp.CachingMana
 dotnet sln RuiChen.MicroService.sln add  modules/caching/RuiChen.Abp.CachingManagement.HttpApi
 dotnet sln RuiChen.MicroService.sln add  modules/caching/RuiChen.Abp.CachingManagement.StackExchangeRedis
 
-dotnet new classlib -o modules/logging/RuiChen.Abp.Logging
-dotnet new classlib -o modules/logging/RuiChen.Abp.Logging.Serilog.Elasticsearch
-dotnet new classlib -o modules/logging/RuiChen.Abp.Serilog.Enrichers.Application
-dotnet new classlib -o modules/logging/RuiChen.Abp.Serilog.Enrichers.UniqueId
-
-dotnet sln RuiChen.MicroService.sln add  modules/logging/RuiChen.Abp.Logging
-dotnet sln RuiChen.MicroService.sln add  modules/logging/RuiChen.Abp.Logging.Serilog.Elasticsearch
-dotnet sln RuiChen.MicroService.sln add  modules/logging/RuiChen.Abp.Serilog.Enrichers.Application
-dotnet sln RuiChen.MicroService.sln add  modules/logging/RuiChen.Abp.Serilog.Enrichers.UniqueId
 
 dotnet new classlib -o modules/openIddict/RuiChen.Abp.OpenIddict.QrCode
 
@@ -72,16 +63,52 @@ dotnet new classlib -o modules/realtime-message/RuiChen.Abp.MessageService.Domai
 dotnet new classlib -o modules/realtime-message/RuiChen.Abp.MessageService.EntityFrameworkCore
 dotnet new classlib -o modules/realtime-message/RuiChen.Abp.MessageService.HttpApi
 
-dotnet new classlib -o modules/realtime-notifications/LINGYUN.Abp.Notifications
-dotnet new classlib -o modules/realtime-notifications/LINGYUN.Abp.Notifications.Application
-dotnet new classlib -o modules/realtime-notifications/LINGYUN.Abp.Notifications.Application.Contracts
-dotnet new classlib -o modules/realtime-notifications/LINGYUN.Abp.Notifications.Common
-dotnet new classlib -o modules/realtime-notifications/LINGYUN.Abp.Notifications.Core
-dotnet new classlib -o modules/realtime-notifications/LINGYUN.Abp.Notifications.Domain
-dotnet new classlib -o modules/realtime-notifications/LINGYUN.Abp.Notifications.Domain.Shared
-dotnet new classlib -o modules/realtime-notifications/LINGYUN.Abp.Notifications.Emailing
-dotnet new classlib -o modules/realtime-notifications/LINGYUN.Abp.Notifications.EntityFrameworkCore
-dotnet new classlib -o modules/realtime-notifications/LINGYUN.Abp.Notifications.HttpApi
-dotnet new classlib -o modules/realtime-notifications/RuiChen.Abp.MessageService.HttpApi
-dotnet new classlib -o modules/realtime-notifications/RuiChen.Abp.MessageService.HttpApi
-dotnet new classlib -o modules/realtime-notifications/RuiChen.Abp.MessageService.HttpApi
+dotnet new classlib -o modules/realtime-notifications/RuiChen.Abp.Notifications
+dotnet new classlib -o modules/realtime-notifications/RuiChen.Abp.Notifications.Application
+dotnet new classlib -o modules/realtime-notifications/RuiChen.Abp.Notifications.Application.Contracts
+dotnet new classlib -o modules/realtime-notifications/RuiChen.Abp.Notifications.Common
+dotnet new classlib -o modules/realtime-notifications/RuiChen.Abp.Notifications.Core
+dotnet new classlib -o modules/realtime-notifications/RuiChen.Abp.Notifications.Domain
+dotnet new classlib -o modules/realtime-notifications/RuiChen.Abp.Notifications.Domain.Shared
+dotnet new classlib -o modules/realtime-notifications/RuiChen.Abp.Notifications.Emailing
+dotnet new classlib -o modules/realtime-notifications/RuiChen.Abp.Notifications.EntityFrameworkCore
+dotnet new classlib -o modules/realtime-notifications/RuiChen.Abp.Notifications.HttpApi
+dotnet new classlib -o modules/realtime-notifications/RuiChen.Abp.Notifications.SignalR
+dotnet new classlib -o modules/realtime-notifications/RuiChen.Abp.Notifications.Sms
+
+dotnet sln RuiChen.MicroService.sln add  modules/realtime-message/RuiChen.Abp.IM
+dotnet sln RuiChen.MicroService.sln add  modules/realtime-message/RuiChen.Abp.IM.SignalR
+dotnet sln RuiChen.MicroService.sln add  modules/realtime-message/RuiChen.Abp.MessageService.Application
+dotnet sln RuiChen.MicroService.sln add  modules/realtime-message/RuiChen.Abp.MessageService.Application.Contracts
+dotnet sln RuiChen.MicroService.sln add  modules/realtime-message/RuiChen.Abp.MessageService.Domain
+dotnet sln RuiChen.MicroService.sln add  modules/realtime-message/RuiChen.Abp.MessageService.Domain.Shared
+dotnet sln RuiChen.MicroService.sln add  modules/realtime-message/RuiChen.Abp.MessageService.EntityFrameworkCore
+dotnet sln RuiChen.MicroService.sln add  modules/realtime-message/RuiChen.Abp.MessageService.HttpApi
+dotnet sln RuiChen.MicroService.sln add  modules/realtime-notifications/RuiChen.Abp.Notifications
+dotnet sln RuiChen.MicroService.sln add  modules/realtime-notifications/RuiChen.Abp.Notifications.Application
+dotnet sln RuiChen.MicroService.sln add  modules/realtime-notifications/RuiChen.Abp.Notifications.Application.Contracts
+dotnet sln RuiChen.MicroService.sln add  modules/realtime-notifications/RuiChen.Abp.Notifications.Common
+dotnet sln RuiChen.MicroService.sln add  modules/realtime-notifications/RuiChen.Abp.Notifications.Core
+dotnet sln RuiChen.MicroService.sln add  modules/realtime-notifications/RuiChen.Abp.Notifications.Domain
+dotnet sln RuiChen.MicroService.sln add  modules/realtime-notifications/RuiChen.Abp.Notifications.Domain.Shared
+dotnet sln RuiChen.MicroService.sln add  modules/realtime-notifications/RuiChen.Abp.Notifications.Emailing
+dotnet sln RuiChen.MicroService.sln add  modules/realtime-notifications/RuiChen.Abp.Notifications.EntityFrameworkCore
+dotnet sln RuiChen.MicroService.sln add  modules/realtime-notifications/RuiChen.Abp.Notifications.HttpApi
+dotnet sln RuiChen.MicroService.sln add  modules/realtime-notifications/RuiChen.Abp.Notifications.SignalR
+dotnet sln RuiChen.MicroService.sln add  modules/realtime-notifications/RuiChen.Abp.Notifications.Sms
+
+
+dotnet new classlib -o modules/identity/RuiChen.Abp.Identity.Notifications
+dotnet new classlib -o modules/identity/RuiChen.Abp.Identity.OrganizaztionUnits
+
+dotnet sln RuiChen.MicroService.sln add  modules/identity/RuiChen.Abp.Identity.Notifications
+dotnet sln RuiChen.MicroService.sln add  modules/identity/RuiChen.Abp.Identity.OrganizaztionUnits
+
+
+dotnet new classlib -o framework/idempotent/RuiChen.Abp.AspNetCore.Mvc.Idempotent
+dotnet new classlib -o framework/idempotent/RuiChen.Abp.AspNetCore.Mvc.Idempotent.Wrapper
+dotnet new classlib -o framework/idempotent/RuiChen.Abp.Idempotent
+
+dotnet sln RuiChen.MicroService.sln add  framework/idempotent/RuiChen.Abp.AspNetCore.Mvc.Idempotent
+dotnet sln RuiChen.MicroService.sln add  framework/idempotent/RuiChen.Abp.AspNetCore.Mvc.Idempotent.Wrapper
+dotnet sln RuiChen.MicroService.sln add  framework/idempotent/RuiChen.Abp.Idempotent

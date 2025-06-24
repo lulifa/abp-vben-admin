@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <AssemblyName>RuiChen.Abp.Identity.Notifications</AssemblyName>
+    <PackageId>RuiChen.Abp.Identity.Notifications</PackageId>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <RootNamespace />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Ddd.Domain.Shared" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\realtime-notifications\RuiChen.Abp.Notifications\RuiChen.Abp.Notifications.csproj" />
+    <ProjectReference Include="..\RuiChen.Abp.Identity.Domain.Shared\RuiChen.Abp.Identity.Domain.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

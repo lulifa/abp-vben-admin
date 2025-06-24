@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <AssemblyName>RuiChen.Abp.Identity.OrganizaztionUnits</AssemblyName>
+    <PackageId>RuiChen.Abp.Identity.OrganizaztionUnits</PackageId>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <RootNamespace />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\framework\authorization\RuiChen.Abp.Authorization.OrganizationUnits\RuiChen.Abp.Authorization.OrganizationUnits.csproj" />
+    <ProjectReference Include="..\RuiChen.Abp.Identity.Domain\RuiChen.Abp.Identity.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
