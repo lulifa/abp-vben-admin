@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using OpenIddict.Abstractions;
 using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Threading.Tasks;
 using Volo.Abp.Authorization.Permissions;
@@ -55,7 +56,7 @@ public class OpenIddictDataSeedContributor : IDataSeedContributor, ITransientDep
 
     private async Task SeedOpenIddictAsync()
     {
-        var scope = _configuration["AuthServer:Scope"];
+        var scope = _configuration["AuthServer:Audience"];
 
         await CreateScopeAsync(scope);
         await CreateApplicationAsync(scope);
@@ -96,19 +97,19 @@ public class OpenIddictDataSeedContributor : IDataSeedContributor, ITransientDep
                 await _applicationManager.CreateAsync(new OpenIddictApplicationDescriptor
                 {
                     ClientId = vueClientId,
-                    ClientSecret = "1q2w3e*",
+                    ClientSecret = configurationSection["VueAdmin:ClientSecret"],
                     ApplicationType = OpenIddictConstants.ApplicationTypes.Web,
                     ConsentType = OpenIddictConstants.ConsentTypes.Explicit,
                     DisplayName = "Abp Vue Admin Client",
                     PostLogoutRedirectUris =
                     {
-                        new Uri(vueClientRootUrl + "signout-callback-oidc"),
+                        new Uri(vueClientRootUrl + "signout-callback"),
                         new Uri(vueClientRootUrl)
                     },
                     RedirectUris =
                     {
                         new Uri(vueClientRootUrl + "signin-callback"),
-                        new Uri(vueClientRootUrl + "signin-oidc")
+                        new Uri(vueClientRootUrl)
                     },
                     Permissions =
                     {
@@ -152,30 +153,22 @@ public class OpenIddictDataSeedContributor : IDataSeedContributor, ITransientDep
             }
         }
 
-        var oauthClientId = configurationSection["OAuthClient:ClientId"];
+        var oauthClientId = configurationSection["VueOAuthClient:ClientId"];
         if (!oauthClientId.IsNullOrWhiteSpace())
         {
-            var oauthClientRootUrl = configurationSection["OAuthClient:RootUrl"].EnsureEndsWith('/');
+            var oauthClientRootUrls = configurationSection.GetSection("VueOAuthClient:RootUrls").Get<List<string>>();
 
             if (await _applicationRepository.FindByClientIdAsync(oauthClientId) == null)
             {
-                await _applicationManager.CreateAsync(new OpenIddictApplicationDescriptor
+                var application = new OpenIddictApplicationDescriptor
                 {
                     ClientId = oauthClientId,
                     ClientSecret = null,
                     ApplicationType = OpenIddictConstants.ApplicationTypes.Web,
                     ConsentType = OpenIddictConstants.ConsentTypes.Implicit,
                     DisplayName = "OAuth Client",
-                    PostLogoutRedirectUris =
-                    {
-                        new Uri(oauthClientRootUrl + "signout-callback"),
-                        new Uri(oauthClientRootUrl)
-                    },
-                    RedirectUris =
-                    {
-                        new Uri(oauthClientRootUrl + "signin-callback"),
-                        new Uri(oauthClientRootUrl)
-                    },
+                    PostLogoutRedirectUris = { },
+                    RedirectUris = { },
                     Permissions =
                     {
                         OpenIddictConstants.Permissions.Endpoints.Authorization,
@@ -204,7 +197,19 @@ public class OpenIddictDataSeedContributor : IDataSeedContributor, ITransientDep
                         OpenIddictConstants.Permissions.Scopes.Phone,
                         OpenIddictConstants.Permissions.Prefixes.Scope + scope
                     }
+                };
+
+                oauthClientRootUrls.ForEach(url =>
+                {
+                    application.PostLogoutRedirectUris.AddIfNotContains(new Uri(url.EnsureEndsWith('/')));
+                    application.PostLogoutRedirectUris.AddIfNotContains(new Uri(url.EnsureEndsWith('/') + "signout-callback"));
+
+                    application.RedirectUris.AddIfNotContains(new Uri(url));
+                    application.RedirectUris.AddIfNotContains(new Uri(url.EnsureEndsWith('/') + "signin-callback"));
+                    application.RedirectUris.AddIfNotContains(new Uri(url.EnsureEndsWith('/') + "swagger/oauth2-redirect.html"));
                 });
+
+                await _applicationManager.CreateAsync(application);
 
                 var oauthClientPermissions = new string[2]
                 {

@@ -145,7 +145,7 @@
     <PackageReference Update="SixLabors.ImageSharp" Version="3.0.2" />
     <PackageReference Update="SixLabors.ImageSharp.Drawing" Version="2.0.1" />
     <PackageReference Update="StackExchange.Redis" Version="2.7.4" />
-    <PackageReference Update="Swashbuckle.AspNetCore" Version="6.5.0" />
+    <PackageReference Update="Swashbuckle.AspNetCore" Version="8.1.1" />
     <PackageReference Update="System.ComponentModel.Annotations" Version="5.0.0" />
     <PackageReference Update="Tencent.QCloud.Cos.Sdk" Version="5.4.37" />
     <PackageReference Update="TencentCloudSDK" Version="3.0.712" />

@@ -134,3 +134,4 @@ global using Volo.Abp.Threading;
 global using Volo.Abp.UI.Navigation.Urls;
 global using Volo.Abp.VirtualFileExplorer.Web;
 global using Volo.Abp.VirtualFileSystem;
+global using Volo.Abp.Swashbuckle;

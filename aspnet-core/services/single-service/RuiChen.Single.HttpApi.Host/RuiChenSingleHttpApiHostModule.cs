@@ -109,6 +109,7 @@ namespace RuiChen.Single.HttpApi.Host;
     typeof(AbpAspNetCoreMvcUiLeptonXLiteThemeModule),
     typeof(AbpAspNetCoreMultiTenancyModule),
     typeof(AbpAspNetCoreSerilogModule),
+    typeof(AbpSwashbuckleModule),
     typeof(AbpAutofacModule)
 )]
 public partial class RuiChenSingleHttpApiHostModule : AbpModule
@@ -144,7 +145,6 @@ public partial class RuiChenSingleHttpApiHostModule : AbpModule
         ConfigureIdentity(configuration);
         ConfigureDbContext(configuration);
         ConfigureAuthServer(configuration);
-        ConfigureSwagger(context.Services);
         ConfigureMultiTenancy(configuration);
         ConfigureJsonSerializer(configuration);
         ConfigureFeatureManagement(configuration);
@@ -152,6 +152,7 @@ public partial class RuiChenSingleHttpApiHostModule : AbpModule
         ConfigurePermissionManagement(configuration);
         ConfigureNotificationManagement(configuration);
         ConfigureCors(context.Services, configuration);
+        ConfigureSwagger(context.Services, configuration);
         ConfigureDistributedLock(context.Services, configuration);
         ConfigureKestrelServer(configuration, hostingEnvironment);
         ConfigureOssManagement(context.Services, configuration);
@@ -197,9 +198,11 @@ public partial class RuiChenSingleHttpApiHostModule : AbpModule
 
         app.UseSwagger();
 
-        app.UseSwaggerUI(options =>
+        app.UseAbpSwaggerUI(options =>
         {
             options.SwaggerEndpoint("/swagger/v1/swagger.json", "RuiChenAdmin API");
+            options.OAuthClientId(configuration["AuthServer:SwaggerClientId"]);
+            options.OAuthScopes(configuration["AuthServer:Audience"]);
         });
 
         app.UseAuditing();
