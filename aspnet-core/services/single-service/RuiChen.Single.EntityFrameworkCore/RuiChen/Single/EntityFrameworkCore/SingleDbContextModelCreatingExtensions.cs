@@ -33,6 +33,19 @@ public static class SingleDbContextModelCreatingExtensions
             b.HasOne<Author>().WithMany().HasForeignKey(x => x.AuthorId).IsRequired();
         });
 
+        builder.Entity<Author>(b =>
+        {
+            b.ToTable(options.TablePrefix + "Authors", options.Schema);
+
+            b.ConfigureByConvention();
+
+            b.Property(x => x.Name)
+                .IsRequired()
+                .HasMaxLength(AuthorConsts.MaxNameLength);
+
+            b.HasIndex(x => x.Name);
+        });
+
         builder.ConfigureEntityAuth<Book, Guid, BookAuth>();
     }
 

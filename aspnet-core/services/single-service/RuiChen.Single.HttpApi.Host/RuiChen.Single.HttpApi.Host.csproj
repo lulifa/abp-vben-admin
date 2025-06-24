@@ -11,15 +11,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="RuiChenSingleHttpApiHostModule.Configure.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="RuiChenSingleHttpApiHostModule.Configure.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="DistributedLock.Redis" />
+    <PackageReference Include="DotNetCore.CAP.Dashboard" />
+    <PackageReference Include="DotNetCore.CAP.RabbitMQ" />
+    <PackageReference Include="DotNetCore.CAP.InMemoryStorage" />
+    <PackageReference Include="DotNetCore.CAP.RedisStreams " />
+    <PackageReference Include="Microsoft.AspNetCore.DataProtection.StackExchangeRedis" />
+    <PackageReference Include="OpenIddict.Validation.DataProtection" />
+    <PackageReference Include="OpenIddict.Server.DataProtection" />
     <PackageReference Include="Volo.Abp.Caching.StackExchangeRedis" />
     <PackageReference Include="Volo.Abp.Autofac" />
     <PackageReference Include="Serilog.AspNetCore" />
@@ -35,6 +34,7 @@
     <PackageReference Include="Volo.Abp.Identity.Web" />
     <PackageReference Include="Volo.Abp.VirtualFileExplorer.Web" />
     <PackageReference Include="Volo.Abp.AspNetCore.Mvc.UI.Theme.LeptonXLite" />
+    <PackageReference Include="DotNetCore.CAP.MySql" />
   </ItemGroup>
 
 
@@ -47,6 +47,8 @@
     <ProjectReference Include="..\..\..\framework\common\RuiChen.Abp.AspNetCore.HttpOverrides\RuiChen.Abp.AspNetCore.HttpOverrides.csproj" />
 
     <ProjectReference Include="..\..\..\framework\common\RuiChen.Abp.EventBus.CAP\RuiChen.Abp.EventBus.CAP.csproj" />
+
+    <ProjectReference Include="..\..\..\framework\exception-handling\RuiChen.Abp.ExceptionHandling.Emailing\RuiChen.Abp.ExceptionHandling.Emailing.csproj" />
 
     <ProjectReference Include="..\..\..\framework\idempotent\RuiChen.Abp.AspNetCore.Mvc.Idempotent.Wrapper\RuiChen.Abp.AspNetCore.Mvc.Idempotent.Wrapper.csproj" />
 
@@ -107,6 +109,12 @@
     <ProjectReference Include="..\..\..\modules\openIddict\RuiChen.Abp.OpenIddict.QrCode\RuiChen.Abp.OpenIddict.QrCode.csproj" />
     <ProjectReference Include="..\..\..\modules\openIddict\RuiChen.Abp.OpenIddict.Sms\RuiChen.Abp.OpenIddict.Sms.csproj" />
 
+    <ProjectReference Include="..\..\..\modules\oss-management\RuiChen.Abp.OssManagement.HttpApi\RuiChen.Abp.OssManagement.HttpApi.csproj" />
+    <ProjectReference Include="..\..\..\modules\oss-management\RuiChen.Abp.OssManagement.Application\RuiChen.Abp.OssManagement.Application.csproj" />
+    <ProjectReference Include="..\..\..\modules\oss-management\RuiChen.Abp.OssManagement.FileSystem\RuiChen.Abp.OssManagement.FileSystem.csproj" />    
+    <ProjectReference Include="..\..\..\modules\oss-management\RuiChen.Abp.OssManagement.Imaging\RuiChen.Abp.OssManagement.Imaging.csproj" />
+    <ProjectReference Include="..\..\..\modules\oss-management\RuiChen.Abp.OssManagement.SettingManagement\RuiChen.Abp.OssManagement.SettingManagement.csproj" />
+
     <ProjectReference Include="..\..\..\modules\permission-management\RuiChen.Abp.PermissionManagement.HttpApi\RuiChen.Abp.PermissionManagement.HttpApi.csproj" />
     <ProjectReference Include="..\..\..\modules\permission-management\RuiChen.Abp.PermissionManagement.Application\RuiChen.Abp.PermissionManagement.Application.csproj" />
     <ProjectReference Include="..\..\..\modules\openIddict\RuiChen.Abp.OpenIddict.AspNetCore.Session\RuiChen.Abp.OpenIddict.AspNetCore.Session.csproj" />
@@ -130,6 +138,7 @@
     <ProjectReference Include="..\..\..\modules\realtime-notifications\RuiChen.Abp.Notifications.Common\RuiChen.Abp.Notifications.Common.csproj" />
     <ProjectReference Include="..\..\..\modules\realtime-notifications\RuiChen.Abp.Notifications.Emailing\RuiChen.Abp.Notifications.Emailing.csproj" />
     <ProjectReference Include="..\..\..\modules\realtime-notifications\RuiChen.Abp.Notifications.SignalR\RuiChen.Abp.Notifications.SignalR.csproj" />
+    <ProjectReference Include="..\..\..\modules\realtime-notifications\RuiChen.Abp.Notifications.Templating\RuiChen.Abp.Notifications.Templating.csproj" />
 
     <ProjectReference Include="..\..\..\modules\saas\RuiChen.Abp.Saas.HttpApi\RuiChen.Abp.Saas.HttpApi.csproj" />
     <ProjectReference Include="..\..\..\modules\saas\RuiChen.Abp.Saas.Application\RuiChen.Abp.Saas.Application.csproj" />

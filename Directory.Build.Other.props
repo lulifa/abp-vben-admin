@@ -31,6 +31,9 @@
     <PackageReference Update="DotNetCore.CAP.MySql" Version="$(DotNetCoreCAPPackageVersion)" />
     <PackageReference Update="DotNetCore.CAP.OpenTelemetry" Version="$(DotNetCoreCAPPackageVersion)" />
     <PackageReference Update="DotNetCore.CAP.RabbitMQ" Version="$(DotNetCoreCAPPackageVersion)" />
+    <PackageReference Update="DotNetCore.CAP.InMemoryStorage" Version="$(DotNetCoreCAPPackageVersion)" />
+    <PackageReference Update="DotNetCore.CAP.RedisStreams" Version="$(DotNetCoreCAPPackageVersion)" />
+    <PackageReference Update="Savorboard.CAP.InMemoryMessageQueue" Version="$(DotNetCoreCAPPackageVersion)" />
   </ItemGroup>
 
   <!-- Elsa -->
@@ -123,6 +126,8 @@
     <PackageReference Update="NEST" Version="7.15.1" />
     <PackageReference Update="NRules" Version="0.9.2" />
     <PackageReference Update="Ocelot.Provider.Polly" Version="20.0.0" />
+    <PackageReference Update="OpenIddict.Server.DataProtection" Version="6.2.1" />
+    <PackageReference Update="OpenIddict.Validation.DataProtection" Version="6.2.1" />
     <PackageReference Update="OpenTelemetry.Extensions.Hosting" Version="1.8.1" />
     <PackageReference Update="OpenTelemetry.Exporter.Console" Version="1.8.1" />
     <PackageReference Update="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.8.1" />

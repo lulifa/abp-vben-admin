@@ -6,7 +6,7 @@ using Volo.Abp.Modularity;
 using Volo.Abp.Validation.Localization;
 using VoloAbpFeatureManagementHttpApiModule = Volo.Abp.FeatureManagement.AbpFeatureManagementHttpApiModule;
 
-namespace RuiChen.Abp.FeatureManagement.HttpApi;
+namespace RuiChen.Abp.FeatureManagement;
 
 [DependsOn(
     typeof(AbpFeatureManagementApplicationContractsModule),

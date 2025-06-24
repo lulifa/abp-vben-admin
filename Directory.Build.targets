@@ -15,7 +15,7 @@
     <PackageReadmeFile>package-readme.md</PackageReadmeFile>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>https://github.com/lulifa/abp-pro-admin</RepositoryUrl>
+    <RepositoryUrl>https://github.com/lulifa/abp-vue-admin</RepositoryUrl>
 
     <!-- Define versions for referenced packages -->
     <VoloAbpPackageVersion>9.2.0</VoloAbpPackageVersion>
@@ -46,9 +46,6 @@
     <None Remove="LocalNuget\**;Logs\**;Modules\**" />
     <Content Remove="$(UserProfile)\.nuget\packages\*\*\contentFiles\any\*\*.abppkg*.json" />
   </ItemGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-		<OutputPath>$(SolutionDir)LocalNuget</OutputPath>
-	</PropertyGroup>
 
 </Project>
 

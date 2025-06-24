@@ -1,71 +1,6 @@
-﻿using RC.MicroService.Single.EntityFrameworkCore;
-using RuiChen.Abp.Account;
-using RuiChen.Abp.Account.Web.OAuth;
-using RuiChen.Abp.Account.Web.OpenIddict;
-using RuiChen.Abp.AspNetCore.HttpOverrides;
-using RuiChen.Abp.AspNetCore.Mvc.Idempotent.Wrapper;
-using RuiChen.Abp.AspNetCore.Mvc.Wrapper;
-using RuiChen.Abp.Auditing;
-using RuiChen.Abp.AuditLogging.EntityFrameworkCore;
-using RuiChen.Abp.AuditLogging.IP.Location;
-using RuiChen.Abp.CachingManagement;
-using RuiChen.Abp.CachingManagement.StackExchangeRedis;
-using RuiChen.Abp.DataProtectionManagement;
-using RuiChen.Abp.DataProtectionManagement.EntityFrameworkCore;
-using RuiChen.Abp.EventBus.CAP;
-using RuiChen.Abp.FeatureManagement;
-using RuiChen.Abp.FeatureManagement.HttpApi;
-using RuiChen.Abp.Identity;
-using RuiChen.Abp.Identity.AspNetCore.Session;
-using RuiChen.Abp.Identity.EntityFrameworkCore;
-using RuiChen.Abp.Identity.Notifications;
-using RuiChen.Abp.Identity.OrganizaztionUnits;
-using RuiChen.Abp.Identity.Session.AspNetCore;
-using RuiChen.Abp.IM;
-using RuiChen.Abp.IM.SignalR;
-using RuiChen.Abp.Localization.CultureMap;
-using RuiChen.Abp.LocalizationManagement;
-using RuiChen.Abp.LocalizationManagement.EntityFrameworkCore;
-using RuiChen.Abp.MessageService;
-using RuiChen.Abp.MessageService.EntityFrameworkCore;
-using RuiChen.Abp.Notifications;
-using RuiChen.Abp.Notifications.Common;
-using RuiChen.Abp.Notifications.Emailing;
-using RuiChen.Abp.Notifications.EntityFrameworkCore;
-using RuiChen.Abp.Notifications.SignalR;
-using RuiChen.Abp.OpenIddict;
-using RuiChen.Abp.OpenIddict.AspNetCore.Session;
-using RuiChen.Abp.OpenIddict.LinkUser;
-using RuiChen.Abp.OpenIddict.Portal;
-using RuiChen.Abp.OpenIddict.QrCode;
-using RuiChen.Abp.OpenIddict.Sms;
-using RuiChen.Abp.PermissionManagement;
-using RuiChen.Abp.PermissionManagement.HttpApi;
-using RuiChen.Abp.PermissionManagement.OrganizationUnits;
-using RuiChen.Abp.Saas;
-using RuiChen.Abp.Saas.EntityFrameworkCore;
-using RuiChen.Abp.Serilog.Enrichers.Application;
-using RuiChen.Abp.Serilog.Enrichers.UniqueId;
-using RuiChen.Abp.SettingManagement;
-using RuiChen.Abp.UI.Navigation.VueVbenAdmin5;
-using RuiChen.Platform;
-using RuiChen.Platform.EntityFrameworkCore;
-using RuiChen.Platform.HttpApi;
-using RuiChen.Platform.Settings.VueVbenAdmin;
-using RuiChen.Platform.Theme.VueVbenAdmin;
-using RuiChen.Single.EntityFrameworkCore;
-using Volo.Abp.AspNetCore.MultiTenancy;
-using Volo.Abp.AspNetCore.Mvc.UI.Theme.LeptonXLite;
-using Volo.Abp.AspNetCore.Serilog;
-using Volo.Abp.Autofac;
-using Volo.Abp.FeatureManagement.EntityFrameworkCore;
-using Volo.Abp.Modularity;
-using Volo.Abp.OpenIddict.EntityFrameworkCore;
-using Volo.Abp.PermissionManagement.EntityFrameworkCore;
-using Volo.Abp.PermissionManagement.Identity;
-using Volo.Abp.PermissionManagement.OpenIddict;
-using Volo.Abp.SettingManagement.EntityFrameworkCore;
-using Volo.Abp.VirtualFileExplorer.Web;
+﻿
+
+using RuiChen.Abp.Notifications.Templating;
 
 namespace RuiChen.Single.HttpApi.Host;
 
@@ -88,8 +23,8 @@ namespace RuiChen.Single.HttpApi.Host;
     typeof(AbpDataProtectionManagementApplicationModule),// 数据审计模块 应用服务
     typeof(AbpDataProtectionManagementEntityFrameworkCoreModule),// 数据审计模块 实体框架
 
-    typeof(AbpFeatureManagementHttpApiModule),// 功能管理模块 控制器
-    typeof(AbpFeatureManagementApplicationModule),// 功能管理模块 应用服务
+    typeof(RuiChen.Abp.FeatureManagement.AbpFeatureManagementHttpApiModule),// 功能管理模块 控制器
+    typeof(RuiChen.Abp.FeatureManagement.AbpFeatureManagementApplicationModule),// 功能管理模块 应用服务
     typeof(AbpFeatureManagementEntityFrameworkCoreModule),// 功能管理模块 实体框架
 
     typeof(AbpIdentityHttpApiModule),// 身份认证模块 控制器
@@ -112,6 +47,12 @@ namespace RuiChen.Single.HttpApi.Host;
     typeof(AbpOpenIddictSmsModule),// OpenIddict扩展模块 短信认证
     typeof(AbpOpenIddictPortalModule),// OpenIddict扩展模块 平台认证
     typeof(AbpOpenIddictQrCodeModule),// OpenIddict扩展模块 扫码登录
+
+    typeof(AbpOssManagementHttpApiModule),// 对象存储模块 控制器
+    typeof(AbpOssManagementApplicationModule),// 对象存储模块 应用服务
+    typeof(AbpOssManagementFileSystemModule),// 对象存储模块 文件系统
+    typeof(AbpOssManagementImagingModule),// 对象存储模块 图片处理
+    typeof(AbpOssManagementSettingManagementModule),// 对象存储模块 设置管理
 
     typeof(AbpPermissionManagementHttpApiModule),// 权限管理模块 控制器
     typeof(AbpPermissionManagementApplicationModule),// 权限管理模块 应用服务
@@ -138,6 +79,7 @@ namespace RuiChen.Single.HttpApi.Host;
     typeof(AbpNotificationsCommonModule),// 通知模块 默认通知
     typeof(AbpNotificationsSignalRModule),// 通知模块 实时通知
     typeof(AbpNotificationsEmailingModule),// 通知模块 邮件通知
+    typeof(AbpNotificationsTemplatingModule),// 通知模块 模板解析
 
     typeof(AbpSaasHttpApiModule),// Saas模块 控制器
     typeof(AbpSaasApplicationModule),// Saas模块 应用服务
@@ -153,7 +95,8 @@ namespace RuiChen.Single.HttpApi.Host;
     typeof(RuiChenSingleEntityFrameworkCoreModule),
     typeof(SingleMigrationEntityFrameworkCoreModule),
 
-    typeof(AbpCAPEventBusModule),
+    typeof(AbpEventBusModule),
+    //typeof(AbpCAPEventBusModule),
     typeof(AbpAspNetCoreMvcWrapperModule),
     typeof(AbpAspNetCoreMvcIdempotentWrapperModule),
     typeof(AbpAspNetCoreHttpOverridesModule),
@@ -173,12 +116,98 @@ public partial class RuiChenSingleHttpApiHostModule : AbpModule
 
     public override void PreConfigureServices(ServiceConfigurationContext context)
     {
-        base.PreConfigureServices(context);
+        var configuration = context.Services.GetConfiguration();
+        var hostingEnvironment = context.Services.GetHostingEnvironment();
+
+        PreConfigureFeature();
+        PreConfigureIdentity();
+        PreConfigureApp(configuration);
+        PreConfigureCAP(configuration);
+        PreConfigureAuthServer(configuration);
+        PreConfigureCertificate(configuration, hostingEnvironment);
     }
 
     public override void ConfigureServices(ServiceConfigurationContext context)
     {
-        base.ConfigureServices(context);
+        var hostingEnvironment = context.Services.GetHostingEnvironment();
+        var configuration = context.Services.GetConfiguration();
+
+        ConfigureWrapper();
+        ConfigureAuditing();
+        ConfigureIdempotent();
+        ConfigureLocalization();
+        ConfigureExceptionHandling();
+        ConfigureVirtualFileSystem();
+        ConfigureUrls(configuration);
+        ConfigureCaching(configuration);
+        ConfigureAuditing(configuration);
+        ConfigureIdentity(configuration);
+        ConfigureDbContext(configuration);
+        ConfigureAuthServer(configuration);
+        ConfigureSwagger(context.Services);
+        ConfigureMultiTenancy(configuration);
+        ConfigureJsonSerializer(configuration);
+        ConfigureFeatureManagement(configuration);
+        ConfigureSettingManagement(configuration);
+        ConfigurePermissionManagement(configuration);
+        ConfigureNotificationManagement(configuration);
+        ConfigureCors(context.Services, configuration);
+        ConfigureDistributedLock(context.Services, configuration);
+        ConfigureKestrelServer(configuration, hostingEnvironment);
+        ConfigureOssManagement(context.Services, configuration);
+        ConfigureSecurity(context.Services, configuration, hostingEnvironment.IsDevelopment());
+
+        ConfigureSingleModule(context.Services, hostingEnvironment.IsDevelopment());
+    }
+
+    public override void OnApplicationInitialization(ApplicationInitializationContext context)
+    {
+        var app = context.GetApplicationBuilder();
+        var configuration = context.GetConfiguration();
+
+        app.UseForwardedHeaders();
+
+        app.UseAbpSecurityHeaders();
+
+        app.UseCookiePolicy();
+
+        app.UseMapRequestLocalization();
+
+        app.UseCorrelationId();
+
+        app.MapAbpStaticAssets();
+
+        app.UseRouting();
+
+        app.UseCors();
+
+        app.UseAuthentication();
+
+        app.UseAbpOpenIddictValidation();
+
+        app.UseAbpSession();
+
+        app.UseDynamicClaims();
+
+        app.UseUnitOfWork();
+
+        app.UseMultiTenancy();
+
+        app.UseAuthorization();
+
+        app.UseSwagger();
+
+        app.UseSwaggerUI(options =>
+        {
+            options.SwaggerEndpoint("/swagger/v1/swagger.json", "RuiChenAdmin API");
+        });
+
+        app.UseAuditing();
+
+        app.UseAbpSerilogEnrichers();
+
+        app.UseConfiguredEndpoints();
+
     }
 
 }

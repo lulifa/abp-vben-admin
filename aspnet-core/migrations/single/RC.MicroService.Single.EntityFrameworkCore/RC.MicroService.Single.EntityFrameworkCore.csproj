@@ -23,8 +23,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\framework\auditing\RuiChen.Abp.AuditLogging.EntityFrameworkCore\RuiChen.Abp.AuditLogging.EntityFrameworkCore.csproj" />
     <ProjectReference Include="..\..\..\framework\common\RuiChen.Abp.Data.DbMigrator\RuiChen.Abp.Data.DbMigrator.csproj" />
+    <ProjectReference Include="..\..\..\modules\data-protection\RuiChen.Abp.DataProtectionManagement.EntityFrameworkCore\RuiChen.Abp.DataProtectionManagement.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\..\..\modules\identity\RuiChen.Abp.Identity.EntityFrameworkCore\RuiChen.Abp.Identity.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\..\..\modules\localization-management\RuiChen.Abp.LocalizationManagement.EntityFrameworkCore\RuiChen.Abp.LocalizationManagement.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\..\..\modules\platform\RuiChen.Platform.EntityFrameworkCore\RuiChen.Platform.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\..\..\modules\realtime-message\RuiChen.Abp.MessageService.EntityFrameworkCore\RuiChen.Abp.MessageService.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\..\..\modules\realtime-notifications\RuiChen.Abp.Notifications.EntityFrameworkCore\RuiChen.Abp.Notifications.EntityFrameworkCore.csproj" />
     <ProjectReference Include="..\..\..\modules\saas\RuiChen.Abp.Saas.EntityFrameworkCore\RuiChen.Abp.Saas.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\..\..\services\single-service\RuiChen.Single.EntityFrameworkCore\RuiChen.Single.EntityFrameworkCore.csproj" />
   </ItemGroup>
 
 </Project>

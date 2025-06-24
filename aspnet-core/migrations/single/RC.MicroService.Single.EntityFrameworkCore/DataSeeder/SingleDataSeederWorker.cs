@@ -14,8 +14,8 @@ public class SingleDataSeederWorker : BackgroundService
         DataSeeder = dataSeeder;
     }
 
-    protected override Task ExecuteAsync(CancellationToken stoppingToken)
+    protected async override Task ExecuteAsync(CancellationToken stoppingToken)
     {
-        throw new System.NotImplementedException();
+        await DataSeeder.SeedAsync();
     }
 }

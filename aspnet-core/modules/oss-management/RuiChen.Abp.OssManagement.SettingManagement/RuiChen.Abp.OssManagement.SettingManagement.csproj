@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <AssemblyName>RuiChen.Abp.OssManagement.SettingManagement</AssemblyName>
+    <PackageId>RuiChen.Abp.OssManagement.SettingManagement</PackageId>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <RootNamespace />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc" />
+    <PackageReference Include="Volo.Abp.SettingManagement.Domain" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\framework\settings\RuiChen.Abp.SettingManagement.Application.Contracts\RuiChen.Abp.SettingManagement.Application.Contracts.csproj" />
+    <ProjectReference Include="..\RuiChen.Abp.OssManagement.Application.Contracts\RuiChen.Abp.OssManagement.Application.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>

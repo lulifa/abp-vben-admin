@@ -1,8 +1,12 @@
-﻿namespace RuiChen.Single.HttpApi.Host;
+﻿
+using VoloAbpExceptionHandlingOptions = Volo.Abp.AspNetCore.ExceptionHandling.AbpExceptionHandlingOptions;
+
+namespace RuiChen.Single.HttpApi.Host;
 
 public partial class RuiChenSingleHttpApiHostModule
 {
-    public static string ApplicationName { get; set; } = "RuiChenSingle";
+
+    public static string ApplicationName { get; set; } = "RuiChenAdmin";
 
     private static readonly OneTimeRunner OneTimeRunner = new OneTimeRunner();
 
@@ -64,7 +68,7 @@ public partial class RuiChenSingleHttpApiHostModule
         {
             builder.AddValidation(options =>
             {
-                //options.AddAudiences("lingyun-abp-application");
+                //options.AddAudiences("RuiChen-abp-application");
 
                 options.UseLocalServer();
 
@@ -158,9 +162,6 @@ public partial class RuiChenSingleHttpApiHostModule
             options.PersistentSessionGrantTypes.Add(SmsTokenExtensionGrantConsts.GrantType);
             options.PersistentSessionGrantTypes.Add(PortalTokenExtensionGrantConsts.GrantType);
             options.PersistentSessionGrantTypes.Add(LinkUserTokenExtensionGrantConsts.GrantType);
-            options.PersistentSessionGrantTypes.Add(WeChatTokenExtensionGrantConsts.OfficialGrantType);
-            options.PersistentSessionGrantTypes.Add(WeChatTokenExtensionGrantConsts.MiniProgramGrantType);
-            options.PersistentSessionGrantTypes.Add(AbpWeChatWorkGlobalConsts.GrantType);
             options.PersistentSessionGrantTypes.Add(QrCodeLoginProviderConsts.GrantType);
         });
 
@@ -199,6 +200,21 @@ public partial class RuiChenSingleHttpApiHostModule
         }
     }
 
+    private void ConfigureOssManagement(IServiceCollection services, IConfiguration configuration)
+    {
+        Configure<AbpBlobStoringOptions>(options =>
+        {
+            options.Containers.ConfigureAll((containerName, containerConfiguration) =>
+            {
+                containerConfiguration.UseFileSystem(fileSystem =>
+                {
+                    fileSystem.BasePath = Path.Combine(Directory.GetCurrentDirectory(), "blobs");
+                });
+            });
+        });
+        services.AddFileSystemContainer();
+    }
+
     private void ConfigureFeatureManagement(IConfiguration configuration)
     {
         if (configuration.GetValue<bool>("FeatureManagement:IsDynamicStoreEnabled"))
@@ -224,38 +240,6 @@ public partial class RuiChenSingleHttpApiHostModule
                 options.IsDynamicSettingStoreEnabled = true;
             });
         }
-    }
-
-    private void ConfigureExporter()
-    {
-        Configure<AbpExporterMiniExcelOptions>(options =>
-        {
-            options.MapExportSetting(typeof(BookDto), config =>
-            {
-                config.DynamicColumns = new[]
-                {
-                    // 忽略某些字段
-                    new DynamicExcelColumn(nameof(BookDto.AuthorId)){ Ignore = true },
-                    new DynamicExcelColumn(nameof(BookDto.LastModificationTime)){ Ignore = true },
-                    new DynamicExcelColumn(nameof(BookDto.LastModifierId)){ Ignore = true },
-                    new DynamicExcelColumn(nameof(BookDto.CreationTime)){ Ignore = true },
-                    new DynamicExcelColumn(nameof(BookDto.CreatorId)){ Ignore = true },
-                    new DynamicExcelColumn(nameof(BookDto.Id)){ Ignore = true },
-                };
-            });
-        });
-    }
-
-    private void ConfigureEntityDataProtected()
-    {
-        Configure<DataProtectionManagementOptions>(options =>
-        {
-            options.AddEntities(typeof(DemoResource),
-                new[]
-                {
-                    typeof(Book),
-                });
-        });
     }
 
     private void ConfigurePermissionManagement(IConfiguration configuration)
@@ -309,7 +293,7 @@ public partial class RuiChenSingleHttpApiHostModule
     {
         Configure<AbpVirtualFileSystemOptions>(options =>
         {
-            options.FileSets.AddEmbedded<MicroServiceApplicationsSingleModule>("LY.MicroService.Applications.Single");
+            options.FileSets.AddEmbedded<RuiChenSingleHttpApiHostModule>("RuiChen.Single.HttpApi.Host");
         });
     }
 
@@ -329,7 +313,6 @@ public partial class RuiChenSingleHttpApiHostModule
             // 
         });
     }
-
 
     private void ConfigureExceptionHandling()
     {
@@ -450,13 +433,13 @@ public partial class RuiChenSingleHttpApiHostModule
                 });
                 options.AddSecurityRequirement(new OpenApiSecurityRequirement
                 {
+                    {
+                        new OpenApiSecurityScheme
                         {
-                            new OpenApiSecurityScheme
-                            {
-                                Reference = new OpenApiReference { Type = ReferenceType.SecurityScheme, Id = "Bearer" }
-                            },
-                            new string[] { }
-                        }
+                            Reference = new OpenApiReference { Type = ReferenceType.SecurityScheme, Id = "Bearer" }
+                        },
+                        new string[] { }
+                    }
                 });
                 options.OperationFilter<TenantHeaderParamter>();
             });
@@ -507,9 +490,6 @@ public partial class RuiChenSingleHttpApiHostModule
             options.Resources.Get<AbpSettingManagementResource>()
                 .AddBaseTypes(
                 typeof(IdentityResource),
-                typeof(AliyunResource),
-                typeof(TencentCloudResource),
-                typeof(WeChatResource),
                 typeof(PlatformResource),
                 typeof(AbpOpenIddictResource));
         });
@@ -539,8 +519,6 @@ public partial class RuiChenSingleHttpApiHostModule
             options.IsEnabled = true;
             // options.IsWrapUnauthorizedEnabled = true;
             options.IgnoreNamespaces.Add("Elsa");
-            // 微信消息不能包装
-            options.IgnoreNamespaces.Add("LINGYUN.Abp.WeChat");
         });
     }
 
@@ -575,14 +553,6 @@ public partial class RuiChenSingleHttpApiHostModule
             // abp 9.0版本可存储登录IP地域, 开启IP解析
             options.IsParseIpLocation = true;
         });
-
-        // 用于消息中心邮件集中发送
-        services.Replace<Volo.Abp.Emailing.IEmailSender, PlatformEmailSender>(ServiceLifetime.Transient);
-        services.AddKeyedTransient<Volo.Abp.Emailing.IEmailSender, MailKitSmtpEmailSender>("DefaultEmailSender");
-
-        // 用于消息中心短信集中发送
-        services.Replace<ISmsSender, PlatformSmsSender>(ServiceLifetime.Transient);
-        services.AddKeyedSingleton<ISmsSender, AliyunSmsSender>("DefaultSmsSender");
     }
 
     private void ConfigureUrls(IConfiguration configuration)
@@ -614,13 +584,6 @@ public partial class RuiChenSingleHttpApiHostModule
             .AddAbpJwtBearer(options =>
             {
                 configuration.GetSection("AuthServer").Bind(options);
-
-                var validIssuers = configuration.GetSection("AuthServer:ValidIssuers").Get<List<string>>();
-                if (validIssuers?.Count > 0)
-                {
-                    options.TokenValidationParameters.ValidIssuers = validIssuers;
-                    options.TokenValidationParameters.IssuerValidator = TokenWildcardIssuerValidator.IssuerValidator;
-                }
 
                 options.Events ??= new JwtBearerEvents();
                 options.Events.OnMessageReceived = context =>
@@ -668,8 +631,8 @@ public partial class RuiChenSingleHttpApiHostModule
             var redis = ConnectionMultiplexer.Connect(configuration["Redis:Configuration"]);
             services
                 .AddDataProtection()
-                .SetApplicationName("LINGYUN.Abp.Application")
-                .PersistKeysToStackExchangeRedis(redis, "LINGYUN.Abp.Application:DataProtection:Protection-Keys");
+                .SetApplicationName(ApplicationName)
+                .PersistKeysToStackExchangeRedis(redis, $"{ApplicationName}:DataProtection:Protection-Keys");
         }
 
         services.AddSameSiteCookiePolicy();

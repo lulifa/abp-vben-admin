@@ -1,0 +1,26 @@
+
+
+dotnet new classlib -o modules/oss-management/RuiChen.Abp.OssManagement.Application
+dotnet new classlib -o modules/oss-management/RuiChen.Abp.OssManagement.Application.Contracts
+dotnet new classlib -o modules/oss-management/RuiChen.Abp.OssManagement.Domain
+dotnet new classlib -o modules/oss-management/RuiChen.Abp.OssManagement.Domain.Shared
+dotnet new classlib -o modules/oss-management/RuiChen.Abp.OssManagement.FileSystem
+dotnet new classlib -o modules/oss-management/RuiChen.Abp.OssManagement.HttpApi
+dotnet new classlib -o modules/oss-management/RuiChen.Abp.OssManagement.Imaging
+dotnet new classlib -o modules/oss-management/RuiChen.Abp.OssManagement.SettingManagement
+
+
+
+dotnet sln RuiChen.MicroService.sln add  modules/oss-management/RuiChen.Abp.OssManagement.Application
+dotnet sln RuiChen.MicroService.sln add  modules/oss-management/RuiChen.Abp.OssManagement.Application.Contracts
+dotnet sln RuiChen.MicroService.sln add  modules/oss-management/RuiChen.Abp.OssManagement.Domain
+dotnet sln RuiChen.MicroService.sln add  modules/oss-management/RuiChen.Abp.OssManagement.Domain.Shared
+dotnet sln RuiChen.MicroService.sln add  modules/oss-management/RuiChen.Abp.OssManagement.FileSystem
+dotnet sln RuiChen.MicroService.sln add  modules/oss-management/RuiChen.Abp.OssManagement.HttpApi
+dotnet sln RuiChen.MicroService.sln add  modules/oss-management/RuiChen.Abp.OssManagement.Imaging
+dotnet sln RuiChen.MicroService.sln add  modules/oss-management/RuiChen.Abp.OssManagement.SettingManagement
+
+
+dotnet new classlib -o modules/realtime-notifications/RuiChen.Abp.Notifications.Templating
+
+dotnet sln RuiChen.MicroService.sln add  modules/realtime-notifications/RuiChen.Abp.Notifications.Templating

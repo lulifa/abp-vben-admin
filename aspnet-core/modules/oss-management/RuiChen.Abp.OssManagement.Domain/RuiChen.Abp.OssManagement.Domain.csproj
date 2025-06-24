@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <AssemblyName>RuiChen.Abp.OssManagement.Domain</AssemblyName>
+    <PackageId>RuiChen.Abp.OssManagement.Domain</PackageId>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <RootNamespace />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.BlobStoring" />
+    <PackageReference Include="Volo.Abp.Ddd.Domain" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\framework\features\RuiChen.Abp.Features.LimitValidation\RuiChen.Abp.Features.LimitValidation.csproj" />
+    <ProjectReference Include="..\RuiChen.Abp.OssManagement.Domain.Shared\RuiChen.Abp.OssManagement.Domain.Shared.csproj" />
+  </ItemGroup>
+
+</Project>
