@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Volo.Abp.DependencyInjection;
 
-namespace RuiChen.Single.Admin.Controllers
+namespace RuiChen.Single.HttpApi.Host.Controllers
 {
     [ExposeServices(
         typeof(SettingController),

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Volo.Abp.MultiTenancy;
 
-namespace RuiChen.Single.Admin.MultiTenancy;
+namespace RuiChen.Single.HttpApi.Host.MultiTenancy;
 
 [IgnoreMultiTenancy]
 public class TenantConfigurationCacheItem

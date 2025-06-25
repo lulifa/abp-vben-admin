@@ -3,7 +3,7 @@ using RuiChen.Platform.Messages.Integration;
 using Volo.Abp.Sms;
 using SmsMessage = Volo.Abp.Sms.SmsMessage;
 
-namespace RuiChen.Single.Admin;
+namespace RuiChen.Single.HttpApi.Host;
 
 public class PlatformSmsSender : ISmsSender
 {

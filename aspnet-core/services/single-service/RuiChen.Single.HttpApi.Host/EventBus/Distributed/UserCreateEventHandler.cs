@@ -5,7 +5,7 @@ using Volo.Abp.EventBus.Distributed;
 using Volo.Abp.EventBus.Local;
 using Volo.Abp.Users;
 
-namespace RuiChen.Single.Admin
+namespace RuiChen.Single.HttpApi.Host
 {
     public class UserCreateEventHandler : IDistributedEventHandler<EntityCreatedEto<UserEto>>, ITransientDependency
     {

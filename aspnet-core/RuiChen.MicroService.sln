@@ -197,7 +197,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.Single.EntityFramew
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.Single.HttpApi", "services\single-service\RuiChen.Single.HttpApi\RuiChen.Single.HttpApi.csproj", "{4211F3EA-3CAE-496B-8D69-413F3DE86DC7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.Single.Admin", "services\single-service\RuiChen.Single.HttpApi.Host\RuiChen.Single.Admin.csproj", "{1B0C0978-AAE1-46A7-BABC-2E35CDAE6BDA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiChen.Single.HttpApi.Host", "services\single-service\RuiChen.Single.HttpApi.Host\RuiChen.Single.HttpApi.Host.csproj", "{1B0C0978-AAE1-46A7-BABC-2E35CDAE6BDA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "data-protection", "data-protection", "{7F1761DF-6936-F99E-41B8-8CE4883E9DF2}"
 EndProject

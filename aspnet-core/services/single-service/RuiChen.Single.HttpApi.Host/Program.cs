@@ -1,5 +1,5 @@
 
-namespace RuiChen.Single.Admin;
+namespace RuiChen.Single.HttpApi.Host;
 
 public class Program
 {
@@ -8,7 +8,7 @@ public class Program
         try
         {
             Console.Title = "RuiChenAdmin";
-            Log.Information("Starting RuiChen.Abp.Admin.HttpApi.Host.");
+            Log.Information("Starting RuiChen.Single.HttpApi.Host.");
 
             var builder = WebApplication.CreateBuilder(args);
             builder.Host.AddAppSettingsSecretsJson()

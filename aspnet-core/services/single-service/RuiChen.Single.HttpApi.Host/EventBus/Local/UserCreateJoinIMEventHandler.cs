@@ -5,7 +5,7 @@ using Volo.Abp.Domain.Entities.Events;
 using Volo.Abp.Uow;
 using Volo.Abp.Users;
 
-namespace RuiChen.Single.Admin
+namespace RuiChen.Single.HttpApi.Host
 {
     public class UserCreateJoinIMEventHandler : ILocalEventHandler<EntityCreatedEventData<UserEto>>, ITransientDependency
     {

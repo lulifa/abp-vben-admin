@@ -4,7 +4,7 @@ using Volo.Abp.Domain.Entities.Events.Distributed;
 using Volo.Abp.EventBus.Distributed;
 using Volo.Abp.Uow;
 
-namespace RuiChen.Single.Admin;
+namespace RuiChen.Single.HttpApi.Host;
 public class MessageCreatedEventHandler :
     IDistributedEventHandler<EntityCreatedEto<SmsMessageEto>>,
     IDistributedEventHandler<EntityCreatedEto<EmailMessageEto>>,

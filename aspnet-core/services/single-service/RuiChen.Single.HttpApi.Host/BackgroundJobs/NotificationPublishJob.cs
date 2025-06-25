@@ -2,7 +2,7 @@
 using Volo.Abp.BackgroundJobs;
 using Volo.Abp.DependencyInjection;
 
-namespace RuiChen.Single.Admin;
+namespace RuiChen.Single.HttpApi.Host;
 
 public class NotificationPublishJob : AsyncBackgroundJob<NotificationPublishJobArgs>, ITransientDependency
 {

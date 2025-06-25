@@ -1,5 +1,5 @@
 ﻿
-namespace RuiChen.Single.Admin;
+namespace RuiChen.Single.HttpApi.Host;
 
 [DependsOn(
     typeof(AbpAccountHttpApiModule),// 账户模块 控制器

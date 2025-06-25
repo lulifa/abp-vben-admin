@@ -3,7 +3,7 @@ using Volo.Abp.DependencyInjection;
 using Volo.Abp.Emailing;
 using Volo.Abp.Settings;
 
-namespace RuiChen.Single.Admin;
+namespace RuiChen.Single.HttpApi.Host;
 
 [Dependency(ReplaceServices = true)]
 [ExposeServices(typeof(IEmailMessageManager), typeof(EmailMessageManager))]

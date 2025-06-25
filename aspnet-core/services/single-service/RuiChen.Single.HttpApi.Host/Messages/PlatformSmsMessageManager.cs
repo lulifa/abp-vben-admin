@@ -2,7 +2,7 @@
 using Volo.Abp.DependencyInjection;
 using Volo.Abp.Sms;
 
-namespace RuiChen.Single.Admin;
+namespace RuiChen.Single.HttpApi.Host;
 
 
 [Dependency(ReplaceServices = true)]

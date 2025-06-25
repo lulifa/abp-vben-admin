@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Volo.Abp.MultiTenancy;
 
-namespace RuiChen.Single.Admin.MultiTenancy;
+namespace RuiChen.Single.HttpApi.Host.MultiTenancy;
 
 public interface ITenantConfigurationCache
 {

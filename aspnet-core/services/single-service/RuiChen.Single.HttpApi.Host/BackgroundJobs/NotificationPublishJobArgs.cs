@@ -1,6 +1,6 @@
 ﻿using RuiChen.Abp.Notifications;
 
-namespace RuiChen.Single.Admin;
+namespace RuiChen.Single.HttpApi.Host;
 
 public class NotificationPublishJobArgs
 {
