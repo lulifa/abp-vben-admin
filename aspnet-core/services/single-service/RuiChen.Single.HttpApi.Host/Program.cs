@@ -1,12 +1,5 @@
-using Microsoft.AspNetCore.Builder;
-using Serilog;
-using System.Threading.Tasks;
-using System;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.DependencyInjection;
-using RuiChen.Single.HttpApi.Host;
 
-namespace RuiChen.Single.HttpApi.Host;
+namespace RuiChen.Single.Admin;
 
 public class Program
 {
@@ -15,7 +8,7 @@ public class Program
         try
         {
             Console.Title = "RuiChenAdmin";
-            Log.Information("Starting RuiChen.AbpPro.Admin.HttpApi.Host.");
+            Log.Information("Starting RuiChen.Abp.Admin.HttpApi.Host.");
 
             var builder = WebApplication.CreateBuilder(args);
             builder.Host.AddAppSettingsSecretsJson()

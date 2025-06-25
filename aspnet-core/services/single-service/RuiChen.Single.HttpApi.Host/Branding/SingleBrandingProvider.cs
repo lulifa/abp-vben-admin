@@ -3,7 +3,7 @@ using System.Globalization;
 using Volo.Abp.DependencyInjection;
 using Volo.Abp.Ui.Branding;
 
-namespace RuiChen.Single.HttpApi.Host.Branding;
+namespace RuiChen.Single.Admin.Branding;
 
 [Dependency(ReplaceServices = true)]
 public class SingleBrandingProvider(IConfiguration configuration) : DefaultBrandingProvider

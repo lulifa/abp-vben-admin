@@ -1,11 +1,11 @@
 ﻿using RuiChen.Abp.Saas.Tenants;
-using RuiChen.Single.HttpApi.Host.MultiTenancy;
+using RuiChen.Single.Admin.MultiTenancy;
 using Volo.Abp.DependencyInjection;
 using Volo.Abp.Domain.Entities.Events.Distributed;
 using Volo.Abp.EventBus.Distributed;
 using Volo.Abp.Uow;
 
-namespace RuiChen.Single.HttpApi.Host
+namespace RuiChen.Single.Admin
 {
     public class TenantSynchronizer : 
         IDistributedEventHandler<EntityCreatedEto<TenantEto>>,

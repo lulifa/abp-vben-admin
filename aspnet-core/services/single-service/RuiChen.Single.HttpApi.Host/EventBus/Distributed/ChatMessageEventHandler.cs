@@ -7,7 +7,7 @@ using Volo.Abp.DependencyInjection;
 using Volo.Abp.EventBus.Distributed;
 using Microsoft.Extensions.Logging;
 
-namespace RuiChen.Single.HttpApi.Host
+namespace RuiChen.Single.Admin
 {
     public class ChatMessageEventHandler : IDistributedEventHandler<RealTimeEto<ChatMessage>>, ITransientDependency
     {

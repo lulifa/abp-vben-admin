@@ -2,7 +2,7 @@
 using Volo.Abp.Domain.Entities.Events;
 using Volo.Abp.Users;
 
-namespace RuiChen.Single.HttpApi.Host
+namespace RuiChen.Single.Admin
 {
     public class UserCreateSendWelcomeEventHandler : ILocalEventHandler<EntityCreatedEventData<UserEto>>, ITransientDependency
     {

@@ -1,8 +1,5 @@
 ﻿
-
-using RuiChen.Abp.Notifications.Templating;
-
-namespace RuiChen.Single.HttpApi.Host;
+namespace RuiChen.Single.Admin;
 
 [DependsOn(
     typeof(AbpAccountHttpApiModule),// 账户模块 控制器
@@ -105,7 +102,6 @@ namespace RuiChen.Single.HttpApi.Host;
     typeof(AbpSerilogEnrichersUniqueIdModule),
 
 
-    typeof(AbpVirtualFileExplorerWebModule),
     typeof(AbpAspNetCoreMvcUiLeptonXLiteThemeModule),
     typeof(AbpAspNetCoreMultiTenancyModule),
     typeof(AbpAspNetCoreSerilogModule),
@@ -201,6 +197,7 @@ public partial class RuiChenSingleHttpApiHostModule : AbpModule
         app.UseAbpSwaggerUI(options =>
         {
             options.SwaggerEndpoint("/swagger/v1/swagger.json", "RuiChenAdmin API");
+
             options.OAuthClientId(configuration["AuthServer:SwaggerClientId"]);
             options.OAuthScopes(configuration["AuthServer:Audience"]);
         });

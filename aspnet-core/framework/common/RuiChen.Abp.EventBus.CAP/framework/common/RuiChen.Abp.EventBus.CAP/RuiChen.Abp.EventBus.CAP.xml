@@ -4,6 +4,19 @@
         <name>RuiChen.Abp.EventBus.CAP</name>
     </assembly>
     <members>
+        <member name="T:Microsoft.Extensions.DependencyInjection.ServiceCollectionExtensions">
+            <summary>
+            CAP ServiceCollectionExtensions
+            </summary>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.ServiceCollectionExtensions.AddCAPEventBus(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{DotNetCore.CAP.CapOptions})">
+            <summary>
+            Adds and configures the consistence services for the consistency.
+            </summary>
+            <param name="services"></param>
+            <param name="capAction"></param>
+            <returns></returns>
+        </member>
         <member name="T:RuiChen.Abp.EventBus.CAP.AbpCAPConsumerServiceSelector">
             <summary>
             消费者查找器
@@ -379,19 +392,6 @@
             FSharp.Core.dll, because non-F# applications wouldn't use it. So all the references
             to FSharp types have to be constructed dynamically at runtime.
             </remarks>
-        </member>
-        <member name="T:Microsoft.Extensions.DependencyInjection.ServiceCollectionExtensions">
-            <summary>
-            CAP ServiceCollectionExtensions
-            </summary>
-        </member>
-        <member name="M:Microsoft.Extensions.DependencyInjection.ServiceCollectionExtensions.AddCAPEventBus(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{DotNetCore.CAP.CapOptions})">
-            <summary>
-            Adds and configures the consistence services for the consistency.
-            </summary>
-            <param name="services"></param>
-            <param name="capAction"></param>
-            <returns></returns>
         </member>
     </members>
 </doc>

@@ -6,7 +6,7 @@ using Volo.Abp.Caching;
 using Volo.Abp.DependencyInjection;
 using Volo.Abp.MultiTenancy;
 
-namespace RuiChen.Single.HttpApi.Host.MultiTenancy;
+namespace RuiChen.Single.Admin.MultiTenancy;
 
 public class TenantConfigurationCache : ITenantConfigurationCache, ITransientDependency
 {

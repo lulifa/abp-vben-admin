@@ -1,7 +1,7 @@
 ﻿
 using VoloAbpExceptionHandlingOptions = Volo.Abp.AspNetCore.ExceptionHandling.AbpExceptionHandlingOptions;
 
-namespace RuiChen.Single.HttpApi.Host;
+namespace RuiChen.Single.Admin;
 
 public partial class RuiChenSingleHttpApiHostModule
 {
@@ -293,7 +293,7 @@ public partial class RuiChenSingleHttpApiHostModule
     {
         Configure<AbpVirtualFileSystemOptions>(options =>
         {
-            options.FileSets.AddEmbedded<RuiChenSingleHttpApiHostModule>("RuiChen.Single.HttpApi.Host");
+            options.FileSets.AddEmbedded<RuiChenSingleHttpApiHostModule>("RuiChen.Single.Admin");
         });
     }
 

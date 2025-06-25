@@ -3,7 +3,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
 using Microsoft.Extensions.Options;
 using RuiChen.Abp.Notifications.Templating;
-using RuiChen.Single.HttpApi.Host.MultiTenancy;
+using RuiChen.Single.Admin.MultiTenancy;
 using System.Globalization;
 using Volo.Abp.BackgroundJobs;
 using Volo.Abp.DependencyInjection;
@@ -11,7 +11,7 @@ using Volo.Abp.EventBus.Distributed;
 using Volo.Abp.TextTemplating;
 using Volo.Abp.Uow;
 
-namespace RuiChen.Single.HttpApi.Host
+namespace RuiChen.Single.Admin
 {
     /// <summary>
     /// 订阅通知发布事件,统一发布消息

@@ -4,7 +4,7 @@ using System.Net.Mail;
 using Volo.Abp.Content;
 using Volo.Abp.Emailing;
 
-namespace RuiChen.Single.HttpApi.Host;
+namespace RuiChen.Single.Admin;
 
 public class PlatformEmailSender : IEmailSender
 {

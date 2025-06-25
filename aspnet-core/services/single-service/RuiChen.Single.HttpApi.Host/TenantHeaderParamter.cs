@@ -1,7 +1,5 @@
-﻿using Microsoft.Extensions.Options;
-using Swashbuckle.AspNetCore.SwaggerGen;
-
-namespace RuiChen.Single.HttpApi.Host;
+﻿
+namespace RuiChen.Single.Admin;
 
 public class TenantHeaderParamter : IOperationFilter
 {

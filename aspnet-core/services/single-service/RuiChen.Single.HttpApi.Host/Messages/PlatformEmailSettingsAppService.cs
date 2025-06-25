@@ -4,7 +4,7 @@ using Volo.Abp.Emailing;
 using SendTestEmailInput = Volo.Abp.SettingManagement.SendTestEmailInput;
 using SettingManagementPermissions = Volo.Abp.SettingManagement.SettingManagementPermissions;
 
-namespace RuiChen.Single.HttpApi.Host;
+namespace RuiChen.Single.Admin;
 
 [Authorize(SettingManagementPermissions.Emailing)]
 public class PlatformEmailSettingsAppService : SettingManagementAppServiceBase, IEmailSettingsAppService
