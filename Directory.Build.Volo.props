@@ -19,7 +19,9 @@
     <PackageReference Update="Volo.Abp.AspNetCore.Mvc.Contracts" Version="$(VoloAbpPackageVersion)" />
     <PackageReference Update="Volo.Abp.AspNetCore.Mvc.NewtonsoftJson" Version="$(VoloAbpPackageVersion)" />
     <PackageReference Update="Volo.Abp.AspNetCore.Mvc.UI.MultiTenancy" Version="$(VoloAbpPackageVersion)" />
-    <PackageReference Update="Volo.Abp.AspNetCore.Mvc.UI.Theme.LeptonXLite" Version="4.1.0" />
+    <PackageReference Update="Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic" Version="$(VoloAbpPackageVersion)" />
+    <PackageReference Update="Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared" Version="$(VoloAbpPackageVersion)" />
+    <PackageReference Update="Volo.Abp.AspNetCore.Mvc.UI.Theme.LeptonXLite" Version="4.2.0" />
     <PackageReference Update="Volo.Abp.AspNetCore.Serilog" Version="$(VoloAbpPackageVersion)" />
     <PackageReference Update="Volo.Abp.AspNetCore.SignalR" Version="$(VoloAbpPackageVersion)" />
     <PackageReference Update="Volo.Abp.AspNetCore.TestBase" Version="$(VoloAbpPackageVersion)" />
