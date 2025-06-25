@@ -13,7 +13,7 @@ using Volo.Abp.EntityFrameworkCore;
 namespace RC.MicroService.Single.EntityFrameworkCore.Migrations
 {
     [DbContext(typeof(SingleMigrationDbContext))]
-    [Migration("20250624061710_InitialDatabase")]
+    [Migration("20250625080424_InitialDatabase")]
     partial class InitialDatabase
     {
         /// <inheritdoc />
@@ -1412,6 +1412,122 @@ namespace RC.MicroService.Single.EntityFrameworkCore.Migrations
                     b.HasKey("TenantId", "Name");
 
                     b.ToTable("AbpTenantConnectionStrings", (string)null);
+                });
+
+            modelBuilder.Entity("RuiChen.Abp.TextTemplating.TextTemplate", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<string>("Content")
+                        .HasMaxLength(1048576)
+                        .HasColumnType("longtext")
+                        .HasColumnName("Content");
+
+                    b.Property<DateTime>("CreationTime")
+                        .HasColumnType("datetime(6)")
+                        .HasColumnName("CreationTime");
+
+                    b.Property<Guid?>("CreatorId")
+                        .HasColumnType("char(36)")
+                        .HasColumnName("CreatorId");
+
+                    b.Property<string>("Culture")
+                        .HasMaxLength(30)
+                        .HasColumnType("varchar(30)")
+                        .HasColumnName("Culture");
+
+                    b.Property<string>("DisplayName")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)")
+                        .HasColumnName("DisplayName");
+
+                    b.Property<DateTime?>("LastModificationTime")
+                        .HasColumnType("datetime(6)")
+                        .HasColumnName("LastModificationTime");
+
+                    b.Property<Guid?>("LastModifierId")
+                        .HasColumnType("char(36)")
+                        .HasColumnName("LastModifierId");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)")
+                        .HasColumnName("Name");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Name")
+                        .HasDatabaseName("IX_Tenant_Text_Template_Name");
+
+                    b.ToTable("AbpTextTemplates", (string)null);
+                });
+
+            modelBuilder.Entity("RuiChen.Abp.TextTemplating.TextTemplateDefinition", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .IsRequired()
+                        .HasMaxLength(40)
+                        .HasColumnType("varchar(40)")
+                        .HasColumnName("ConcurrencyStamp");
+
+                    b.Property<string>("DefaultCultureName")
+                        .HasMaxLength(30)
+                        .HasColumnType("varchar(30)")
+                        .HasColumnName("DefaultCultureName");
+
+                    b.Property<string>("DisplayName")
+                        .IsRequired()
+                        .HasMaxLength(512)
+                        .HasColumnType("varchar(512)")
+                        .HasColumnName("DisplayName");
+
+                    b.Property<string>("ExtraProperties")
+                        .IsRequired()
+                        .HasColumnType("longtext")
+                        .HasColumnName("ExtraProperties");
+
+                    b.Property<bool>("IsInlineLocalized")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("IsLayout")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("IsStatic")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<string>("Layout")
+                        .HasMaxLength(60)
+                        .HasColumnType("varchar(60)")
+                        .HasColumnName("Layout");
+
+                    b.Property<string>("LocalizationResourceName")
+                        .HasMaxLength(64)
+                        .HasColumnType("varchar(64)")
+                        .HasColumnName("LocalizationResourceName");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(128)
+                        .HasColumnType("varchar(128)")
+                        .HasColumnName("Name");
+
+                    b.Property<string>("RenderEngine")
+                        .HasMaxLength(30)
+                        .HasColumnType("varchar(30)")
+                        .HasColumnName("RenderEngine");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("AbpTextTemplateDefinitions", (string)null);
                 });
 
             modelBuilder.Entity("RuiChen.Platform.Datas.Data", b =>

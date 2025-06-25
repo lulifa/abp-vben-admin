@@ -63,6 +63,7 @@
 
     <ProjectReference Include="..\..\..\migrations\single\RC.MicroService.Single.EntityFrameworkCore\RC.MicroService.Single.EntityFrameworkCore.csproj" />
 
+
     <ProjectReference Include="..\RuiChen.Single.HttpApi\RuiChen.Single.HttpApi.csproj" />
     <ProjectReference Include="..\RuiChen.Single.Application\RuiChen.Single.Application.csproj" />
     <ProjectReference Include="..\RuiChen.Single.EntityFrameworkCore\RuiChen.Single.EntityFrameworkCore.csproj" />
@@ -145,9 +146,13 @@
     <ProjectReference Include="..\..\..\modules\saas\RuiChen.Abp.Saas.Application\RuiChen.Abp.Saas.Application.csproj" />
     <ProjectReference Include="..\..\..\modules\saas\RuiChen.Abp.Saas.EntityFrameworkCore\RuiChen.Abp.Saas.EntityFrameworkCore.csproj" />
     <ProjectReference Include="..\..\..\modules\saas\RuiChen.Abp.Saas.DbChecker\RuiChen.Abp.Saas.DbChecker.csproj" />
-
-    <ProjectReference Include="..\..\..\modules\settings\RuiChen.Abp.SettingManagement.Application\RuiChen.Abp.SettingManagement.Application.csproj" />
+   
     <ProjectReference Include="..\..\..\modules\settings\RuiChen.Abp.SettingManagement.HttpApi\RuiChen.Abp.SettingManagement.HttpApi.csproj" />
+    <ProjectReference Include="..\..\..\modules\settings\RuiChen.Abp.SettingManagement.Application\RuiChen.Abp.SettingManagement.Application.csproj" />
+
+    <ProjectReference Include="..\..\..\modules\text-templating\RuiChen.Abp.TextTemplating.HttpApi\RuiChen.Abp.TextTemplating.HttpApi.csproj" />
+    <ProjectReference Include="..\..\..\modules\text-templating\RuiChen.Abp.TextTemplating.Application\RuiChen.Abp.TextTemplating.Application.csproj" />
+    <ProjectReference Include="..\..\..\modules\text-templating\RuiChen.Abp.TextTemplating.EntityFrameworkCore\RuiChen.Abp.TextTemplating.EntityFrameworkCore.csproj" />
     
   </ItemGroup>
 

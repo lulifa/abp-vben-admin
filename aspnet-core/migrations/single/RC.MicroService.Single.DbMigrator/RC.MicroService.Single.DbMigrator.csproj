@@ -32,6 +32,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\modules\platform\RuiChen.Abp.UI.Navigation.VueVbenAdmin\RuiChen.Abp.UI.Navigation.VueVbenAdmin.csproj" />
     <ProjectReference Include="..\RC.MicroService.Single.EntityFrameworkCore\RC.MicroService.Single.EntityFrameworkCore.csproj" />
   </ItemGroup>
 

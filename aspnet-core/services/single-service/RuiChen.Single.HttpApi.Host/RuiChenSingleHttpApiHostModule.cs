@@ -1,4 +1,7 @@
 ﻿
+using RuiChen.Abp.TextTemplating;
+using RuiChen.Abp.TextTemplating.EntityFrameworkCore;
+
 namespace RuiChen.Single.Admin;
 
 [DependsOn(
@@ -87,6 +90,10 @@ namespace RuiChen.Single.Admin;
     typeof(AbpSettingManagementApplicationModule),// 设置管理模块 应用服务
     typeof(AbpSettingManagementEntityFrameworkCoreModule),// 设置管理模块 实体框架
 
+    typeof(AbpTextTemplatingHttpApiModule),// 文本模板模块 控制器
+    typeof(AbpTextTemplatingApplicationModule),// 文本模板模块 应用服务
+    typeof(AbpTextTemplatingEntityFrameworkCoreModule),// 文本模板模块 实体框架
+
     typeof(RuiChenSingleHttpApiModule),
     typeof(RuiChenSingleApplicationModule),
     typeof(RuiChenSingleEntityFrameworkCoreModule),
@@ -143,6 +150,7 @@ public partial class RuiChenSingleHttpApiHostModule : AbpModule
         ConfigureAuthServer(configuration);
         ConfigureMultiTenancy(configuration);
         ConfigureJsonSerializer(configuration);
+        ConfigureTextTemplating(configuration);
         ConfigureFeatureManagement(configuration);
         ConfigureSettingManagement(configuration);
         ConfigurePermissionManagement(configuration);

@@ -4,6 +4,7 @@ using RuiChen.Abp.LocalizationManagement.EntityFrameworkCore;
 using RuiChen.Abp.MessageService.EntityFrameworkCore;
 using RuiChen.Abp.Notifications.EntityFrameworkCore;
 using RuiChen.Abp.Saas.EntityFrameworkCore;
+using RuiChen.Abp.TextTemplating.EntityFrameworkCore;
 using RuiChen.Platform.EntityFrameworkCore;
 using RuiChen.Single.EntityFrameworkCore;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
@@ -33,6 +34,7 @@ public class SingleMigrationDbContext : AbpDbContext<SingleMigrationDbContext>
         modelBuilder.ConfigureFeatureManagement();
         modelBuilder.ConfigureSettingManagement();
         modelBuilder.ConfigurePermissionManagement();
+        modelBuilder.ConfigureTextTemplating();
         modelBuilder.ConfigurePlatform();
         modelBuilder.ConfigureLocalization();
         modelBuilder.ConfigureNotifications();

@@ -32,6 +32,7 @@
     <ProjectReference Include="..\..\..\modules\realtime-message\RuiChen.Abp.MessageService.EntityFrameworkCore\RuiChen.Abp.MessageService.EntityFrameworkCore.csproj" />
     <ProjectReference Include="..\..\..\modules\realtime-notifications\RuiChen.Abp.Notifications.EntityFrameworkCore\RuiChen.Abp.Notifications.EntityFrameworkCore.csproj" />
     <ProjectReference Include="..\..\..\modules\saas\RuiChen.Abp.Saas.EntityFrameworkCore\RuiChen.Abp.Saas.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\..\..\modules\text-templating\RuiChen.Abp.TextTemplating.EntityFrameworkCore\RuiChen.Abp.TextTemplating.EntityFrameworkCore.csproj" />
     <ProjectReference Include="..\..\..\services\single-service\RuiChen.Single.EntityFrameworkCore\RuiChen.Single.EntityFrameworkCore.csproj" />
   </ItemGroup>
 

@@ -1,4 +1,5 @@
 ﻿
+using RuiChen.Abp.TextTemplating;
 using VoloAbpExceptionHandlingOptions = Volo.Abp.AspNetCore.ExceptionHandling.AbpExceptionHandlingOptions;
 
 namespace RuiChen.Single.Admin;
@@ -359,6 +360,17 @@ public partial class RuiChenSingleHttpApiHostModule
         {
             options.JsonSerializerOptions.Encoder = JavaScriptEncoder.Create(UnicodeRanges.All);
         });
+    }
+
+    private void ConfigureTextTemplating(IConfiguration configuration)
+    {
+        if (configuration.GetValue<bool>("TextTemplating:IsDynamicStoreEnabled"))
+        {
+            Configure<AbpTextTemplatingCachingOptions>(options =>
+            {
+                options.IsDynamicTemplateDefinitionStoreEnabled = true;
+            });
+        }
     }
 
     private void ConfigureCaching(IConfiguration configuration)
