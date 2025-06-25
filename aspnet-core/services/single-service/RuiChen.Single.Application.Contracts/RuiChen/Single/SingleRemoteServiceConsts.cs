@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace RuiChen.Single;
+﻿namespace RuiChen.Single;
 
 public static class SingleRemoteServiceConsts
 {
-    public const string RemoteServiceName = "RuiChenSingle";
-    public const string ModuleName = "ruichensingle";
+    public const string RemoteServiceName = "Admin";
+    public const string ModuleName = "admin";
 }

@@ -432,13 +432,13 @@ public partial class RuiChenSingleHttpApiHostModule
             configuration["AuthServer:Authority"],
             new Dictionary<string, string>
             {
-                { configuration["AuthServer:Audience"], "Single APP"}
+                { configuration["AuthServer:Audience"], "RuiChenAdmin API"}
             },
             options =>
             {
                 options.SwaggerDoc("v1", new OpenApiInfo
                 {
-                    Title = "Single APP API",
+                    Title = "RuiChenAdmin API",
                     Version = "v1",
                     Contact = new OpenApiContact
                     {

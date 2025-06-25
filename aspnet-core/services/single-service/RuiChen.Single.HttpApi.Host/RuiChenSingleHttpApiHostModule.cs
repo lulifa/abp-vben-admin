@@ -1,7 +1,4 @@
 ﻿
-using RuiChen.Abp.TextTemplating;
-using RuiChen.Abp.TextTemplating.EntityFrameworkCore;
-
 namespace RuiChen.Single.Admin;
 
 [DependsOn(
@@ -99,8 +96,7 @@ namespace RuiChen.Single.Admin;
     typeof(RuiChenSingleEntityFrameworkCoreModule),
     typeof(SingleMigrationEntityFrameworkCoreModule),
 
-    typeof(AbpEventBusModule),
-    //typeof(AbpCAPEventBusModule),
+    typeof(AbpCAPEventBusModule),
     typeof(AbpAspNetCoreMvcWrapperModule),
     typeof(AbpAspNetCoreMvcIdempotentWrapperModule),
     typeof(AbpAspNetCoreHttpOverridesModule),
