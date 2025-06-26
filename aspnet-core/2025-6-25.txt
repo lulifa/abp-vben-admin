@@ -1,0 +1,15 @@
+
+
+dotnet new classlib -o modules/text-templating/RuiChen.Abp.TextTemplating.Application
+dotnet new classlib -o modules/text-templating/RuiChen.Abp.TextTemplating.Application.Contracts
+dotnet new classlib -o modules/text-templating/RuiChen.Abp.TextTemplating.Domain
+dotnet new classlib -o modules/text-templating/RuiChen.Abp.TextTemplating.Domain.Shared
+dotnet new classlib -o modules/text-templating/RuiChen.Abp.TextTemplating.EntityFrameworkCore
+dotnet new classlib -o modules/text-templating/RuiChen.Abp.TextTemplating.HttpApi
+
+dotnet sln RuiChen.MicroService.sln add  modules/text-templating/RuiChen.Abp.TextTemplating.Application
+dotnet sln RuiChen.MicroService.sln add  modules/text-templating/RuiChen.Abp.TextTemplating.Application.Contracts
+dotnet sln RuiChen.MicroService.sln add  modules/text-templating/RuiChen.Abp.TextTemplating.Domain
+dotnet sln RuiChen.MicroService.sln add  modules/text-templating/RuiChen.Abp.TextTemplating.Domain.Shared
+dotnet sln RuiChen.MicroService.sln add  modules/text-templating/RuiChen.Abp.TextTemplating.EntityFrameworkCore
+dotnet sln RuiChen.MicroService.sln add  modules/text-templating/RuiChen.Abp.TextTemplating.HttpApi

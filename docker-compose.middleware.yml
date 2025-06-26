@@ -1,0 +1,123 @@
+
+services:
+  nginx:
+    image: nginx:1.25.3-alpine
+    hostname: abp-nginx
+    container_name: abp-nginx
+    environment:
+     - TZ=${TZ}  
+    volumes:
+      - ./deploy/middleware/nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./deploy/middleware/nginx/conf.d:/etc/nginx/conf.d
+      - ./deploy/middleware/nginx/ssl:/etc/nginx/ssl
+      - ./deploy/middleware/nginx/logs:/var/log/nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    networks:
+      - abp-next-admin
+    restart: always
+  abp-mysql:
+    image: mysql:8.0
+    hostname: abp-mysql
+    container_name: abp-mysql
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_ROOT_HOST=${MYSQL_ROOT_HOST}
+      - TZ=${TZ}
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./deploy/middleware/mysql/conf:/etc/mysql/conf.d
+      - ./deploy/middleware/mysql/logs:/logs
+    restart: always
+    networks:
+      - abp-next-admin
+
+  abp-redis:
+    image: redis:6
+    hostname: abp-redis
+    container_name: abp-redis
+    environment:
+     - TZ=${TZ}
+    volumes:
+      - redis_data:/data
+      - ./deploy/middleware/redis/conf:/usr/local/etc/redis
+      - ./deploy/middleware/redis/logs:/logs
+    ports:
+      - "6379:6379"
+    restart: always
+    networks:
+      - abp-next-admin
+  
+  abp-rabbitmq:
+    image: rabbitmq:3.12-management
+    hostname: abp-rabbitmq
+    container_name: abp-rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+      - "25672:25672"
+      - "1883:1883"
+    environment:
+      - RABBITMQ_ERLANG_COOKIE=${RABBITMQ_ERLANG_COOKIE}
+      - RABBITMQ_DEFAULT_VHOST=${RABBITMQ_DEFAULT_VHOST}
+      - RABBITMQ_DEFAULT_USER=${RABBITMQ_DEFAULT_USER}
+      - RABBITMQ_DEFAULT_PASS=${RABBITMQ_DEFAULT_PASS}
+      - TZ=${TZ}
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+      - ./deploy/middleware/rabbitmq/conf:/etc/rabbitmq
+      - rabbitmq_logs:/var/log/rabbitmq
+    restart: always
+    networks:
+      - abp-next-admin
+
+  abp-elasticsearch:
+    image: elasticsearch:7.16.3
+    container_name: abp-elasticsearch
+    restart: always
+    environment:
+      - "cluster.name=elasticsearch"
+      - "discovery.type=single-node"
+      - "ES_JAVA_OPTS=-Xms1g -Xmx1g"
+      - TZ=Asia/Shanghai
+    volumes:
+      - ./deploy/middleware/elasticsearch/plugins:/usr/share/elasticsearch/plugins
+      - ./deploy/middleware/elasticsearch/data:/usr/share/elasticsearch/data
+    ports:
+      - 9200:9200
+    networks:
+      - abp-next-admin
+
+  abp-tdengine:
+   image: tdengine/tdengine:3.3.6.9
+   hostname: abp-tdengine
+   container_name: abp-tdengine
+   ports:
+     - "6030:6030"
+     - "6041:6041"
+     - "6043:6043"
+     - "6044-6049:6044-6049"
+     - "6044-6045:6044-6045/udp"
+     - "6060:6060"
+   environment:
+     - TZ=${TZ}
+   volumes:
+     - tdengine_data:/var/lib/taos
+     - ./deploy/middleware/tdengine/conf:/etc/taos
+     - ./deploy/middleware/tdengine/logs:/var/log/taos
+   restart: always
+   networks:
+      - abp-next-admin
+volumes:
+  mysql_data:
+  redis_data:
+  rabbitmq_data:
+  rabbitmq_logs:
+  tdengine_data:
+
+networks:
+  abp-next-admin:
+    driver: bridge
