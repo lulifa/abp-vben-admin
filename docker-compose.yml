@@ -1,0 +1,22 @@
+
+services:
+  admin-api:
+    build:
+      context: ./apps/admin/backend/publish
+      dockerfile: Dockerfile
+    container_name: admin-api
+    ports:
+      - "30001:80"
+    volumes:
+      - ./apps/admin/backend/blobs:/app/blobs
+      - ./apps/admin/backend/Logs:/app/Logs
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - TZ=${TZ}
+    restart: always
+    networks:
+      - abp-next-admin
+
+networks:
+  abp-next-admin:
+    driver: bridge

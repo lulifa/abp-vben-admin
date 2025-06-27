@@ -1,0 +1,71 @@
+services:
+  admin-api:
+    environment:
+      - App__SslFile=openiddict.pfx
+      - App__SslPassword=e1c48393-0c43-11f0-9582-4aecacda42db
+      - App__ShowPii=true
+      - App__SelfUrl=http://127.0.0.1:30001/
+      - App__CorsOrigins=http://127.0.0.1:5666,http://127.0.0.1:30001
+      - Elasticsearch__NodeUris=http://abp-elasticsearch:9200
+      - Clock__Kind=Local
+      - Forwarded__ForwardedHeaders=XForwardedFor,XForwardedProto
+      - Json__OutputDateTimeFormat=yyyy-MM-dd HH:mm:ss
+      - Json__InputDateTimeFormats__0=yyyy-MM-dd HH:mm:ss
+      - Json__InputDateTimeFormats__1=yyyy-MM-ddTHH:mm:ss
+      - StringEncryption__DefaultPassPhrase=s46c5q55nxpeS8Ra
+      - StringEncryption__InitVectorBytes=s83ng0abvd02js84
+      - StringEncryption__DefaultSalt=sf&5)s3#
+      - Auditing__AllEntitiesSelector=true
+      - CAP__IsEnabled=false
+      - CAP__EventBus__DefaultGroupName=Platform
+      - CAP__EventBus__GroupNamePrefix=Dev
+      - CAP__EventBus__Version=v1
+      - CAP__EventBus__FailedRetryInterval=300
+      - CAP__EventBus__FailedRetryCount=10
+      - CAP__MySql__TableNamePrefix=pt_event
+      - CAP__MySql__ConnectionString=Server=abp-mysql;Database=ruichen;User Id=root;Password=123456;SslMode=None
+      - CAP__RabbitMQ__HostName=abp-rabbitmq
+      - CAP__RabbitMQ__Port=5672
+      - CAP__RabbitMQ__UserName=admin
+      - CAP__RabbitMQ__Password=123456
+      - CAP__RabbitMQ__ExchangeName=RuiChen.Abp.Application
+      - CAP__RabbitMQ__VirtualHost=/
+      - CAP__Redis__Configuration=abp-redis
+      - DistributedCache__HideErrors=true
+      - DistributedCache__KeyPrefix=RuiChen.Abp.Application
+      - DistributedCache__GlobalCacheEntryOptions__SlidingExpiration=30:00:00
+      - DistributedCache__GlobalCacheEntryOptions__AbsoluteExpirationRelativeToNow=60:00:00
+      - ConnectionStrings__Default=Server=abp-mysql;Database=ruichen;User Id=root;Password=123456
+      - DistributedLock__IsEnabled=true
+      - DistributedLock__Redis__Configuration=abp-redis,defaultDatabase=14
+      - Redis__IsEnabled=true
+      - Redis__Configuration=abp-redis,defaultDatabase=15
+      - Redis__InstanceName=RuiChen.Abp.Application
+      - Features__Validation__Redis__Configuration=abp-redis,defaultDatabase=13
+      - Features__Validation__Redis__InstanceName=RuiChen.Abp.Application
+      - AuthServer__Authority=http://127.0.0.1:30001/
+      - AuthServer__Audience=lingyun-abp-application
+      - AuthServer__RequireHttpsMetadata=false
+      - AuthServer__SwaggerClientId=vue-oauth-client
+      - AuthServer__SwaggerClientSecret=1q2w3E*
+      - OpenIddict__Applications__VueAdmin__ClientId=vue-admin-client
+      - OpenIddict__Applications__VueAdmin__ClientSecret=1q2w3e*
+      - OpenIddict__Applications__VueAdmin__RootUrl=http://127.0.0.1:3100/
+      - OpenIddict__Applications__VueOAuthClient__ClientId=vue-oauth-client
+      - OpenIddict__Applications__VueOAuthClient__RootUrls__0=http://127.0.0.1:5666/
+      - OpenIddict__Applications__VueOAuthClient__RootUrls__1=http://127.0.0.1:30001/
+      - Identity__Password__RequiredLength=6
+      - Identity__Password__RequiredUniqueChars=0
+      - Identity__Password__RequireNonAlphanumeric=false
+      - Identity__Password__RequireLowercase=false
+      - Identity__Password__RequireUppercase=false
+      - Identity__Password__RequireDigit=false
+      - Identity__Lockout__AllowedForNewUsers=false
+      - Identity__Lockout__LockoutDuration=5
+      - Identity__Lockout__MaxFailedAccessAttempts=5
+      - Identity__SignIn__RequireConfirmedEmail=false
+      - Identity__SignIn__RequireConfirmedPhoneNumber=false
+      - FeatureManagement__IsDynamicStoreEnabled=true
+      - SettingManagement__IsDynamicStoreEnabled=true
+      - PermissionManagement__IsDynamicStoreEnabled=true
+      - TextTemplating__IsDynamicStoreEnabled=true
