@@ -1,26 +1,26 @@
 
 services:
   nginx:
-    image: nginx:1.25.3-alpine
-    hostname: abp-nginx
-    container_name: abp-nginx
-    environment:
-     - TZ=${TZ}  
-    volumes:
-      - ./deploy/middleware/nginx/nginx.conf:/etc/nginx/nginx.conf
-      - ./deploy/middleware/nginx/conf.d:/etc/nginx/conf.d
-      - ./deploy/middleware/nginx/ssl:/etc/nginx/ssl
-      - ./deploy/middleware/nginx/logs:/var/log/nginx
+    image: nginx:stable-alpine
+    container_name: lulifa-nginx
     ports:
       - "80:80"
       - "443:443"
-    networks:
-      - abp-next-admin
+    privileged: true
+    volumes:
+      - ./deploy/middleware/nginx/conf.d:/etc/nginx/conf.d
+      - ./deploy/middleware/nginx/logs:/var/log/nginx
+      - ./deploy/middleware/nginx/certs:/etc/nginx/certs:ro 
+    depends_on:
+      - admin-api
+      - admin-web
     restart: always
-  abp-mysql:
+    networks:
+      - lulifa-next-admin
+  lulifa-mysql:
     image: mysql:8.0
-    hostname: abp-mysql
-    container_name: abp-mysql
+    hostname: lulifa-mysql
+    container_name: lulifa-mysql
     ports:
       - "3306:3306"
     environment:
@@ -33,12 +33,12 @@ services:
       - ./deploy/middleware/mysql/logs:/logs
     restart: always
     networks:
-      - abp-next-admin
+      - lulifa-next-admin
 
-  abp-redis:
+  lulifa-redis:
     image: redis:6
-    hostname: abp-redis
-    container_name: abp-redis
+    hostname: lulifa-redis
+    container_name: lulifa-redis
     environment:
      - TZ=${TZ}
     volumes:
@@ -49,12 +49,12 @@ services:
       - "6379:6379"
     restart: always
     networks:
-      - abp-next-admin
+      - lulifa-next-admin
   
-  abp-rabbitmq:
+  lulifa-rabbitmq:
     image: rabbitmq:3.12-management
-    hostname: abp-rabbitmq
-    container_name: abp-rabbitmq
+    hostname: lulifa-rabbitmq
+    container_name: lulifa-rabbitmq
     ports:
       - "5672:5672"
       - "15672:15672"
@@ -72,45 +72,46 @@ services:
       - rabbitmq_logs:/var/log/rabbitmq
     restart: always
     networks:
-      - abp-next-admin
+      - lulifa-next-admin
 
-  abp-elasticsearch:
+  lulifa-elasticsearch:
     image: elasticsearch:7.16.3
-    container_name: abp-elasticsearch
+    container_name: lulifa-elasticsearch
     restart: always
     environment:
       - "cluster.name=elasticsearch"
       - "discovery.type=single-node"
       - "ES_JAVA_OPTS=-Xms1g -Xmx1g"
-      - TZ=Asia/Shanghai
+      - TZ=${TZ}
     volumes:
       - ./deploy/middleware/elasticsearch/plugins:/usr/share/elasticsearch/plugins
       - ./deploy/middleware/elasticsearch/data:/usr/share/elasticsearch/data
+    user: "1000:1000"
     ports:
       - 9200:9200
     networks:
-      - abp-next-admin
+      - lulifa-next-admin
 
-  abp-tdengine:
-   image: tdengine/tdengine:3.3.6.9
-   hostname: abp-tdengine
-   container_name: abp-tdengine
-   ports:
+  lulifa-tdengine:
+    image: tdengine/tdengine:3.3.6.9
+    hostname: lulifa-tdengine
+    container_name: lulifa-tdengine
+    ports:
      - "6030:6030"
      - "6041:6041"
      - "6043:6043"
      - "6044-6049:6044-6049"
      - "6044-6045:6044-6045/udp"
      - "6060:6060"
-   environment:
+    environment:
      - TZ=${TZ}
-   volumes:
+    volumes:
      - tdengine_data:/var/lib/taos
      - ./deploy/middleware/tdengine/conf:/etc/taos
      - ./deploy/middleware/tdengine/logs:/var/log/taos
-   restart: always
-   networks:
-      - abp-next-admin
+    restart: always
+    networks:
+      - lulifa-next-admin
 volumes:
   mysql_data:
   redis_data:
@@ -119,5 +120,6 @@ volumes:
   tdengine_data:
 
 networks:
-  abp-next-admin:
+  lulifa-next-admin:
+    name: lulifa-next-admin
     driver: bridge

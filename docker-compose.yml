@@ -2,7 +2,7 @@
 services:
   admin-api:
     build:
-      context: ./apps/admin/backend/publish
+      context: ./apps/admin/backend
       dockerfile: Dockerfile
     container_name: admin-api
     ports:
@@ -12,11 +12,28 @@ services:
       - ./apps/admin/backend/Logs:/app/Logs
     environment:
       - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_HTTP_PORTS=80
       - TZ=${TZ}
     restart: always
     networks:
-      - abp-next-admin
+      - lulifa-next-admin
+
+  admin-web:
+      build:
+        context: ./apps/admin/frontend
+        dockerfile: Dockerfile
+      container_name: admin-web
+      ports:
+        - "8080:80"
+      volumes:
+        - ./apps/admin/frontend/dist/_app.config.js:/usr/share/nginx/html/_app.config.js
+      environment:
+        - TZ=${TZ}
+      restart: always
+      networks:
+        - lulifa-next-admin
 
 networks:
-  abp-next-admin:
+  lulifa-next-admin:
+    name: lulifa-next-admin
     driver: bridge
