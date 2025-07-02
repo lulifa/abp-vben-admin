@@ -2,7 +2,7 @@
 services:
   admin-api:
     build:
-      context: ./apps/admin/backend
+      context: ./apps/admin/backend/publish
       dockerfile: Dockerfile
     container_name: admin-api
     ports:
@@ -14,6 +14,15 @@ services:
       - ASPNETCORE_ENVIRONMENT=${ASPNETCORE_ENVIRONMENT}
       - ASPNETCORE_HTTP_PORTS=${ASPNETCORE_HTTP_PORTS}
       - TZ=${TZ}
+    restart: always
+    networks:
+      - lulifa-next-admin
+
+  lulifa-music-yesplay:
+    image: fogforest/yesplaymusic:latest
+    container_name: lulifa-music-yesplay
+    expose:
+      - "80"
     restart: always
     networks:
       - lulifa-next-admin
