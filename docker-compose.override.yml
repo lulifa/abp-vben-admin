@@ -1,107 +1,120 @@
+
 services:
   admin-api:
-    environment:
-      # App 基本配置
-      - App__SslFile=openiddict.pfx
-      - App__SslPassword=e1c48393-0c43-11f0-9582-4aecacda42db
-      - App__ShowPii=true
-      - App__SelfUrl=http://admin-api:30001/
-      - App__CorsOrigins=http://www.lulifa.com:8080,http://www.lulifa.com:30001,http://www.lulifa.com
+   environment:
+    # App 基本配置
+    - App__Name__zh=身份认证服务器
+    - App__Name__en=Identity authentication server
+    - App__SslFile=openiddict.pfx
+    - App__SslPassword=e1c48393-0c43-11f0-9582-4aecacda42db
+    - App__ShowPii=true
+    - App__SelfUrl=http://admin-api:30001/
+    - App__CorsOrigins__0=http://www.lulifa.com
+    - App__CorsOrigins__1=http://www.lulifa.com:30001
 
-      # App Urls
-      - App__Urls__Applications__MVC__RootUrl=http://admin-api:30001
-      - App__Urls__Applications__MVC__Urls__Abp.Account.EmailConfirm=Account/EmailConfirm
-      - App__Urls__Applications__MVC__Urls__Abp.Account.EmailVerifyLogin=Account/VerifyCode
-      - App__Urls__Applications__STS__RootUrl=http://admin-api:30001
-      - App__Urls__Applications__VuePureAdmin__RootUrl=http://admin-api:5666
-      - App__Urls__Applications__VuePureAdmin__Urls__Abp.Account.EmailConfirm=account/email-confirm
-      - App__Urls__Applications__VuePureAdmin__Urls__Abp.Account.EmailVerifyLogin=account/verify-code
+    # MVC URL
+    - App__Urls__Applications__MVC__RootUrl=http://www.lulifa.com:30001
+    - App__Urls__Applications__MVC__Urls__Abp.Account.EmailConfirm=Account/EmailConfirm
+    - App__Urls__Applications__MVC__Urls__Abp.Account.EmailVerifyLogin=Account/VerifyCode
 
-      # Elasticsearch
-      - Elasticsearch__NodeUris=http://lulifa-elasticsearch:9200
+    # VueVbenAdmin URL
+    - App__Urls__Applications__VueVbenAdmin__RootUrl=http://www.lulifa.com
+    - App__Urls__Applications__VueVbenAdmin__Urls__Abp.Account.EmailConfirm=account/email-confirm
+    - App__Urls__Applications__VueVbenAdmin__Urls__Abp.Account.EmailVerifyLogin=account/verify-code
 
-      # CAP 配置
-      - CAP__IsEnabled=false
-      - CAP__MySql__ConnectionString=Server=lulifa-mysql;Database=ruichen;User Id=root;Password=123456;SslMode=None
-      - CAP__RabbitMQ__HostName=lulifa-rabbitmq
-      - CAP__RabbitMQ__Port=5672
-      - CAP__RabbitMQ__UserName=admin
-      - CAP__RabbitMQ__Password=123456
-      - CAP__RabbitMQ__ExchangeName=RuiChen.Abp.Application
-      - CAP__RabbitMQ__VirtualHost=/
-      - CAP__Redis__Configuration=lulifa-redis
+    # Logging: Elasticsearch
+    - Logging__Serilog__Elasticsearch__IndexFormat=abp.dev.logging-{0:yyyy.MM.dd}
 
-      # 分布式缓存
-      - DistributedCache__HideErrors=true
-      - DistributedCache__KeyPrefix=RuiChen.Abp.Application
+    # AuditLogging
+    - AuditLogging__IPLocation__IsEnabled=true
+    - AuditLogging__Elasticsearch__IndexPrefix=abp.dev.auditing
 
-      # 分布式锁
-      - DistributedLock__IsEnabled=true
-      - DistributedLock__Redis__Configuration=lulifa-redis,defaultDatabase=14
+    # Elasticsearch
+    - Elasticsearch__NodeUris=http://lulifa-elasticsearch:9200
 
-      # Redis
-      - Redis__IsEnabled=true
-      - Redis__Configuration=lulifa-redis,defaultDatabase=15
-      - Redis__InstanceName=RuiChen.Abp.Application
+    # 时区和时间格式
+    - Clock__Kind=Local
+    - Json__OutputDateTimeFormat=yyyy-MM-dd HH:mm:ss
+    - Json__InputDateTimeFormats__0=yyyy-MM-dd HH:mm:ss
+    - Json__InputDateTimeFormats__1=yyyy-MM-ddTHH:mm:ss
 
-      # 功能验证缓存 Redis
-      - Features__Validation__Redis__Configuration=lulifa-redis,defaultDatabase=13
-      - Features__Validation__Redis__InstanceName=RuiChen.Abp.Application
+    # 加密配置
+    - StringEncryption__DefaultPassPhrase=s46c5q55nxpeS8Ra
+    - StringEncryption__InitVectorBytes=s83ng0abvd02js84
+    - StringEncryption__DefaultSalt=sf&5)s3#
 
-      # 连接字符串
-      - ConnectionStrings__Default=Server=lulifa-mysql;Database=ruichen;User Id=root;Password=123456
+    # 审计配置
+    - Auditing__AllEntitiesSelector=true
 
-      # AuthServer 配置
-      - AuthServer__Authority=http://www.lulifa.com:30001/
-      - AuthServer__Audience=lingyun-abp-application
-      - AuthServer__RequireHttpsMetadata=false
-      - AuthServer__SwaggerClientId=vue-oauth-client
-      - AuthServer__SwaggerClientSecret=1q2w3E*
+    # CAP
+    - CAP__IsEnabled=false
+    - CAP__EventBus__DefaultGroupName=Platform
+    - CAP__EventBus__GroupNamePrefix=Dev
+    - CAP__EventBus__Version=v1
+    - CAP__EventBus__FailedRetryInterval=300
+    - CAP__EventBus__FailedRetryCount=10
+    - CAP__MySql__TableNamePrefix=pt_event
+    - CAP__MySql__ConnectionString=Server=lulifa-mysql;Database=ruichen;User Id=root;Password=123456;SslMode=None
+    - CAP__RabbitMQ__HostName=lulifa-rabbitmq
+    - CAP__RabbitMQ__Port=5672
+    - CAP__RabbitMQ__UserName=admin
+    - CAP__RabbitMQ__Password=123456
+    - CAP__RabbitMQ__ExchangeName=RuiChen.Abp.Application
+    - CAP__RabbitMQ__VirtualHost=/
+    - CAP__Redis__Configuration=lulifa-redis
 
-      # OpenIddict 应用配置
-      - OpenIddict__Applications__VueAdmin__ClientId=vue-admin-client
-      - OpenIddict__Applications__VueAdmin__ClientSecret=1q2w3e*
-      - OpenIddict__Applications__VueAdmin__RootUrl=http://www.lulifa.com:8080/
-      - OpenIddict__Applications__VueOAuthClient__ClientId=vue-oauth-client
-      - OpenIddict__Applications__VueOAuthClient__RootUrls__0=http://www.lulifa.com:8080/
-      - OpenIddict__Applications__VueOAuthClient__RootUrls__1=http://www.lulifa.com:30001/
+    # 分布式缓存
+    - DistributedCache__HideErrors=true
+    - DistributedCache__KeyPrefix=RuiChen.Abp.Application
+    - DistributedCache__GlobalCacheEntryOptions__SlidingExpiration=30:00:00
+    - DistributedCache__GlobalCacheEntryOptions__AbsoluteExpirationRelativeToNow=60:00:00
 
-      # JSON 日期格式配置
-      - Json__OutputDateTimeFormat=yyyy-MM-dd HH:mm:ss
-      - Json__InputDateTimeFormats__0=yyyy-MM-dd HH:mm:ss
-      - Json__InputDateTimeFormats__1=yyyy-MM-ddTHH:mm:ss
+    # 默认数据库连接
+    - ConnectionStrings__Default=Server=lulifa-mysql;Database=ruichen;User Id=root;Password=123456
 
-      # 加密配置
-      - StringEncryption__DefaultPassPhrase=s46c5q55nxpeS8Ra
-      - StringEncryption__InitVectorBytes=s83ng0abvd02js84
-      - StringEncryption__DefaultSalt=sf&5)s3#
+    # 分布式锁
+    - DistributedLock__IsEnabled=true
+    - DistributedLock__Redis__Configuration=lulifa-redis,defaultDatabase=14
 
-      # 审计配置
-      - Auditing__AllEntitiesSelector=true
-      - AuditLogging__IPLocation__IsEnabled=true
-      - AuditLogging__Elasticsearch__IndexPrefix=abp.dev.auditing
+    # Redis
+    - Redis__IsEnabled=true
+    - Redis__Configuration=lulifa-redis,defaultDatabase=15
+    - Redis__InstanceName=RuiChen.Abp.Application
 
-      # 日志配置
-      - Serilog__MinimumLevel__Default=Information
-      - Serilog__MinimumLevel__Override__System=Warning
-      - Serilog__MinimumLevel__Override__Microsoft=Warning
-      - Serilog__MinimumLevel__Override__Microsoft.EntityFrameworkCore=Warning
-      - Serilog__MinimumLevel__Override__DotNetCore=Warning
-      - Serilog__WriteTo__1__Name=Elasticsearch
-      - Serilog__WriteTo__1__Args__nodeUris=http://lulifa-elasticsearch:9200
-      - Serilog__WriteTo__1__Args__indexFormat=abp.dev.logging-{0:yyyy.MM.dd}
-      - Serilog__WriteTo__1__Args__autoRegisterTemplate=true
-      - Serilog__WriteTo__1__Args__autoRegisterTemplateVersion=ESv7
+    # Redis 验证配置
+    - Features__Validation__Redis__Configuration=lulifa-redis,defaultDatabase=13
+    - Features__Validation__Redis__InstanceName=RuiChen.Abp.Application
 
-      # 时间配置
-      - Clock__Kind=Local
+    # AuthServer
+    - AuthServer__Authority=http://www.lulifa.com:30001/
+    - AuthServer__Audience=lingyun-abp-application
+    - AuthServer__RequireHttpsMetadata=false
+    - AuthServer__SwaggerClientId=vue-oauth-client
+    - AuthServer__SwaggerClientSecret=1q2w3E*
 
-      # Forward 头配置
-      - Forwarded__ForwardedHeaders=XForwardedFor,XForwardedProto
+    # OpenIddict Clients
+    - OpenIddict__Applications__VueAdmin__ClientId=vue-admin-client
+    - OpenIddict__Applications__VueAdmin__ClientSecret=1q2w3e*
+    - OpenIddict__Applications__VueAdmin__RootUrl=http://www.lulifa.com/
+    - OpenIddict__Applications__VueOAuthClient__ClientId=vue-oauth-client
+    - OpenIddict__Applications__VueOAuthClient__RootUrls__0=http://www.lulifa.com/
+    - OpenIddict__Applications__VueOAuthClient__RootUrls__1=http://www.lulifa.com:30001/
 
-      # FeatureManagement / SettingManagement 等
-      - FeatureManagement__IsDynamicStoreEnabled=true
-      - SettingManagement__IsDynamicStoreEnabled=true
-      - PermissionManagement__IsDynamicStoreEnabled=true
-      - TextTemplating__IsDynamicStoreEnabled=true
+    # 身份系统
+    - Identity__Password__RequiredLength=6
+    - Identity__Password__RequiredUniqueChars=0
+    - Identity__Password__RequireNonAlphanumeric=false
+    - Identity__Password__RequireLowercase=false
+    - Identity__Password__RequireUppercase=false
+    - Identity__Password__RequireDigit=false
+    - Identity__Lockout__AllowedForNewUsers=false
+    - Identity__Lockout__LockoutDuration=5
+    - Identity__Lockout__MaxFailedAccessAttempts=5
+    - Identity__SignIn__RequireConfirmedEmail=false
+    - Identity__SignIn__RequireConfirmedPhoneNumber=false
 
+    # 动态配置模块
+    - FeatureManagement__IsDynamicStoreEnabled=true
+    - SettingManagement__IsDynamicStoreEnabled=true
+    - PermissionManagement__IsDynamicStoreEnabled=true
+    - TextTemplating__IsDynamicStoreEnabled=true

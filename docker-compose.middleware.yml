@@ -1,7 +1,8 @@
 
 services:
-  nginx:
-    image: nginx:stable-alpine
+  lulifa-nginx:
+    image: nginx:1.28.0-alpine
+    hostname: lulifa-nginx
     container_name: lulifa-nginx
     ports:
       - "80:80"
@@ -10,10 +11,8 @@ services:
     volumes:
       - ./deploy/middleware/nginx/conf.d:/etc/nginx/conf.d
       - ./deploy/middleware/nginx/logs:/var/log/nginx
-      - ./deploy/middleware/nginx/certs:/etc/nginx/certs:ro 
-    depends_on:
-      - admin-api
-      - admin-web
+      - ./deploy/middleware/nginx/certs:/etc/nginx/certs:ro
+      - ./apps/admin/frontend/dist:/usr/share/nginx/html/admin
     restart: always
     networks:
       - lulifa-next-admin
@@ -76,6 +75,7 @@ services:
 
   lulifa-elasticsearch:
     image: elasticsearch:7.16.3
+    hostname: lulifa-elasticsearch
     container_name: lulifa-elasticsearch
     restart: always
     environment:

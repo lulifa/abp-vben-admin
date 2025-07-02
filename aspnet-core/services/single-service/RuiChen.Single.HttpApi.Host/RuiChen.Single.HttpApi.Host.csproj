@@ -63,6 +63,8 @@
 
     <ProjectReference Include="..\..\..\framework\common\RuiChen.Abp.EventBus.CAP\RuiChen.Abp.EventBus.CAP.csproj" />
 
+    <ProjectReference Include="..\..\..\framework\common\RuiChen.Abp.IP2Region\RuiChen.Abp.IP2Region.csproj" />
+
     <ProjectReference Include="..\..\..\framework\exception-handling\RuiChen.Abp.ExceptionHandling.Emailing\RuiChen.Abp.ExceptionHandling.Emailing.csproj" />
 
     <ProjectReference Include="..\..\..\framework\idempotent\RuiChen.Abp.AspNetCore.Mvc.Idempotent.Wrapper\RuiChen.Abp.AspNetCore.Mvc.Idempotent.Wrapper.csproj" />

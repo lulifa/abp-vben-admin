@@ -1,4 +1,6 @@
 ﻿
+using RuiChen.Abp.IP2Region;
+
 namespace RuiChen.Single.HttpApi.Host;
 
 [DependsOn(
@@ -96,6 +98,7 @@ namespace RuiChen.Single.HttpApi.Host;
     typeof(RuiChenSingleEntityFrameworkCoreModule),
     typeof(SingleMigrationEntityFrameworkCoreModule),
 
+    typeof(AbpIP2RegionModule),
     typeof(AbpCAPEventBusModule),
     typeof(AbpAspNetCoreMvcWrapperModule),
     typeof(AbpAspNetCoreMvcIdempotentWrapperModule),
