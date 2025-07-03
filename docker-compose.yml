@@ -23,6 +23,8 @@ services:
     container_name: lulifa-music-yesplay
     expose:
       - "80"
+    environment:
+      - TZ=${TZ}
     restart: always
     networks:
       - lulifa-next-admin
@@ -33,7 +35,8 @@ services:
     expose:
       - "8080"
     environment:
-      # - PASSWORD=${LIBRETV_PASSWORD}
+      - TZ=${TZ}
+      - PASSWORD=${LIBRETV_PASSWORD}
       - ADMINPASSWORD=${LIBRETV_ADMIN_PASSWORD}
     restart: always
     networks:
@@ -44,6 +47,8 @@ services:
     container_name: lulifa-linux-command
     expose:
       - "3000"
+    environment:
+      - TZ=${TZ}
     restart: always
     networks:
       - lulifa-next-admin
