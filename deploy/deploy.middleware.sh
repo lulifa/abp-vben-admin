@@ -13,11 +13,7 @@ echo "创建目录结构..."
 mkdir -p apps/admin/backend
 mkdir -p apps/admin/frontend
 mkdir -p deploy/middleware/{mysql,redis,rabbitmq,tdengine}/{data,conf,logs}
-mkdir -p deploy/middleware/elasticsearch/{data,plugins}
 mkdir -p deploy/middleware/nginx/{conf.d,logs,certs}
-
-sudo chown -R 1000:1000 ./deploy/middleware/elasticsearch/data
-sudo chmod 750 ./deploy/middleware/elasticsearch/data
 
 echo "清理RabbitMQ旧数据卷..."
 docker volume rm -f lulifa-middleware_rabbitmq_data >/dev/null 2>&1 || true
@@ -48,29 +44,105 @@ server {
     
     location /.well-known {
         proxy_pass http://admin-api:80;
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header Host \$host;
+        proxy_set_header X-Real-IP \$remote_addr;
     }
 
     location /api {
         proxy_pass http://admin-api:80;
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header Host \$host;
+        proxy_set_header X-Real-IP \$remote_addr;
     }
 
     location /connect {
         proxy_pass http://admin-api:80;
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header Host \$host;
+        proxy_set_header X-Real-IP \$remote_addr;
     }
 
     location /signalr-hubs {
         proxy_pass http://admin-api:80;
         proxy_http_version 1.1;
-        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Upgrade \$http_upgrade;
         proxy_set_header Connection "upgrade";
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header Host \$host;
+        proxy_set_header X-Real-IP \$remote_addr;
+    }
+}
+EOF
+fi
+
+# 如果没有配置文件lulifa.conf，则生成默认的Nginx配置文件
+if [ ! -f "deploy/middleware/nginx/conf.d/lulifa.conf" ]; then
+  echo "生成默认的Nginx配置文件lulifa.conf..."
+  cat > deploy/middleware/nginx/conf.d/lulifa.conf <<EOF
+  
+server {
+    listen 80;
+    server_name music.lulifa.com www.music.lulifa.com;
+
+    location / {
+        proxy_pass http://lulifa-yesplay:80;
+        proxy_set_header Host \$host;
+        proxy_set_header X-Real-IP \$remote_addr;
+        proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto \$scheme;
+    }
+}
+
+server {
+    listen 80;
+    server_name video.lulifa.com www.video.lulifa.com;
+
+    location / {
+        proxy_pass http://lulifa-libretv:8080;
+        proxy_set_header Host \$host;
+        proxy_set_header X-Real-IP \$remote_addr;
+        proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto \$scheme;
+    }
+}
+
+server {
+    listen 80;
+    server_name linux.lulifa.com www.linux.lulifa.com;
+
+    location / {
+        proxy_pass http://lulifa-linux-command:80;
+        proxy_set_header Host \$host;
+        proxy_set_header X-Real-IP \$remote_addr;
+        proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto \$scheme;
+    }
+}
+
+server {
+    listen 80;
+    server_name photo.lulifa.com www.photo.lulifa.com;
+
+    client_max_body_size 200M;
+
+    location / {
+        proxy_pass http://lulifa-lychee:80;
+        
+        proxy_set_header Host \$host;
+        proxy_set_header X-Real-IP \$remote_addr;
+        proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto \$scheme;
+        
+        proxy_set_header Cookie \$http_cookie;
+        proxy_cookie_path / "/; SameSite=Lax";
+        charset utf-8;
+
+        proxy_hide_header Content-Security-Policy;
+    }
+    
+    location ~* \.(jpg|jpeg|png|gif|css|js|ico)$ {
+        proxy_pass http://lulifa-lychee:80;
+        expires 30d;
+        add_header Cache-Control "public";
+
+        proxy_hide_header Content-Security-Policy;
     }
 }
 EOF
@@ -104,5 +176,4 @@ echo "Redis:         docker exec -it lulifa-redis redis-cli"
 echo "RabbitMQ:      docker exec -it lulifa-rabbitmq rabbitmqctl 或访问 http://www.lulifa.com:15672"
 echo "RabbitMQ MQTT: mqtt://www.lulifa.com:1883 (用户名密码同RabbitMQ)"
 echo "TDengine:      docker exec -it lulifa-tdengine taos"
-echo "Elasticsearch: http://www.lulifa.com:9200"
 echo "Nginx:         http://www.lulifa.com"
