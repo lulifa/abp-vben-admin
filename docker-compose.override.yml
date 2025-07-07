@@ -22,15 +22,8 @@ services:
     - App__Urls__Applications__VueVbenAdmin__Urls__Abp.Account.EmailConfirm=account/email-confirm
     - App__Urls__Applications__VueVbenAdmin__Urls__Abp.Account.EmailVerifyLogin=account/verify-code
 
-    # Logging: Elasticsearch
-    - Logging__Serilog__Elasticsearch__IndexFormat=abp.dev.logging-{0:yyyy.MM.dd}
-
     # AuditLogging
     - AuditLogging__IPLocation__IsEnabled=true
-    - AuditLogging__Elasticsearch__IndexPrefix=abp.dev.auditing
-
-    # Elasticsearch
-    - Elasticsearch__NodeUris=http://lulifa-elasticsearch:9200
 
     # 时区和时间格式
     - Clock__Kind=Local
