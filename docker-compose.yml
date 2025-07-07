@@ -18,41 +18,6 @@ services:
     networks:
       - lulifa-next-admin
 
-  lulifa-music-yesplay:
-    image: fogforest/yesplaymusic:latest
-    container_name: lulifa-music-yesplay
-    expose:
-      - "80"
-    environment:
-      - TZ=${TZ}
-    restart: always
-    networks:
-      - lulifa-next-admin
-
-  lulifa-video-libretv:
-    image: bestzwei/libretv:latest
-    container_name: lulifa-video-libretv
-    expose:
-      - "8080"
-    environment:
-      - TZ=${TZ}
-      - PASSWORD=${LIBRETV_PASSWORD}
-      - ADMINPASSWORD=${LIBRETV_ADMIN_PASSWORD}
-    restart: always
-    networks:
-      - lulifa-next-admin
-  
-  lulifa-linux-command:
-    image: wcjiang/linux-command:latest
-    container_name: lulifa-linux-command
-    expose:
-      - "3000"
-    environment:
-      - TZ=${TZ}
-    restart: always
-    networks:
-      - lulifa-next-admin
-
 networks:
   lulifa-next-admin:
     name: lulifa-next-admin
