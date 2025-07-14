@@ -9,11 +9,13 @@ using Volo.Abp.Domain.Entities.Events.Distributed;
 using Volo.Abp.Identity;
 using Volo.Abp.Modularity;
 using Volo.Abp.Threading;
+using Volo.Abp.DistributedLocking;
 
 namespace RuiChen.Abp.Identity;
 
 [DependsOn(
     typeof(AbpIdentityDomainSharedModule),
+    typeof(AbpDistributedLockingAbstractionsModule),
     typeof(Volo.Abp.Identity.AbpIdentityDomainModule))]
 public class AbpIdentityDomainModule : AbpModule
 {
