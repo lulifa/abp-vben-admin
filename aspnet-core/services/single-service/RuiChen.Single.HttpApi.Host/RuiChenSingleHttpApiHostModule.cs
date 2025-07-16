@@ -54,7 +54,7 @@ namespace RuiChen.Single.HttpApi.Host;
     typeof(AbpOssManagementSettingManagementModule),// 对象存储模块 设置管理
 
     typeof(AbpPermissionManagementHttpApiModule),// 权限管理模块 控制器
-    typeof(AbpPermissionManagementApplicationModule),// 权限管理模块 应用服务
+    typeof(RuiChen.Abp.PermissionManagement.AbpPermissionManagementApplicationModule),// 权限管理模块 应用服务
     typeof(AbpPermissionManagementEntityFrameworkCoreModule),// 权限管理模块 实体框架
     typeof(AbpPermissionManagementDomainIdentityModule),// 权限管理模块 身份认证集成
     typeof(AbpPermissionManagementDomainOpenIddictModule),// 权限管理模块 OpenIddict集成
