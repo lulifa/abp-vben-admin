@@ -51,13 +51,26 @@ services:
       - DB_USERNAME=root
       - DB_PASSWORD="Ruichen@20190217"
     expose:
-      - "80"  # 通过80端口对外暴露
+      - "80"
     volumes:
       - ./apps/lychee/uploads:/uploads
       - ./apps/lychee/conf:/conf
       - ./apps/lychee/logs:/logs
       - ./apps/lychee/sym:/sym
       - ./apps/lychee/tmp:/lychee-tmp
+    networks:
+      - lulifa-next-admin
+
+  lulifa-onenav:
+    image: helloz/onenav
+    container_name: lulifa-onenav
+    restart: always
+    environment:
+      - TZ=${TZ}
+    expose:
+      - "80"
+    volumes:
+      - ./apps/onenav/data:/data/wwwroot/default/data
     networks:
       - lulifa-next-admin
 
