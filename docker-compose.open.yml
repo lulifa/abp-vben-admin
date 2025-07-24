@@ -74,6 +74,19 @@ services:
     networks:
       - lulifa-next-admin
 
+  lulifa-talebook:
+    image: talebook/talebook:latest
+    container_name: lulifa-talebook
+    restart: always
+    environment:
+      - TZ=${TZ}
+    expose:
+      - "80"
+    volumes:
+      - ./apps/talebook/data:/data
+    networks:
+      - lulifa-next-admin
+
 
 networks:
   lulifa-next-admin:
