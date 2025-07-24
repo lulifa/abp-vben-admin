@@ -33,9 +33,17 @@ fi
 if [ ! -f "deploy/middleware/nginx/conf.d/default.conf" ]; then
   echo "生成默认的Nginx配置文件..."
   cat > deploy/middleware/nginx/conf.d/default.conf <<EOF
+
+server {
+    listen 80 default_server;
+    server_name _;
+
+    return 404;  # 或跳转统一页面
+}
+
 server {
     listen 80;
-    server_name www.lulifa.com;
+    server_name www.admin.lulifa.com;
 
     location / {
         root /usr/share/nginx/html/admin;
@@ -77,6 +85,19 @@ if [ ! -f "deploy/middleware/nginx/conf.d/lulifa.conf" ]; then
   echo "生成默认的Nginx配置文件lulifa.conf..."
   cat > deploy/middleware/nginx/conf.d/lulifa.conf <<EOF
   
+server {
+    listen 80;
+    server_name lulifa.com www.lulifa.com;
+
+    location / {
+        proxy_pass http://lulifa-onenav:80;
+        proxy_set_header Host \$host;
+        proxy_set_header X-Real-IP \$remote_addr;
+        proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto \$scheme;
+    }
+}
+
 server {
     listen 80;
     server_name music.lulifa.com www.music.lulifa.com;

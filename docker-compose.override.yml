@@ -9,16 +9,16 @@ services:
     - App__SslPassword=e1c48393-0c43-11f0-9582-4aecacda42db
     - App__ShowPii=true
     - App__SelfUrl=http://admin-api:30001/
-    - App__CorsOrigins__0=http://www.lulifa.com
-    - App__CorsOrigins__1=http://www.lulifa.com:30001
+    - App__CorsOrigins__0=http://www.admin.lulifa.com
+    - App__CorsOrigins__1=http://www.admin.lulifa.com:30001
 
     # MVC URL
-    - App__Urls__Applications__MVC__RootUrl=http://www.lulifa.com:30001
+    - App__Urls__Applications__MVC__RootUrl=http://www.admin.lulifa.com:30001
     - App__Urls__Applications__MVC__Urls__Abp.Account.EmailConfirm=Account/EmailConfirm
     - App__Urls__Applications__MVC__Urls__Abp.Account.EmailVerifyLogin=Account/VerifyCode
 
     # VueVbenAdmin URL
-    - App__Urls__Applications__VueVbenAdmin__RootUrl=http://www.lulifa.com
+    - App__Urls__Applications__VueVbenAdmin__RootUrl=http://www.admin.lulifa.com
     - App__Urls__Applications__VueVbenAdmin__Urls__Abp.Account.EmailConfirm=account/email-confirm
     - App__Urls__Applications__VueVbenAdmin__Urls__Abp.Account.EmailVerifyLogin=account/verify-code
 
@@ -79,7 +79,7 @@ services:
     - Features__Validation__Redis__InstanceName=RuiChen.Abp.Application
 
     # AuthServer
-    - AuthServer__Authority=http://www.lulifa.com:30001/
+    - AuthServer__Authority=http://www.admin.lulifa.com:30001/
     - AuthServer__Audience=lingyun-abp-application
     - AuthServer__RequireHttpsMetadata=false
     - AuthServer__SwaggerClientId=vue-oauth-client
@@ -88,10 +88,10 @@ services:
     # OpenIddict Clients
     - OpenIddict__Applications__VueAdmin__ClientId=vue-admin-client
     - OpenIddict__Applications__VueAdmin__ClientSecret=1q2w3e*
-    - OpenIddict__Applications__VueAdmin__RootUrl=http://www.lulifa.com/
+    - OpenIddict__Applications__VueAdmin__RootUrl=http://www.admin.lulifa.com/
     - OpenIddict__Applications__VueOAuthClient__ClientId=vue-oauth-client
-    - OpenIddict__Applications__VueOAuthClient__RootUrls__0=http://www.lulifa.com/
-    - OpenIddict__Applications__VueOAuthClient__RootUrls__1=http://www.lulifa.com:30001/
+    - OpenIddict__Applications__VueOAuthClient__RootUrls__0=http://www.admin.lulifa.com/
+    - OpenIddict__Applications__VueOAuthClient__RootUrls__1=http://www.admin.lulifa.com:30001/
 
     # 身份系统
     - Identity__Password__RequiredLength=6
