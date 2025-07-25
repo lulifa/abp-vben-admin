@@ -88,6 +88,29 @@ services:
     networks:
       - lulifa-next-admin
 
+  lulifa-newsnow:
+    image: ghcr.io/ourongxing/newsnow:latest
+    container_name: lulifa-newsnow
+    restart: always
+    expose:
+      - "4444"
+    environment:
+      - TZ=${TZ}
+      - HOST=0.0.0.0
+      - PORT=4444
+      - NODE_ENV=production
+      - INIT_TABLE=true
+      - ENABLE_CACHE=true
+      - JWT_SECRET=Ruichen@20190217
+      # 如需启用 Google 登录，取消下方注释并填写信息：
+      # - G_CLIENT_ID=your_google_client_id
+      # - G_CLIENT_SECRET=your_google_client_secret
+    volumes:
+      - ./apps/newsnow/data:/app/data
+    networks:
+      - lulifa-next-admin
+
+
 
 networks:
   lulifa-next-admin:
