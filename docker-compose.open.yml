@@ -117,8 +117,9 @@ services:
       - TZ=${TZ}
     volumes:
       - etherpad_data:/opt/etherpad-lite/var
-    expose:
-      - "9001"
+      - ./apps/etherpad/settings.json:/opt/etherpad-lite/settings.json
+    ports:
+      - "9001:9001"
     restart: always
     networks:
       - lulifa-next-admin
