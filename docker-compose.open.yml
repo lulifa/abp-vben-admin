@@ -109,24 +109,6 @@ services:
     networks:
       - lulifa-next-admin
 
-  lulifa-etherpad:
-    image: etherpad/etherpad:latest
-    container_name: lulifa-etherpad
-    environment:
-      - ETH_PAD_DB=sqlite
-      - TZ=${TZ}
-    volumes:
-      - etherpad_data:/opt/etherpad-lite/var
-      - ./apps/etherpad/settings.json:/opt/etherpad-lite/settings.json
-    ports:
-      - "9001:9001"
-    restart: always
-    networks:
-      - lulifa-next-admin
-
-volumes:
-  etherpad_data:
-
 networks:
   lulifa-next-admin:
     name: lulifa-next-admin
