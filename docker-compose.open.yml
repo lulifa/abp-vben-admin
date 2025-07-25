@@ -102,9 +102,8 @@ services:
       - INIT_TABLE=true
       - ENABLE_CACHE=true
       - JWT_SECRET=Ruichen@20190217
-      # 如需启用 Google 登录，取消下方注释并填写信息：
-      # - G_CLIENT_ID=your_google_client_id
-      # - G_CLIENT_SECRET=your_google_client_secret
+      - G_CLIENT_ID=${NEWSNOW_CLIENT_ID}
+      - G_CLIENT_SECRET=${NEWSNOW_CLIENT_SECRET}
     volumes:
       - ./apps/newsnow/data:/app/data
     networks:
