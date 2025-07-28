@@ -122,6 +122,25 @@ services:
       - "80"
     networks:
       - lulifa-next-admin
+
+  lulifa-navidrome:
+    image: deluan/navidrome:latest
+    container_name: lulifa-navidrome
+    restart: always
+    environment:
+      - TZ=${TZ}
+      - ND_SCANSCHEDULE=1h
+      - ND_LOGLEVEL=info
+      - ND_SESSIONTIMEOUT=24h
+      - ND_MUSICFOLDER=/music
+    volumes:
+      - /root/lulifa/resources/music:/music
+      - ./apps/navidrome/data:/data
+    expose:
+      - "4533"
+    networks:
+      - lulifa-next-admin
+
       
 
 networks:
