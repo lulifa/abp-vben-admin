@@ -143,6 +143,14 @@ server {
 
     client_max_body_size 200M;
 
+    proxy_connect_timeout 300;
+    proxy_send_timeout 300;
+    proxy_read_timeout 300;
+    send_timeout 300;
+
+    proxy_request_buffering off;
+    proxy_buffering off;
+
     location / {
         proxy_pass http://lulifa-lychee:80;
         
@@ -186,6 +194,40 @@ server {
 
     location / {
         proxy_pass http://lulifa-newsnow:4444;
+        proxy_set_header Host \$host;
+        proxy_set_header X-Real-IP \$remote_addr;
+        proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto \$scheme;
+    }
+}
+
+server {
+    listen 80;
+    server_name file.lulifa.com www.file.lulifa.com;
+
+    client_max_body_size 200M;
+
+    proxy_connect_timeout 300;
+    proxy_send_timeout 300;
+    proxy_read_timeout 300;
+    send_timeout 300;
+
+    proxy_request_buffering off;
+    proxy_buffering off;
+
+    location ~* \.(mp3|flac|wav|ogg|m4a)$ {
+        proxy_pass http://lulifa-filebrowser:80;
+        expires 30d;
+        add_header Cache-Control "public";
+
+        proxy_set_header Host \$host;
+        proxy_set_header X-Real-IP \$remote_addr;
+        proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto \$scheme;
+    }
+
+    location / {
+        proxy_pass http://lulifa-filebrowser:80;
         proxy_set_header Host \$host;
         proxy_set_header X-Real-IP \$remote_addr;
         proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;

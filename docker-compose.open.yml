@@ -109,6 +109,21 @@ services:
     networks:
       - lulifa-next-admin
 
+  lulifa-filebrowser:
+    image: filebrowser/filebrowser:latest
+    container_name: lulifa-filebrowser
+    restart: always
+    environment:
+      - TZ=${TZ}
+    volumes:
+      - /root/lulifa:/srv
+      - ./apps/filebrowser/config:/config
+    expose:
+      - "80"
+    networks:
+      - lulifa-next-admin
+      
+
 networks:
   lulifa-next-admin:
     name: lulifa-next-admin
